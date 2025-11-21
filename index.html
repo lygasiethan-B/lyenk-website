@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyenk - Customer Insight Engine & Service Marketplace</title>
+    <meta name="description" content="Lyenk Insight Engine: Understand your customers better. Then connect with verified service providers across East Africa to grow your business.">
+    <meta name="keywords" content="customer feedback, insight engine, service providers, East Africa, business growth, Lyenk">
+    <meta name="author" content="Lyenk">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Lyenk - Customer Insight Engine & Service Marketplace">
+    <meta property="og:description" content="Understand your customers better with our Insight Engine, then connect with verified service providers to grow your business.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCSVB2VNKN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YCSVB2VNKN');
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables for Brand Colors */
+        :root {
+            --deep-purple: #5D2E8A;
+            --antique-gold: #B18F4D;
+            --charcoal: #333333;
+            --warm-cream: #F8F5F0;
+            --light-lavender: #EFEBF5;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal);
+            background-color: var(--warm-cream);
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--deep-purple);
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--deep-purple);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--antique-gold);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--deep-purple);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--antique-gold);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--deep-purple);
+            color: var(--deep-purple);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--deep-purple);
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: var(--antique-gold);
+            border: 2px solid var(--antique-gold);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--antique-gold);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--antique-gold);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0;
+            color: var(--deep-purple);
+        }
+
+        .logo span {
+            color: var(--antique-gold);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            font-weight: 500;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--deep-purple);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(93, 46, 138, 0.8), rgba(93, 46, 138, 0.9)), url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 180px 0 100px;
+            margin-top: 70px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--warm-cream);
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero .btn {
+            background-color: var(--antique-gold);
+            border: 2px solid var(--antique-gold);
+        }
+
+        .hero .btn:hover {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+
+        .hero .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .hero .btn-outline:hover {
+            background-color: white;
+            color: var(--deep-purple);
+        }
+
+        /* Insight Engine Section */
+        .insight-engine {
+            background-color: var(--light-lavender);
+        }
+
+        .insight-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .insight-features {
+            margin: 30px 0;
+        }
+
+        .insight-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .insight-feature i {
+            color: var(--antique-gold);
+            margin-right: 15px;
+            font-size: 1.2rem;
+            width: 20px;
+        }
+
+        /* Phone Mockup */
+        .phone-mockup {
+            background: var(--charcoal);
+            border-radius: 30px;
+            padding: 15px;
+            width: 300px;
+            height: 600px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .phone-screen {
+            background: var(--warm-cream);
+            border-radius: 20px;
+            height: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feedback-form-mockup {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mockup-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .mockup-header h4 {
+            color: var(--deep-purple);
+            margin-bottom: 5px;
+        }
+
+        .mockup-header p {
+            color: var(--charcoal);
+            font-size: 0.9rem;
+        }
+
+        .mockup-stars {
+            font-size: 2rem;
+            color: var(--antique-gold);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .mockup-question p {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--charcoal);
+        }
+
+        .mockup-textarea {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            height: 120px;
+            margin-bottom: 20px;
+        }
+
+        .mockup-btn {
+            background: var(--antique-gold);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: auto;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            margin: 80px 0;
+            text-align: center;
+        }
+
+        .pricing-section h3 {
+            margin-bottom: 50px;
+        }
+
+        .pricing-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .pricing-tier {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-tier:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-tier.featured {
+            border: 2px solid var(--antique-gold);
+            transform: scale(1.05);
+        }
+
+        .tier-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--antique-gold);
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .tier-header {
+            margin-bottom: 30px;
+        }
+
+        .tier-header h4 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--deep-purple);
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--charcoal);
+            font-weight: normal;
+        }
+
+        .tier-features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .tier-features li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .tier-features i {
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .tier-features .fa-check {
+            color: var(--antique-gold);
+        }
+
+        .tier-features .fa-times {
+            color: #ccc;
+        }
+
+        /* Insight Steps */
+        .insight-steps {
+            margin: 80px 0;
+            text-align: center;
+        }
+
+        .insight-steps h3 {
+            margin-bottom: 50px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .step-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: var(--deep-purple);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .step-card h4 {
+            margin-bottom: 15px;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            background-color: var(--warm-cream);
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 30px 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: var(--deep-purple);
+            color: white;
+            border-radius: 50%;
+            line-height: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Marketplace Section */
+        .marketplace {
+            background-color: white;
+        }
+
+        .marketplace-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .marketplace-features {
+            margin: 30px 0;
+        }
+
+        .marketplace-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .marketplace-feature i {
+            color: var(--antique-gold);
+            margin-right: 15px;
+            font-size: 1.2rem;
+            width: 20px;
+        }
+
+        /* Insight CTA */
+        .insight-cta {
+            text-align: center;
+            background: white;
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .insight-cta h3 {
+            margin-bottom: 20px;
+        }
+
+        .insight-cta p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(to right, var(--deep-purple), #7a42a8);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+
+        .cta .btn {
+            background-color: var(--antique-gold);
+            border: 2px solid var(--antique-gold);
+        }
+
+        .cta .btn:hover {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--charcoal);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--antique-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--antique-gold);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .legal-links a {
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        .legal-links a:hover {
+            color: var(--antique-gold);
+            text-decoration: underline;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: var(--warm-cream);
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            color: var(--deep-purple);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: var(--antique-gold);
+        }
+
+        .modal-header {
+            border-bottom: 2px solid var(--antique-gold);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .modal-header h2 {
+            color: var(--deep-purple);
+        }
+
+        .modal-body {
+            max-height: 70vh;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .modal-body h3 {
+            color: var(--deep-purple);
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .modal-body ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .modal-body li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background-color: var(--light-lavender);
+            border-left: 4px solid var(--antique-gold);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* FAQ Styles */
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--deep-purple);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--antique-gold);
+        }
+
+        .faq-question.active::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 10px;
+            padding-left: 15px;
+        }
+
+        /* Contact Form Styles */
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--deep-purple);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .form-success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-error {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+
+            .logo {
+                margin-bottom: 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-btns .btn {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 10px;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .insight-hero, .marketplace-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .phone-mockup {
+                width: 250px;
+                height: 500px;
+            }
+            
+            .pricing-tier.featured {
+                transform: none;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .modal-content {
+                padding: 20px;
+                margin: 20px auto;
+            }
+
+            .legal-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>Ly<span>enk</span></h1>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#insight-engine">Insight Engine</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="https://app.lyenk.com" class="btn">Get the App</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Understand Your Customers, Grow Your Business</h1>
+            <p>Start with our Insight Engine to know what your customers really think, then connect with verified service providers to take action.</p>
+            <div class="hero-btns">
+                <a href="#insight-engine" class="btn">Start with Insight Engine</a>
+                <a href="https://app.lyenk.com" class="btn btn-outline">Find Service Providers</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insight Engine Section -->
+    <section class="insight-engine" id="insight-engine">
+        <div class="container">
+            <div class="section-title">
+                <h2>LYENK Insight Engine</h2>
+                <p>Your direct customer feedback hotline. Stop guessing, start knowing what your customers really think.</p>
+            </div>
+            
+            <div class="insight-content">
+                <div class="insight-hero">
+                    <div class="insight-text">
+                        <h3>Transform Customer Feedback into Actionable Insights</h3>
+                        <p>A minimal, mobile-first solution that gives you a direct line to your customers' thoughts. No complicated surveys, just pure, actionable feedback.</p>
+                        
+                        <div class="insight-features">
+                            <div class="insight-feature">
+                                <i class="fas fa-link"></i>
+                                <span>Simple Feedback Link System</span>
+                            </div>
+                            <div class="insight-feature">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Mobile-First Design</span>
+                            </div>
+                            <div class="insight-feature">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Real-time Analytics Dashboard</span>
+                            </div>
+                            <div class="insight-feature">
+                                <i class="fas fa-comment-alt"></i>
+                                <span>Weekly Insight Digests</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="insight-visual">
+                        <div class="phone-mockup">
+                            <div class="phone-screen">
+                                <div class="feedback-form-mockup">
+                                    <div class="mockup-header">
+                                        <h4>ABC Supermarket</h4>
+                                        <p>We Value Your Feedback</p>
+                                    </div>
+                                    <div class="mockup-stars">★★★★★</div>
+                                    <div class="mockup-question">
+                                        <p>What one thing could we do to make your experience better?</p>
+                                        <div class="mockup-textarea"></div>
+                                    </div>
+                                    <button class="mockup-btn">Submit Feedback</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Tiers -->
+            <div class="pricing-section">
+                <h3>Choose Your Insight Plan</h3>
+                <div class="pricing-tiers">
+                    <div class="pricing-tier">
+                        <div class="tier-header">
+                            <h4>Insight Starter</h4>
+                            <div class="price">$14<span>/month</span></div>
+                        </div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-check"></i> Branded Feedback Page</li>
+                            <li><i class="fas fa-check"></i> Custom Feedback Link</li>
+                            <li><i class="fas fa-check"></i> Basic Dashboard Access</li>
+                            <li><i class="fas fa-times"></i> Weekly Insight Digest</li>
+                            <li><i class="fas fa-times"></i> Strategy Calls</li>
+                        </ul>
+                        <button class="btn btn-outline">Get Started</button>
+                    </div>
+                    
+                    <div class="pricing-tier featured">
+                        <div class="tier-badge">Most Popular</div>
+                        <div class="tier-header">
+                            <h4>Insight Pro</h4>
+                            <div class="price">$42<span>/month</span></div>
+                        </div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-check"></i> Everything in Starter</li>
+                            <li><i class="fas fa-check"></i> Weekly Insight Digest</li>
+                            <li><i class="fas fa-check"></i> Monthly Strategy Call</li>
+                            <li><i class="fas fa-check"></i> Priority Support</li>
+                            <li><i class="fas fa-check"></i> Action Recommendations</li>
+                        </ul>
+                        <button class="btn btn-primary">Start Free Trial</button>
+                    </div>
+                    
+                    <div class="pricing-tier">
+                        <div class="tier-header">
+                            <h4>Insight Enterprise</h4>
+                            <div class="price">$69<span>/month</span></div>
+                        </div>
+                        <ul class="tier-features">
+                            <li><i class="fas fa-check"></i> Everything in Pro</li>
+                            <li><i class="fas fa-check"></i> Detailed Monthly Reports</li>
+                            <li><i class="fas fa-check"></i> Bi-weekly Strategy Calls</li>
+                            <li><i class="fas fa-check"></i> Staff Training</li>
+                            <li><i class="fas fa-check"></i> Custom Analytics</li>
+                        </ul>
+                        <button class="btn btn-outline">Contact Sales</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How It Works -->
+            <div class="insight-steps">
+                <h3>How It Works in 3 Simple Steps</h3>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h4>Share Your Link</h4>
+                        <p>Share your custom feedback link with customers via email, SMS, or social media.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h4>Collect Feedback</h4>
+                        <p>Customers share their thoughts in seconds using our mobile-optimized form.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h4>Get Insights</h4>
+                        <p>Receive weekly digests with the top 3 actionable insights from customer feedback.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final CTA -->
+            <div class="insight-cta">
+                <h3>Ready to Understand Your Customers Better?</h3>
+                <p>Join businesses across East Africa that are transforming customer feedback into growth.</p>
+                <div class="cta-buttons">
+                    <a href="#contact-demo" class="btn btn-primary">Book a Demo</a>
+                    <a href="https://feedback.lyenk.com" class="btn btn-outline">View Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Demo Section -->
+    <section id="contact-demo" class="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>Book a Demo</h2>
+                <p>Let us show you how the Insight Engine can transform your customer feedback into growth</p>
+            </div>
+            <div class="contact-form">
+                <form action="https://api.web3forms.com/submit" method="POST" id="demoForm">
+                    <input type="hidden" name="access_key" value="9ce26fff-f98c-4fa2-9f2a-7bb1a3cfb231">
+                    <input type="hidden" name="subject" value="New Demo Request - Lyenk Insight Engine">
+                    <input type="hidden" name="from_name" value="Lyenk Website">
+                    <input type="checkbox" name="botcheck" style="display: none;">
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="business">Business Name *</label>
+                        <input type="text" id="business" name="business" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="employees">Number of Employees *</label>
+                        <select id="employees" name="employees" required>
+                            <option value="">Select...</option>
+                            <option value="1-5">1-5</option>
+                            <option value="6-10">6-10</option>
+                            <option value="11-25">11-25</option>
+                            <option value="26-50">26-50</option>
+                            <option value="51+">51+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">What challenges are you facing with customer feedback?</label>
+                        <textarea id="message" name="message" placeholder="Tell us about your current customer feedback challenges..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Request Demo</button>
+                </form>
+                <div id="form-result" style="display: none;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>From Insight to Action</h2>
+                <p>How Lyenk helps you turn customer feedback into business growth</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Gather Insights</h3>
+                    <p>Use our Insight Engine to collect honest feedback from your customers about what they really want.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Identify Opportunities</h3>
+                    <p>Our weekly digests highlight the top 3 areas where you can improve your business based on customer feedback.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Take Action</h3>
+                    <p>Connect with verified service providers in our marketplace to implement the changes your customers want.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Measure Impact</h3>
+                    <p>Track how customer satisfaction improves as you address their feedback and grow your business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketplace Section -->
+    <section class="marketplace">
+        <div class="container">
+            <div class="section-title">
+                <h2>Connect with Service Providers</h2>
+                <p>Once you know what your customers want, find the right professionals to make it happen</p>
+            </div>
+            <div class="marketplace-content">
+                <div class="marketplace-text">
+                    <h3>Your Business Growth Partners</h3>
+                    <p>After identifying opportunities through our Insight Engine, connect with verified service providers who can help you implement changes and grow your business.</p>
+                    
+                    <div class="marketplace-features">
+                        <div class="marketplace-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Verified professionals across East Africa</span>
+                        </div>
+                        <div class="marketplace-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Direct communication with providers</span>
+                        </div>
+                        <div class="marketplace-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Transparent pricing and reviews</span>
+                        </div>
+                        <div class="marketplace-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Secure payment and agreements</span>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px;">
+                        <a href="https://app.lyenk.com" class="btn">Explore Service Providers</a>
+                    </div>
+                </div>
+                <div class="marketplace-visual">
+                    <div style="background: var(--light-lavender); padding: 40px; border-radius: 12px; text-align: center;">
+                        <i class="fas fa-users" style="font-size: 4rem; color: var(--antique-gold); margin-bottom: 20px;"></i>
+                        <h4>100+ Verified Providers</h4>
+                        <p>IT, Marketing, Business Consulting, Design, and more</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Grow Your Business?</h2>
+            <p>Start with customer insights, then connect with the right service providers to take action.</p>
+            <div class="hero-btns">
+                <a href="#insight-engine" class="btn">Start with Insight Engine</a>
+                <a href="https://app.lyenk.com" class="btn btn-outline">Find Service Providers</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Lyenk</h3>
+                    <p>Helping East African businesses understand their customers and connect with service providers to drive growth.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/lyenk.comm/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://medium.com/@lyenk" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                        <a href="https://www.linkedin.com/company/lyenk/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#insight-engine">Insight Engine</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="https://app.lyenk.com">Service Marketplace</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://medium.com/@lyenk">Blog</a></li>
+                        <li><a href="#" id="faq-link">FAQs</a></li>
+                        <li><a href="#insight-engine">Insight Engine</a></li>
+                        <li><a href="#" id="terms-link">Terms & Conditions</a></li>
+                        <li><a href="#" id="privacy-link">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> hello@lyenk.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> East Africa</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Lyenk. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#" id="faq-link-footer">FAQs</a>
+                    <a href="#" id="terms-link-footer">Terms & Conditions</a>
+                    <a href="#" id="privacy-link-footer">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FAQs Modal -->
+    <div id="faq-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-faq">&times;</span>
+            <div class="modal-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="modal-body">
+                <p>Find answers to the most common questions about using Lyenk Insight Engine and our service marketplace.</p>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What is Lyenk Insight Engine?</div>
+                    <div class="faq-answer">
+                        <p>Lyenk Insight Engine is a customer feedback platform that helps businesses collect, analyze, and act on customer feedback. It provides a simple way to gather insights through customizable feedback links and delivers actionable recommendations.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How does the feedback collection work?</div>
+                    <div class="faq-answer">
+                        <p>You get a custom feedback link that you can share with customers via email, SMS, social media, or your website. Customers click the link and complete a simple mobile-optimized form. All responses are collected in your private dashboard.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What's included in the weekly Insight Digest?</div>
+                    <div class="faq-answer">
+                        <p>The weekly Insight Digest summarizes the most important feedback from your customers, highlighting the top 3 areas for improvement, customer sentiment trends, and specific actionable recommendations to enhance your business.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Can I try before I buy?</div>
+                    <div class="faq-answer">
+                        <p>Yes! We offer a 14-day free trial for our Insight Pro plan. You'll get full access to all features during the trial period with no commitment required.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How do I connect with service providers?</div>
+                    <div class="faq-answer">
+                        <p>Once you identify areas for improvement through the Insight Engine, you can use our service marketplace to find verified professionals who can help implement the changes. Browse profiles, read reviews, and connect directly with providers.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What types of businesses use Lyenk?</div>
+                    <div class="faq-answer">
+                        <p>We serve businesses of all sizes across East Africa - from small retail shops and restaurants to growing SMEs and established enterprises. Any business that wants to better understand their customers can benefit from our platform.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">How secure is my customer data?</div>
+                    <div class="faq-answer">
+                        <p>We take data security seriously. All customer feedback is encrypted and stored securely. We never share your customer data with third parties without your explicit permission.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Can I cancel my subscription anytime?</div>
+                    <div class="faq-answer">
+                        <p>Yes, you can cancel your subscription at any time. There are no long-term contracts, and you'll continue to have access to your account until the end of your billing period.</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <p>Can't find the answer you're looking for? Contact our support team at hello@lyenk.com or through our social media channels.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms & Conditions Modal -->
+    <div id="terms-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-terms">&times;</span>
+            <div class="modal-header">
+                <h2>Terms and Conditions</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>Last Updated: January 2025</strong></p>
+                
+                <h3>1. Acceptance of Terms</h3>
+                <p>By accessing and using Lyenk's services, including the Insight Engine and service marketplace, you agree to be bound by these Terms and Conditions.</p>
+                
+                <h3>2. Services Description</h3>
+                <p>Lyenk provides two main services:</p>
+                <ul>
+                    <li><strong>Insight Engine:</strong> A customer feedback collection and analysis platform</li>
+                    <li><strong>Service Marketplace:</strong> A platform connecting businesses with verified service providers</li>
+                </ul>
+                
+                <h3>3. User Accounts</h3>
+                <p>To use our services, you must create an account with accurate and complete information. You are responsible for maintaining the security of your account credentials.</p>
+                
+                <h3>4. Subscription and Payments</h3>
+                <ul>
+                    <li>Subscription fees are billed monthly in advance</li>
+                    <li>All fees are non-refundable except as required by law</li>
+                    <li>We may change subscription fees with 30 days' notice</li>
+                    <li>Free trials are available for first-time users</li>
+                </ul>
+                
+                <h3>5. User Responsibilities</h3>
+                <p>You agree to:</p>
+                <ul>
+                    <li>Use our services only for lawful purposes</li>
+                    <li>Not engage in any fraudulent, misleading, or harmful activities</li>
+                    <li>Respect the intellectual property rights of others</li>
+                    <li>Not attempt to reverse engineer or compromise our platform</li>
+                </ul>
+                
+                <h3>6. Service Providers</h3>
+                <p>For service providers using our marketplace:</p>
+                <ul>
+                    <li>You must provide accurate information about your services and qualifications</li>
+                    <li>You are responsible for the quality and delivery of your services</li>
+                    <li>You must maintain appropriate insurance where required</li>
+                    <li>You agree to resolve disputes professionally</li>
+                </ul>
+                
+                <h3>7. Intellectual Property</h3>
+                <p>All content, features, and functionality of Lyenk's platform are owned by Lyenk and are protected by international copyright, trademark, and other intellectual property laws.</p>
+                
+                <h3>8. Limitation of Liability</h3>
+                <p>Lyenk acts as a platform provider and is not responsible for:</p>
+                <ul>
+                    <li>The quality of services provided by marketplace providers</li>
+                    <li>Disputes between users and service providers</li>
+                    <li>Any indirect, incidental, or consequential damages</li>
+                </ul>
+                
+                <h3>9. Termination</h3>
+                <p>We may suspend or terminate your account if you violate these Terms and Conditions. You may terminate your account at any time.</p>
+                
+                <h3>10. Changes to Terms</h3>
+                <p>We may update these Terms and Conditions from time to time. Continued use of our services after changes constitutes acceptance of the modified terms.</p>
+                
+                <h3>11. Governing Law</h3>
+                <p>These Terms and Conditions are governed by the laws of East Africa. Any disputes shall be resolved through arbitration in accordance with East African arbitration rules.</p>
+                
+                <div class="highlight-box">
+                    <p>If you have any questions about these Terms and Conditions, please contact us at hello@lyenk.com.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-privacy">&times;</span>
+            <div class="modal-header">
+                <h2>Privacy Policy</h2>
+            </div>
+            <div class="modal-body">
+                <p><strong>Last Updated: January 2025</strong></p>
+                
+                <h3>1. Information We Collect</h3>
+                <p>We collect several types of information to provide and improve our services:</p>
+                
+                <h4>Personal Information</h4>
+                <ul>
+                    <li><strong>Account Information:</strong> Name, email, phone number, business details</li>
+                    <li><strong>Payment Information:</strong> Billing address, payment method details (processed securely by our payment partners)</li>
+                    <li><strong>Communication Data:</strong> Messages, support requests, feedback</li>
+                </ul>
+                
+                <h4>Customer Feedback Data</h4>
+                <ul>
+                    <li>Feedback responses collected through the Insight Engine</li>
+                    <li>Customer ratings and comments</li>
+                    <li>Response metadata (timestamp, device type, etc.)</li>
+                </ul>
+                
+                <h4>Usage Data</h4>
+                <ul>
+                    <li>Platform usage patterns and analytics</li>
+                    <li>IP addresses, browser type, device information</li>
+                    <li>Cookies and similar tracking technologies</li>
+                </ul>
+                
+                <h3>2. How We Use Your Information</h3>
+                <p>We use collected information to:</p>
+                <ul>
+                    <li>Provide and maintain our services</li>
+                    <li>Process payments and manage subscriptions</li>
+                    <li>Send important notifications and updates</li>
+                    <li>Improve and personalize user experience</li>
+                    <li>Analyze platform usage and performance</li>
+                    <li>Prevent fraud and ensure security</li>
+                    <li>Comply with legal obligations</li>
+                </ul>
+                
+                <h3>3. Data Sharing and Disclosure</h3>
+                <p>We may share information with:</p>
+                
+                <h4>Service Providers</h4>
+                <ul>
+                    <li>Payment processors for transaction handling</li>
+                    <li>Cloud hosting providers for data storage</li>
+                    <li>Analytics services for platform improvement</li>
+                    <li>Customer support tools for assistance</li>
+                </ul>
+                
+                <h4>Legal Requirements</h4>
+                <p>We may disclose information when required by law or to:</p>
+                <ul>
+                    <li>Comply with legal obligations</li>
+                    <li>Protect our rights and property</li>
+                    <li>Prevent fraud or security issues</li>
+                    <li>Protect the safety of our users</li>
+                </ul>
+                
+                <h3>4. Data Security</h3>
+                <p>We implement appropriate security measures including:</p>
+                <ul>
+                    <li>Encryption of data in transit and at rest</li>
+                    <li>Regular security assessments and updates</li>
+                    <li>Access controls and authentication</li>
+                    <li>Secure data backup procedures</li>
+                </ul>
+                
+                <h3>5. Your Rights</h3>
+                <p>You have the right to:</p>
+                <ul>
+                    <li>Access your personal information</li>
+                    <li>Correct inaccurate data</li>
+                    <li>Request deletion of your data</li>
+                    <li>Export your data in a portable format</li>
+                    <li>Opt-out of marketing communications</li>
+                    <li>Withdraw consent where applicable</li>
+                </ul>
+                
+                <h3>6. Data Retention</h3>
+                <p>We retain personal information only as long as necessary for:</p>
+                <ul>
+                    <li>Providing our services</li>
+                    <li>Complying with legal obligations</li>
+                    <li>Resolving disputes</li>
+                    <li>Enforcing our agreements</li>
+                </ul>
+                
+                <h3>7. International Data Transfers</h3>
+                <p>As an East Africa-focused platform, we primarily process data within the region. When international transfers occur, we ensure adequate protection through standard contractual clauses or other approved mechanisms.</p>
+                
+                <h3>8. Children's Privacy</h3>
+                <p>Our services are not directed to individuals under 18. We do not knowingly collect personal information from children.</p>
+                
+                <h3>9. Changes to This Policy</h3>
+                <p>We may update this Privacy Policy. We will notify users of significant changes through email or platform notifications.</p>
+                
+                <h3>10. Contact Us</h3>
+                <p>For privacy-related questions or to exercise your rights, contact us at:</p>
+                <p>Email: hello@lyenk.com<br>
+                Address: East Africa</p>
+                
+                <div class="highlight-box">
+                    <p>We are committed to protecting your privacy and being transparent about our data practices. If you have any concerns, please don't hesitate to contact us.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Modal functionality
+        const faqModal = document.getElementById('faq-modal');
+        const termsModal = document.getElementById('terms-modal');
+        const privacyModal = document.getElementById('privacy-modal');
+
+        // FAQs modal
+        document.getElementById('faq-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            faqModal.style.display = 'block';
+        });
+        
+        document.getElementById('faq-link-footer').addEventListener('click', function(e) {
+            e.preventDefault();
+            faqModal.style.display = 'block';
+        });
+
+        document.getElementById('close-faq').addEventListener('click', function() {
+            faqModal.style.display = 'none';
+        });
+
+        // Terms & Conditions modal
+        document.getElementById('terms-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            termsModal.style.display = 'block';
+        });
+        
+        document.getElementById('terms-link-footer').addEventListener('click', function(e) {
+            e.preventDefault();
+            termsModal.style.display = 'block';
+        });
+
+        document.getElementById('close-terms').addEventListener('click', function() {
+            termsModal.style.display = 'none';
+        });
+
+        // Privacy Policy modal
+        document.getElementById('privacy-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            privacyModal.style.display = 'block';
+        });
+        
+        document.getElementById('privacy-link-footer').addEventListener('click', function(e) {
+            e.preventDefault();
+            privacyModal.style.display = 'block';
+        });
+
+        document.getElementById('close-privacy').addEventListener('click', function() {
+            privacyModal.style.display = 'none';
+        });
+
+        // Close modals when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target === faqModal) {
+                faqModal.style.display = 'none';
+            }
+            if (e.target === termsModal) {
+                termsModal.style.display = 'none';
+            }
+            if (e.target === privacyModal) {
+                privacyModal.style.display = 'none';
+            }
+        });
+
+        // FAQ accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const answer = this.nextElementSibling;
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+
+        // Web3Forms submission handling
+        document.getElementById('demoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = this;
+            const submitButton = form.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            
+            // Show loading state
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            // Get form data
+            const formData = new FormData(form);
+            
+            // Send to Web3Forms
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Success message
+                    form.style.display = 'none';
+                    const resultDiv = document.getElementById('form-result');
+                    resultDiv.innerHTML = `
+                        <div class="form-success">
+                            <h3>Thank You!</h3>
+                            <p>Your demo request has been received. We will contact you within 24 hours.</p>
+                            <p>In the meantime, feel free to explore our <a href="#insight-engine">Insight Engine</a> features.</p>
+                        </div>
+                    `;
+                    resultDiv.style.display = 'block';
+                } else {
+                    throw new Error(data.message || 'Form submission failed');
+                }
+            })
+            .catch(error => {
+                // Error message
+                const resultDiv = document.getElementById('form-result');
+                resultDiv.innerHTML = `
+                    <div class="form-error">
+                        <h3>Sorry, there was an error</h3>
+                        <p>${error.message}. Please try again or contact us directly at hello@lyenk.com</p>
+                    </div>
+                `;
+                resultDiv.style.display = 'block';
+                
+                // Reset button
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
