@@ -350,100 +350,6 @@
             margin-top: auto;
         }
 
-        /* Pricing Section */
-        .pricing-section {
-            margin: 80px 0;
-            text-align: center;
-        }
-
-        .pricing-section h3 {
-            margin-bottom: 50px;
-        }
-
-        .pricing-tiers {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .pricing-tier {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-
-        .pricing-tier:hover {
-            transform: translateY(-10px);
-        }
-
-        .pricing-tier.featured {
-            border: 2px solid var(--antique-gold);
-            transform: scale(1.05);
-        }
-
-        .tier-badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--antique-gold);
-            color: white;
-            padding: 5px 20px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .tier-header {
-            margin-bottom: 30px;
-        }
-
-        .tier-header h4 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .price {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--deep-purple);
-        }
-
-        .price span {
-            font-size: 1rem;
-            color: var(--charcoal);
-            font-weight: normal;
-        }
-
-        .tier-features {
-            list-style: none;
-            margin: 30px 0;
-            text-align: left;
-        }
-
-        .tier-features li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-
-        .tier-features i {
-            margin-right: 10px;
-            width: 20px;
-        }
-
-        .tier-features .fa-check {
-            color: var(--antique-gold);
-        }
-
-        .tier-features .fa-times {
-            color: #ccc;
-        }
-
         /* Insight Steps */
         .insight-steps {
             margin: 80px 0;
@@ -766,6 +672,23 @@
             border-radius: 0 4px 4px 0;
         }
 
+        /* Google Form Modal Styles */
+        .google-form-modal .modal-content {
+            max-width: 700px;
+            padding: 20px;
+        }
+
+        .google-form-modal .modal-body {
+            padding: 0;
+            max-height: 80vh;
+        }
+
+        .google-form-modal iframe {
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+
         /* FAQ Styles */
         .faq-item {
             margin-bottom: 20px;
@@ -918,10 +841,6 @@
                 height: 500px;
             }
             
-            .pricing-tier.featured {
-                transform: none;
-            }
-            
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
@@ -1035,58 +954,6 @@
                 </div>
             </div>
 
-            <!-- Pricing Tiers -->
-            <div class="pricing-section">
-                <h3>Choose Your Insight Plan</h3>
-                <div class="pricing-tiers">
-                    <div class="pricing-tier">
-                        <div class="tier-header">
-                            <h4>Insight Starter</h4>
-                            <div class="price">$14<span>/month</span></div>
-                        </div>
-                        <ul class="tier-features">
-                            <li><i class="fas fa-check"></i> Branded Feedback Page</li>
-                            <li><i class="fas fa-check"></i> Custom Feedback Link</li>
-                            <li><i class="fas fa-check"></i> Basic Dashboard Access</li>
-                            <li><i class="fas fa-times"></i> Weekly Insight Digest</li>
-                            <li><i class="fas fa-times"></i> Strategy Calls</li>
-                        </ul>
-                        <button class="btn btn-outline">Get Started</button>
-                    </div>
-                    
-                    <div class="pricing-tier featured">
-                        <div class="tier-badge">Most Popular</div>
-                        <div class="tier-header">
-                            <h4>Insight Pro</h4>
-                            <div class="price">$42<span>/month</span></div>
-                        </div>
-                        <ul class="tier-features">
-                            <li><i class="fas fa-check"></i> Everything in Starter</li>
-                            <li><i class="fas fa-check"></i> Weekly Insight Digest</li>
-                            <li><i class="fas fa-check"></i> Monthly Strategy Call</li>
-                            <li><i class="fas fa-check"></i> Priority Support</li>
-                            <li><i class="fas fa-check"></i> Action Recommendations</li>
-                        </ul>
-                        <button class="btn btn-primary">Start Free Trial</button>
-                    </div>
-                    
-                    <div class="pricing-tier">
-                        <div class="tier-header">
-                            <h4>Insight Enterprise</h4>
-                            <div class="price">$69<span>/month</span></div>
-                        </div>
-                        <ul class="tier-features">
-                            <li><i class="fas fa-check"></i> Everything in Pro</li>
-                            <li><i class="fas fa-check"></i> Detailed Monthly Reports</li>
-                            <li><i class="fas fa-check"></i> Bi-weekly Strategy Calls</li>
-                            <li><i class="fas fa-check"></i> Staff Training</li>
-                            <li><i class="fas fa-check"></i> Custom Analytics</li>
-                        </ul>
-                        <button class="btn btn-outline">Contact Sales</button>
-                    </div>
-                </div>
-            </div>
-
             <!-- How It Works -->
             <div class="insight-steps">
                 <h3>How It Works in 3 Simple Steps</h3>
@@ -1114,61 +981,9 @@
                 <h3>Ready to Understand Your Customers Better?</h3>
                 <p>Join businesses across East Africa that are transforming customer feedback into growth.</p>
                 <div class="cta-buttons">
-                    <a href="#contact-demo" class="btn btn-primary">Book a Demo</a>
+                    <a href="#" class="btn btn-primary" id="book-demo-btn">Book a Demo</a>
                     <a href="https://feedback.lyenk.com" class="btn btn-outline">View Demo</a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact/Demo Section -->
-    <section id="contact-demo" class="how-it-works">
-        <div class="container">
-            <div class="section-title">
-                <h2>Book a Demo</h2>
-                <p>Let us show you how the Insight Engine can transform your customer feedback into growth</p>
-            </div>
-            <div class="contact-form">
-                <form action="https://api.web3forms.com/submit" method="POST" id="demoForm">
-                    <input type="hidden" name="access_key" value="9ce26fff-f98c-4fa2-9f2a-7bb1a3cfb231">
-                    <input type="hidden" name="subject" value="New Demo Request - Lyenk Insight Engine">
-                    <input type="hidden" name="from_name" value="Lyenk Website">
-                    <input type="checkbox" name="botcheck" style="display: none;">
-                    
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="business">Business Name *</label>
-                        <input type="text" id="business" name="business" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="employees">Number of Employees *</label>
-                        <select id="employees" name="employees" required>
-                            <option value="">Select...</option>
-                            <option value="1-5">1-5</option>
-                            <option value="6-10">6-10</option>
-                            <option value="11-25">11-25</option>
-                            <option value="26-50">26-50</option>
-                            <option value="51+">51+</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">What challenges are you facing with customer feedback?</label>
-                        <textarea id="message" name="message" placeholder="Tell us about your current customer feedback challenges..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Request Demo</button>
-                </form>
-                <div id="form-result" style="display: none;"></div>
             </div>
         </div>
     </section>
@@ -1313,6 +1128,19 @@
             </div>
         </div>
     </footer>
+
+    <!-- Google Form Modal -->
+    <div id="google-form-modal" class="modal google-form-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-google-form">&times;</span>
+            <div class="modal-header">
+                <h2>Book a Demo</h2>
+            </div>
+            <div class="modal-body">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdP8eZg2ZUiksFhR4by6tQlxnLliRMv26YMWS0xUNusAFBHzA/viewform?embedded=true" width="100%" height="1830" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
+        </div>
+    </div>
 
     <!-- FAQs Modal -->
     <div id="faq-modal" class="modal">
@@ -1604,9 +1432,20 @@
         });
 
         // Modal functionality
+        const googleFormModal = document.getElementById('google-form-modal');
         const faqModal = document.getElementById('faq-modal');
         const termsModal = document.getElementById('terms-modal');
         const privacyModal = document.getElementById('privacy-modal');
+
+        // Google Form modal
+        document.getElementById('book-demo-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            googleFormModal.style.display = 'block';
+        });
+
+        document.getElementById('close-google-form').addEventListener('click', function() {
+            googleFormModal.style.display = 'none';
+        });
 
         // FAQs modal
         document.getElementById('faq-link').addEventListener('click', function(e) {
@@ -1655,6 +1494,9 @@
 
         // Close modals when clicking outside
         window.addEventListener('click', function(e) {
+            if (e.target === googleFormModal) {
+                googleFormModal.style.display = 'none';
+            }
             if (e.target === faqModal) {
                 faqModal.style.display = 'none';
             }
@@ -1676,61 +1518,6 @@
                 } else {
                     answer.style.display = 'block';
                 }
-            });
-        });
-
-        // Web3Forms submission handling
-        document.getElementById('demoForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const form = this;
-            const submitButton = form.querySelector('button[type="submit"]');
-            const originalText = submitButton.textContent;
-            
-            // Show loading state
-            submitButton.textContent = 'Sending...';
-            submitButton.disabled = true;
-            
-            // Get form data
-            const formData = new FormData(form);
-            
-            // Send to Web3Forms
-            fetch(form.action, {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    // Success message
-                    form.style.display = 'none';
-                    const resultDiv = document.getElementById('form-result');
-                    resultDiv.innerHTML = `
-                        <div class="form-success">
-                            <h3>Thank You!</h3>
-                            <p>Your demo request has been received. We will contact you within 24 hours.</p>
-                            <p>In the meantime, feel free to explore our <a href="#insight-engine">Insight Engine</a> features.</p>
-                        </div>
-                    `;
-                    resultDiv.style.display = 'block';
-                } else {
-                    throw new Error(data.message || 'Form submission failed');
-                }
-            })
-            .catch(error => {
-                // Error message
-                const resultDiv = document.getElementById('form-result');
-                resultDiv.innerHTML = `
-                    <div class="form-error">
-                        <h3>Sorry, there was an error</h3>
-                        <p>${error.message}. Please try again or contact us directly at hello@lyenk.com</p>
-                    </div>
-                `;
-                resultDiv.style.display = 'block';
-                
-                // Reset button
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
             });
         });
     </script>
