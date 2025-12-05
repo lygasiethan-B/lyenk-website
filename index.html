@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lyenk - Customer Insight Engine & Service Marketplace</title>
-    <meta name="description" content="Lyenk Insight Engine: Understand your customers better. Then connect with verified service providers across East Africa to grow your business.">
-    <meta name="keywords" content="customer feedback, insight engine, service providers, East Africa, business growth, Lyenk">
+    <title>Lyenk - Customer Insight Engine & Service Marketplace | East Africa</title>
+    <meta name="description" content="Lyenk Insight Engine: Understand your customers better with actionable feedback. Connect with verified service providers across East Africa to grow your business.">
+    <meta name="keywords" content="customer feedback, insight engine, service providers, East Africa, business growth, Lyenk, customer analytics, feedback collection">
     <meta name="author" content="Lyenk">
+    <meta name="robots" content="index, follow">
     
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Lyenk - Customer Insight Engine & Service Marketplace">
     <meta property="og:description" content="Understand your customers better with our Insight Engine, then connect with verified service providers to grow your business.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lyenk.com">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lyenk - Customer Insight Engine & Service Marketplace">
+    <meta name="twitter:description" content="Understand your customers better with actionable feedback. Connect with verified service providers across East Africa.">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCSVB2VNKN"></script>
@@ -20,6 +28,28 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-YCSVB2VNKN');
+    </script>
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Lyenk",
+      "url": "https://lyenk.com",
+      "logo": "https://lyenk.com/logo.png",
+      "description": "Customer Insight Engine and Service Marketplace for East African businesses",
+      "email": "lyenkynathan@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "East Africa"
+      },
+      "sameAs": [
+        "https://www.instagram.com/lyenk.comm/",
+        "https://medium.com/@lyenk",
+        "https://www.linkedin.com/company/lyenk/"
+      ]
+    }
     </script>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -31,6 +61,8 @@
             --charcoal: #333333;
             --warm-cream: #F8F5F0;
             --light-lavender: #EFEBF5;
+            --white: #FFFFFF;
+            --transition: all 0.3s ease;
         }
 
         /* Base Styles */
@@ -40,30 +72,52 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--charcoal);
             background-color: var(--warm-cream);
+            overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
+        h1, h2, h3, h4, h5 {
             color: var(--deep-purple);
             margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
         }
 
         p {
             margin-bottom: 1rem;
+            font-size: clamp(1rem, 2vw, 1.1rem);
         }
 
         a {
             text-decoration: none;
             color: var(--deep-purple);
-            transition: color 0.3s ease;
+            transition: var(--transition);
         }
 
-        a:hover {
+        a:hover,
+        a:focus {
             color: var(--antique-gold);
+            outline: 2px solid var(--antique-gold);
+            outline-offset: 3px;
         }
 
         .container {
@@ -77,19 +131,22 @@
             display: inline-block;
             padding: 12px 30px;
             background-color: var(--deep-purple);
-            color: white;
+            color: var(--white);
             border-radius: 4px;
             font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
+            transition: var(--transition);
+            border: 2px solid transparent;
             cursor: pointer;
             text-align: center;
+            font-size: 1rem;
         }
 
-        .btn:hover {
+        .btn:hover,
+        .btn:focus {
             background-color: var(--antique-gold);
-            color: white;
+            color: var(--white);
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .btn-outline {
@@ -98,17 +155,20 @@
             color: var(--deep-purple);
         }
 
-        .btn-outline:hover {
+        .btn-outline:hover,
+        .btn-outline:focus {
             background-color: var(--deep-purple);
-            color: white;
+            color: var(--white);
         }
 
         .btn-primary {
             background-color: var(--antique-gold);
             border: 2px solid var(--antique-gold);
+            color: var(--white);
         }
 
-        .btn-primary:hover {
+        .btn-primary:hover,
+        .btn-primary:focus {
             background-color: transparent;
             color: var(--antique-gold);
         }
@@ -123,7 +183,7 @@
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 4vw, 2.5rem);
             position: relative;
             display: inline-block;
         }
@@ -141,7 +201,7 @@
 
         /* Header Styles */
         header {
-            background-color: white;
+            background-color: var(--white);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
@@ -171,18 +231,86 @@
             color: var(--antique-gold);
         }
 
+        /* Navigation with Dropdown */
         nav ul {
             display: flex;
             list-style: none;
             align-items: center;
+            gap: 20px;
         }
 
         nav ul li {
-            margin-left: 30px;
+            position: relative;
         }
 
-        nav ul li a {
+        nav ul li > a {
             font-weight: 500;
+            padding: 5px 0;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            color: var(--deep-purple);
+            cursor: pointer;
+            font-weight: 500;
+            padding: 5px 0;
+        }
+
+        .dropdown-toggle i {
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .dropdown-toggle.active i {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            min-width: 200px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 100;
+        }
+
+        .dropdown-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li {
+            width: 100%;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 20px;
+            border-bottom: 1px solid var(--light-lavender);
+            color: var(--charcoal);
+        }
+
+        .dropdown-menu a:hover,
+        .dropdown-menu a:focus {
+            background: var(--light-lavender);
+            color: var(--deep-purple);
         }
 
         .mobile-menu-btn {
@@ -192,27 +320,28 @@
             font-size: 1.5rem;
             color: var(--deep-purple);
             cursor: pointer;
+            padding: 5px;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(93, 46, 138, 0.8), rgba(93, 46, 138, 0.9)), url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(93, 46, 138, 0.85), rgba(93, 46, 138, 0.9)), url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
-            color: white;
+            background-attachment: fixed;
+            color: var(--white);
             text-align: center;
             padding: 180px 0 100px;
             margin-top: 70px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            color: var(--white);
             margin-bottom: 20px;
-            color: white;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
             max-width: 700px;
             margin: 0 auto 30px;
             color: var(--warm-cream);
@@ -230,19 +359,21 @@
             border: 2px solid var(--antique-gold);
         }
 
-        .hero .btn:hover {
+        .hero .btn:hover,
+        .hero .btn:focus {
             background-color: transparent;
-            border: 2px solid white;
+            border: 2px solid var(--white);
         }
 
         .hero .btn-outline {
             background-color: transparent;
-            border: 2px solid white;
-            color: white;
+            border: 2px solid var(--white);
+            color: var(--white);
         }
 
-        .hero .btn-outline:hover {
-            background-color: white;
+        .hero .btn-outline:hover,
+        .hero .btn-outline:focus {
+            background-color: var(--white);
             color: var(--deep-purple);
         }
 
@@ -265,7 +396,7 @@
 
         .insight-feature {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: 15px;
             font-weight: 500;
         }
@@ -274,7 +405,8 @@
             color: var(--antique-gold);
             margin-right: 15px;
             font-size: 1.2rem;
-            width: 20px;
+            min-width: 20px;
+            margin-top: 3px;
         }
 
         /* Phone Mockup */
@@ -282,7 +414,7 @@
             background: var(--charcoal);
             border-radius: 30px;
             padding: 15px;
-            width: 300px;
+            width: min(300px, 100%);
             height: 600px;
             margin: 0 auto;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
@@ -296,6 +428,7 @@
             padding: 20px;
             display: flex;
             flex-direction: column;
+            overflow: hidden;
         }
 
         .feedback-form-mockup {
@@ -333,7 +466,7 @@
         }
 
         .mockup-textarea {
-            background: white;
+            background: var(--white);
             border: 1px solid #ddd;
             border-radius: 8px;
             height: 120px;
@@ -342,22 +475,19 @@
 
         .mockup-btn {
             background: var(--antique-gold);
-            color: white;
+            color: var(--white);
             border: none;
             padding: 12px;
             border-radius: 8px;
             font-weight: 600;
             margin-top: auto;
+            cursor: pointer;
         }
 
         /* Insight Steps */
         .insight-steps {
             margin: 80px 0;
             text-align: center;
-        }
-
-        .insight-steps h3 {
-            margin-bottom: 50px;
         }
 
         .steps-grid {
@@ -367,10 +497,16 @@
         }
 
         .step-card {
-            background: white;
+            background: var(--white);
             padding: 40px 30px;
             border-radius: 12px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
         }
 
         .step-number {
@@ -380,7 +516,7 @@
             width: 60px;
             height: 60px;
             background: var(--deep-purple);
-            color: white;
+            color: var(--white);
             border-radius: 50%;
             font-size: 1.5rem;
             font-weight: bold;
@@ -397,38 +533,36 @@
         }
 
         .steps {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
 
         .step {
-            flex: 1;
-            min-width: 250px;
             text-align: center;
             padding: 30px 20px;
-            background-color: white;
+            background-color: var(--white);
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
         }
 
-        .step-number {
-            display: inline-block;
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .step .step-number {
             width: 50px;
             height: 50px;
-            background-color: var(--deep-purple);
-            color: white;
-            border-radius: 50%;
             line-height: 50px;
             font-size: 1.5rem;
-            font-weight: bold;
             margin-bottom: 20px;
         }
 
         /* Marketplace Section */
         .marketplace {
-            background-color: white;
+            background-color: var(--white);
         }
 
         .marketplace-content {
@@ -444,7 +578,7 @@
 
         .marketplace-feature {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: 15px;
             font-weight: 500;
         }
@@ -453,13 +587,14 @@
             color: var(--antique-gold);
             margin-right: 15px;
             font-size: 1.2rem;
-            width: 20px;
+            min-width: 20px;
+            margin-top: 3px;
         }
 
         /* Insight CTA */
         .insight-cta {
             text-align: center;
-            background: white;
+            background: var(--white);
             padding: 60px 40px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -471,7 +606,6 @@
 
         .insight-cta p {
             margin-bottom: 30px;
-            font-size: 1.1rem;
         }
 
         .cta-buttons {
@@ -484,20 +618,19 @@
         /* CTA Section */
         .cta {
             background: linear-gradient(to right, var(--deep-purple), #7a42a8);
-            color: white;
+            color: var(--white);
             text-align: center;
             padding: 80px 0;
         }
 
         .cta h2 {
-            color: white;
+            color: var(--white);
             margin-bottom: 20px;
         }
 
         .cta p {
             max-width: 700px;
             margin: 0 auto 30px;
-            font-size: 1.1rem;
         }
 
         .cta .btn {
@@ -505,15 +638,16 @@
             border: 2px solid var(--antique-gold);
         }
 
-        .cta .btn:hover {
+        .cta .btn:hover,
+        .cta .btn:focus {
             background-color: transparent;
-            border: 2px solid white;
+            border: 2px solid var(--white);
         }
 
         /* Footer */
         footer {
             background-color: var(--charcoal);
-            color: white;
+            color: var(--white);
             padding: 60px 0 30px;
         }
 
@@ -525,7 +659,7 @@
         }
 
         .footer-column h3 {
-            color: white;
+            color: var(--white);
             margin-bottom: 20px;
             font-size: 1.2rem;
         }
@@ -542,7 +676,8 @@
             color: #ccc;
         }
 
-        .footer-column ul li a:hover {
+        .footer-column ul li a:hover,
+        .footer-column ul li a:focus {
             color: var(--antique-gold);
         }
 
@@ -560,11 +695,12 @@
             height: 40px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            color: white;
-            transition: all 0.3s ease;
+            color: var(--white);
+            transition: var(--transition);
         }
 
-        .social-links a:hover {
+        .social-links a:hover,
+        .social-links a:focus {
             background-color: var(--antique-gold);
             transform: translateY(-3px);
         }
@@ -590,7 +726,8 @@
             font-size: 0.9rem;
         }
 
-        .legal-links a:hover {
+        .legal-links a:hover,
+        .legal-links a:focus {
             color: var(--antique-gold);
             text-decoration: underline;
         }
@@ -606,6 +743,7 @@
             background-color: rgba(0, 0, 0, 0.7);
             z-index: 2000;
             overflow-y: auto;
+            padding: 20px;
         }
 
         .modal-content {
@@ -626,10 +764,14 @@
             font-size: 1.8rem;
             color: var(--deep-purple);
             cursor: pointer;
-            transition: color 0.3s ease;
+            transition: var(--transition);
+            background: none;
+            border: none;
+            line-height: 1;
         }
 
-        .close-modal:hover {
+        .close-modal:hover,
+        .close-modal:focus {
             color: var(--antique-gold);
         }
 
@@ -687,6 +829,7 @@
             width: 100%;
             border: none;
             border-radius: 8px;
+            min-height: 600px;
         }
 
         /* FAQ Styles */
@@ -703,6 +846,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 10px 0;
+            background: none;
+            border: none;
+            text-align: left;
+            width: 100%;
+            font-size: 1rem;
         }
 
         .faq-question::after {
@@ -723,7 +872,7 @@
 
         /* Contact Form Styles */
         .contact-form {
-            background: white;
+            background: var(--white);
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -750,7 +899,7 @@
             border: 1px solid #ddd;
             border-radius: 4px;
             font-size: 1rem;
-            transition: border-color 0.3s ease;
+            transition: var(--transition);
         }
 
         .form-group input:focus,
@@ -758,6 +907,7 @@
         .form-group select:focus {
             outline: none;
             border-color: var(--deep-purple);
+            box-shadow: 0 0 0 3px rgba(93, 46, 138, 0.1);
         }
 
         .form-group textarea {
@@ -785,35 +935,94 @@
             text-align: center;
         }
 
+        /* Skip to main content link for accessibility */
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--deep-purple);
+            color: var(--white);
+            padding: 8px;
+            z-index: 1001;
+            text-decoration: none;
+        }
+
+        .skip-to-content:focus {
+            top: 0;
+        }
+
         /* Responsive Styles */
+        @media (max-width: 992px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .insight-hero,
+            .marketplace-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .phone-mockup {
+                height: 500px;
+                order: -1;
+            }
+        }
+
         @media (max-width: 768px) {
             .header-container {
-                flex-direction: column;
-                padding: 15px 0;
-            }
-
-            .logo {
-                margin-bottom: 15px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            nav ul li {
-                margin: 10px 0;
+                flex-direction: row;
             }
 
             .mobile-menu-btn {
                 display: block;
-                position: absolute;
-                top: 20px;
-                right: 20px;
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+                z-index: 999;
+            }
+
+            nav ul.show {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+                width: 100%;
+            }
+
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background: var(--light-lavender);
+                border-radius: 4px;
+                margin-top: 10px;
+                display: none;
+            }
+
+            .dropdown-menu.active {
+                display: block;
+            }
+
+            .hero {
+                padding: 150px 0 80px;
             }
 
             .hero-btns {
@@ -827,25 +1036,15 @@
                 margin-bottom: 10px;
             }
 
-            .section-title h2 {
-                font-size: 2rem;
+            .insight-cta {
+                padding: 40px 20px;
             }
 
-            .insight-hero, .marketplace-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .phone-mockup {
-                width: 250px;
-                height: 500px;
-            }
-            
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .cta-buttons .btn {
                 width: 100%;
                 max-width: 300px;
@@ -859,29 +1058,90 @@
             .legal-links {
                 flex-direction: column;
                 gap: 10px;
+                align-items: center;
             }
 
             .contact-form {
                 padding: 20px;
             }
         }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .phone-mockup {
+                height: 400px;
+            }
+            
+            .step-card,
+            .step {
+                padding: 25px 15px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            header, footer, .hero-btns, .cta, .mobile-menu-btn {
+                display: none;
+            }
+            
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .hero {
+                background: white;
+                color: black;
+                padding: 50px 0;
+            }
+            
+            .hero h1 {
+                color: black;
+            }
+            
+            section {
+                padding: 40px 0;
+                break-inside: avoid;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Skip to content link for accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
     <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
                 <h1>Ly<span>enk</span></h1>
             </div>
-            <button class="mobile-menu-btn">
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
             </button>
-            <nav>
+            <nav aria-label="Main navigation">
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#insight-engine">Insight Engine</a></li>
                     <li><a href="#how-it-works">How It Works</a></li>
+                    <li class="dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                            Resources <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="https://medium.com/@lyenk">Blog</a></li>
+                            <li><a href="#" id="faq-link">FAQs</a></li>
+                            <li><a href="#" id="terms-link">Terms & Conditions</a></li>
+                            <li><a href="#" id="privacy-link">Privacy Policy</a></li>
+                        </ul>
+                    </li>
                     <li><a href="https://engine.lyenk.com" class="btn">Get Started</a></li>
                 </ul>
             </nav>
@@ -900,184 +1160,187 @@
         </div>
     </section>
 
-    <!-- Insight Engine Section -->
-    <section class="insight-engine" id="insight-engine">
-        <div class="container">
-            <div class="section-title">
-                <h2>LYENK Insight Engine</h2>
-                <p>Your direct customer feedback hotline. Stop guessing, start knowing what your customers really think.</p>
-            </div>
-            
-            <div class="insight-content">
-                <div class="insight-hero">
-                    <div class="insight-text">
-                        <h3>Transform Customer Feedback into Actionable Insights</h3>
-                        <p>A minimal, mobile-first solution that gives you a direct line to your customers' thoughts. No complicated surveys, just pure, actionable feedback.</p>
-                        
-                        <div class="insight-features">
-                            <div class="insight-feature">
-                                <i class="fas fa-link"></i>
-                                <span>Simple Feedback Link System</span>
-                            </div>
-                            <div class="insight-feature">
-                                <i class="fas fa-mobile-alt"></i>
-                                <span>Mobile-First Design</span>
-                            </div>
-                            <div class="insight-feature">
-                                <i class="fas fa-chart-line"></i>
-                                <span>Real-time Analytics Dashboard</span>
-                            </div>
-                            <div class="insight-feature">
-                                <i class="fas fa-comment-alt"></i>
-                                <span>Weekly Insight Digests</span>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Insight Engine Section -->
+        <section class="insight-engine" id="insight-engine">
+            <div class="container">
+                <div class="section-title">
+                    <h2>LYENK Insight Engine</h2>
+                    <p>Your direct customer feedback hotline. Stop guessing, start knowing what your customers really think.</p>
+                </div>
+                
+                <div class="insight-content">
+                    <div class="insight-hero">
+                        <div class="insight-text">
+                            <h3>Transform Customer Feedback into Actionable Insights</h3>
+                            <p>A minimal, mobile-first solution that gives you a direct line to your customers' thoughts. No complicated surveys, just pure, actionable feedback.</p>
+                            
+                            <div class="insight-features">
+                                <div class="insight-feature">
+                                    <i class="fas fa-link" aria-hidden="true"></i>
+                                    <span>Simple Feedback Link System</span>
+                                </div>
+                                <div class="insight-feature">
+                                    <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                                    <span>Mobile-First Design</span>
+                                </div>
+                                <div class="insight-feature">
+                                    <i class="fas fa-chart-line" aria-hidden="true"></i>
+                                    <span>Real-time Analytics Dashboard</span>
+                                </div>
+                                <div class="insight-feature">
+                                    <i class="fas fa-comment-alt" aria-hidden="true"></i>
+                                    <span>Weekly Insight Digests</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="insight-visual">
-                        <div class="phone-mockup">
-                            <div class="phone-screen">
-                                <div class="feedback-form-mockup">
-                                    <div class="mockup-header">
-                                        <h4>ABC Supermarket</h4>
-                                        <p>We Value Your Feedback</p>
+                        <div class="insight-visual">
+                            <div class="phone-mockup" aria-label="Mobile feedback form mockup">
+                                <div class="phone-screen">
+                                    <div class="feedback-form-mockup">
+                                        <div class="mockup-header">
+                                            <h4>ABC Supermarket</h4>
+                                            <p>We Value Your Feedback</p>
+                                        </div>
+                                        <div class="mockup-stars" aria-label="5 star rating">★★★★★</div>
+                                        <div class="mockup-question">
+                                            <p>What one thing could we do to make your experience better?</p>
+                                            <div class="mockup-textarea" aria-hidden="true"></div>
+                                        </div>
+                                        <button class="mockup-btn">Submit Feedback</button>
                                     </div>
-                                    <div class="mockup-stars">★★★★★</div>
-                                    <div class="mockup-question">
-                                        <p>What one thing could we do to make your experience better?</p>
-                                        <div class="mockup-textarea"></div>
-                                    </div>
-                                    <button class="mockup-btn">Submit Feedback</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- How It Works -->
-            <div class="insight-steps">
-                <h3>How It Works in 3 Simple Steps</h3>
-                <div class="steps-grid">
-                    <div class="step-card">
-                        <div class="step-number">1</div>
-                        <h4>Share Your Link</h4>
-                        <p>Share your custom feedback link with customers via email, SMS, or social media.</p>
+                <!-- How It Works -->
+                <div class="insight-steps">
+                    <h3>How It Works in 3 Simple Steps</h3>
+                    <div class="steps-grid">
+                        <div class="step-card">
+                            <div class="step-number" aria-hidden="true">1</div>
+                            <h4>Share Your Link</h4>
+                            <p>Share your custom feedback link with customers via email, SMS, or social media.</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number" aria-hidden="true">2</div>
+                            <h4>Collect Feedback</h4>
+                            <p>Customers share their thoughts in seconds using our mobile-optimized form.</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number" aria-hidden="true">3</div>
+                            <h4>Get Insights</h4>
+                            <p>Receive weekly digests with the top 3 actionable insights from customer feedback.</p>
+                        </div>
                     </div>
-                    <div class="step-card">
-                        <div class="step-number">2</div>
-                        <h4>Collect Feedback</h4>
-                        <p>Customers share their thoughts in seconds using our mobile-optimized form.</p>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-number">3</div>
-                        <h4>Get Insights</h4>
-                        <p>Receive weekly digests with the top 3 actionable insights from customer feedback.</p>
+                </div>
+
+                <!-- Final CTA -->
+                <div class="insight-cta">
+                    <h3>Ready to Understand Your Customers Better?</h3>
+                    <p>Join businesses across East Africa that are transforming customer feedback into growth.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-primary" id="book-demo-btn">Book a Demo</a>
+                        <a href="https://engine.lyenk.com" class="btn btn-outline">Try Insight Engine</a>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Final CTA -->
-            <div class="insight-cta">
-                <h3>Ready to Understand Your Customers Better?</h3>
-                <p>Join businesses across East Africa that are transforming customer feedback into growth.</p>
-                <div class="cta-buttons">
-                    <a href="#" class="btn btn-primary" id="book-demo-btn">Book a Demo</a>
+        <!-- How It Works Section -->
+        <section class="how-it-works" id="how-it-works">
+            <div class="container">
+                <div class="section-title">
+                    <h2>From Insight to Action</h2>
+                    <p>How Lyenk helps you turn customer feedback into business growth</p>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number" aria-hidden="true">1</div>
+                        <h3>Gather Insights</h3>
+                        <p>Use our Insight Engine to collect honest feedback from your customers about what they really want.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number" aria-hidden="true">2</div>
+                        <h3>Identify Opportunities</h3>
+                        <p>Our weekly digests highlight the top 3 areas where you can improve your business based on customer feedback.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number" aria-hidden="true">3</div>
+                        <h3>Take Action</h3>
+                        <p>Soon you'll be able to connect with verified service providers in our marketplace to implement the changes your customers want.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number" aria-hidden="true">4</div>
+                        <h3>Measure Impact</h3>
+                        <p>Track how customer satisfaction improves as you address their feedback and grow your business.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marketplace Section -->
+        <section class="marketplace">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Connect with Service Providers</h2>
+                    <p>Once you know what your customers want, find the right professionals to make it happen</p>
+                </div>
+                <div class="marketplace-content">
+                    <div class="marketplace-text">
+                        <h3>Service Marketplace (Coming Soon)</h3>
+                        <p>After identifying opportunities through our Insight Engine, you'll soon be able to connect with verified service providers who can help you implement changes and grow your business.</p>
+                        
+                        <div class="marketplace-features">
+                            <div class="marketplace-feature">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                <span>Verified professionals across East Africa</span>
+                            </div>
+                            <div class="marketplace-feature">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                <span>Direct communication with providers</span>
+                            </div>
+                            <div class="marketplace-feature">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                <span>Transparent pricing and reviews</span>
+                            </div>
+                            <div class="marketplace-feature">
+                                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                                <span>Secure payment and agreements</span>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 30px;">
+                            <a href="#insight-engine" class="btn">Start with Insight Engine</a>
+                            <p style="margin-top: 10px; font-size: 0.9rem; color: var(--charcoal);">Service Marketplace coming soon</p>
+                        </div>
+                    </div>
+                    <div class="marketplace-visual">
+                        <div style="background: var(--light-lavender); padding: 40px; border-radius: 12px; text-align: center;">
+                            <i class="fas fa-users" style="font-size: 4rem; color: var(--antique-gold); margin-bottom: 20px;" aria-hidden="true"></i>
+                            <h4>100+ Verified Providers</h4>
+                            <p>IT, Marketing, Business Consulting, Design, and more</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta">
+            <div class="container">
+                <h2>Ready to Grow Your Business?</h2>
+                <p>Start with customer insights, then connect with the right service providers to take action.</p>
+                <div class="hero-btns">
+                    <a href="#insight-engine" class="btn">Start with Insight Engine</a>
                     <a href="https://engine.lyenk.com" class="btn btn-outline">Try Insight Engine</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section class="how-it-works" id="how-it-works">
-        <div class="container">
-            <div class="section-title">
-                <h2>From Insight to Action</h2>
-                <p>How Lyenk helps you turn customer feedback into business growth</p>
-            </div>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Gather Insights</h3>
-                    <p>Use our Insight Engine to collect honest feedback from your customers about what they really want.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Identify Opportunities</h3>
-                    <p>Our weekly digests highlight the top 3 areas where you can improve your business based on customer feedback.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Take Action</h3>
-                    <p>Soon you'll be able to connect with verified service providers in our marketplace to implement the changes your customers want.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Measure Impact</h3>
-                    <p>Track how customer satisfaction improves as you address their feedback and grow your business.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Marketplace Section -->
-    <section class="marketplace">
-        <div class="container">
-            <div class="section-title">
-                <h2>Connect with Service Providers</h2>
-                <p>Once you know what your customers want, find the right professionals to make it happen</p>
-            </div>
-            <div class="marketplace-content">
-                <div class="marketplace-text">
-                    <h3>Service Marketplace (Coming Soon)</h3>
-                    <p>After identifying opportunities through our Insight Engine, you'll soon be able to connect with verified service providers who can help you implement changes and grow your business.</p>
-                    
-                    <div class="marketplace-features">
-                        <div class="marketplace-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Verified professionals across East Africa</span>
-                        </div>
-                        <div class="marketplace-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Direct communication with providers</span>
-                        </div>
-                        <div class="marketplace-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Transparent pricing and reviews</span>
-                        </div>
-                        <div class="marketplace-feature">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Secure payment and agreements</span>
-                        </div>
-                    </div>
-                    
-                    <div style="margin-top: 30px;">
-                        <a href="#insight-engine" class="btn">Start with Insight Engine</a>
-                        <p style="margin-top: 10px; font-size: 0.9rem; color: var(--charcoal);">Service Marketplace coming soon</p>
-                    </div>
-                </div>
-                <div class="marketplace-visual">
-                    <div style="background: var(--light-lavender); padding: 40px; border-radius: 12px; text-align: center;">
-                        <i class="fas fa-users" style="font-size: 4rem; color: var(--antique-gold); margin-bottom: 20px;"></i>
-                        <h4>100+ Verified Providers</h4>
-                        <p>IT, Marketing, Business Consulting, Design, and more</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <h2>Ready to Grow Your Business?</h2>
-            <p>Start with customer insights, then connect with the right service providers to take action.</p>
-            <div class="hero-btns">
-                <a href="#insight-engine" class="btn">Start with Insight Engine</a>
-                <a href="https://engine.lyenk.com" class="btn btn-outline">Try Insight Engine</a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -1107,15 +1370,15 @@
                         <li><a href="https://medium.com/@lyenk">Blog</a></li>
                         <li><a href="#" id="faq-link">FAQs</a></li>
                         <li><a href="#insight-engine">Insight Engine</a></li>
-                        <li><a href="#" id="terms-link">Terms & Conditions</a></li>
-                        <li><a href="#" id="privacy-link">Privacy Policy</a></li>
+                        <li><a href="#" id="terms-link-footer">Terms & Conditions</a></li>
+                        <li><a href="#" id="privacy-link-footer">Privacy Policy</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul>
-                        <li><i class="fas fa-envelope"></i> hello@lyenk.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> East Africa</li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i> lyenkynathan@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> East Africa</li>
                     </ul>
                 </div>
             </div>
@@ -1131,97 +1394,97 @@
     </footer>
 
     <!-- Google Form Modal -->
-    <div id="google-form-modal" class="modal google-form-modal">
+    <div id="google-form-modal" class="modal google-form-modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
         <div class="modal-content">
-            <span class="close-modal" id="close-google-form">&times;</span>
+            <button class="close-modal" id="close-google-form" aria-label="Close modal">&times;</button>
             <div class="modal-header">
-                <h2>Book a Demo</h2>
+                <h2 id="modal-title">Book a Demo</h2>
             </div>
             <div class="modal-body">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdP8eZg2ZUiksFhR4by6tQlxnLliRMv26YMWS0xUNusAFBHzA/viewform?embedded=true" width="100%" height="1830" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdP8eZg2ZUiksFhR4by6tQlxnLliRMv26YMWS0xUNusAFBHzA/viewform?embedded=true" width="100%" height="1830" frameborder="0" marginheight="0" marginwidth="0" title="Demo booking form">Loading…</iframe>
             </div>
         </div>
     </div>
 
     <!-- FAQs Modal -->
-    <div id="faq-modal" class="modal">
+    <div id="faq-modal" class="modal" role="dialog" aria-labelledby="faq-modal-title" aria-hidden="true">
         <div class="modal-content">
-            <span class="close-modal" id="close-faq">&times;</span>
+            <button class="close-modal" id="close-faq" aria-label="Close modal">&times;</button>
             <div class="modal-header">
-                <h2>Frequently Asked Questions</h2>
+                <h2 id="faq-modal-title">Frequently Asked Questions</h2>
             </div>
             <div class="modal-body">
                 <p>Find answers to the most common questions about using Lyenk Insight Engine and our service marketplace.</p>
                 
                 <div class="faq-item">
-                    <div class="faq-question">What is Lyenk Insight Engine?</div>
+                    <button class="faq-question">What is Lyenk Insight Engine?</button>
                     <div class="faq-answer">
                         <p>Lyenk Insight Engine is a customer feedback platform that helps businesses collect, analyze, and act on customer feedback. It provides a simple way to gather insights through customizable feedback links and delivers actionable recommendations.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">How does the feedback collection work?</div>
+                    <button class="faq-question">How does the feedback collection work?</button>
                     <div class="faq-answer">
                         <p>You get a custom feedback link that you can share with customers via email, SMS, social media, or your website. Customers click the link and complete a simple mobile-optimized form. All responses are collected in your private dashboard.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">What's included in the weekly Insight Digest?</div>
+                    <button class="faq-question">What's included in the weekly Insight Digest?</button>
                     <div class="faq-answer">
                         <p>The weekly Insight Digest summarizes the most important feedback from your customers, highlighting the top 3 areas for improvement, customer sentiment trends, and specific actionable recommendations to enhance your business.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">Can I try before I buy?</div>
+                    <button class="faq-question">Can I try before I buy?</button>
                     <div class="faq-answer">
                         <p>Yes! We offer a 14-day free trial for our Insight Pro plan. You'll get full access to all features during the trial period with no commitment required.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">How do I connect with service providers?</div>
+                    <button class="faq-question">How do I connect with service providers?</button>
                     <div class="faq-answer">
                         <p>Once you identify areas for improvement through the Insight Engine, you can use our service marketplace to find verified professionals who can help implement the changes. Browse profiles, read reviews, and connect directly with providers.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">What types of businesses use Lyenk?</div>
+                    <button class="faq-question">What types of businesses use Lyenk?</button>
                     <div class="faq-answer">
                         <p>We serve businesses of all sizes across East Africa - from small retail shops and restaurants to growing SMEs and established enterprises. Any business that wants to better understand their customers can benefit from our platform.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">How secure is my customer data?</div>
+                    <button class="faq-question">How secure is my customer data?</button>
                     <div class="faq-answer">
                         <p>We take data security seriously. All customer feedback is encrypted and stored securely. We never share your customer data with third parties without your explicit permission.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <div class="faq-question">Can I cancel my subscription anytime?</div>
+                    <button class="faq-question">Can I cancel my subscription anytime?</button>
                     <div class="faq-answer">
                         <p>Yes, you can cancel your subscription at any time. There are no long-term contracts, and you'll continue to have access to your account until the end of your billing period.</p>
                     </div>
                 </div>
 
                 <div class="highlight-box">
-                    <p>Can't find the answer you're looking for? Contact our support team at hello@lyenk.com or through our social media channels.</p>
+                    <p>Can't find the answer you're looking for? Contact our support team at lyenkynathan@gmail.com or through our social media channels.</p>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Terms & Conditions Modal -->
-    <div id="terms-modal" class="modal">
+    <div id="terms-modal" class="modal" role="dialog" aria-labelledby="terms-modal-title" aria-hidden="true">
         <div class="modal-content">
-            <span class="close-modal" id="close-terms">&times;</span>
+            <button class="close-modal" id="close-terms" aria-label="Close modal">&times;</button>
             <div class="modal-header">
-                <h2>Terms and Conditions</h2>
+                <h2 id="terms-modal-title">Terms and Conditions</h2>
             </div>
             <div class="modal-body">
                 <p><strong>Last Updated: January 2025</strong></p>
@@ -1286,18 +1549,18 @@
                 <p>These Terms and Conditions are governed by the laws of East Africa. Any disputes shall be resolved through arbitration in accordance with East African arbitration rules.</p>
                 
                 <div class="highlight-box">
-                    <p>If you have any questions about these Terms and Conditions, please contact us at hello@lyenk.com.</p>
+                    <p>If you have any questions about these Terms and Conditions, please contact us at lyenkynathan@gmail.com.</p>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Privacy Policy Modal -->
-    <div id="privacy-modal" class="modal">
+    <div id="privacy-modal" class="modal" role="dialog" aria-labelledby="privacy-modal-title" aria-hidden="true">
         <div class="modal-content">
-            <span class="close-modal" id="close-privacy">&times;</span>
+            <button class="close-modal" id="close-privacy" aria-label="Close modal">&times;</button>
             <div class="modal-header">
-                <h2>Privacy Policy</h2>
+                <h2 id="privacy-modal-title">Privacy Policy</h2>
             </div>
             <div class="modal-body">
                 <p><strong>Last Updated: January 2025</strong></p>
@@ -1398,7 +1661,7 @@
                 
                 <h3>10. Contact Us</h3>
                 <p>For privacy-related questions or to exercise your rights, contact us at:</p>
-                <p>Email: hello@lyenk.com<br>
+                <p>Email: lyenkynathan@gmail.com<br>
                 Address: East Africa</p>
                 
                 <div class="highlight-box">
@@ -1411,101 +1674,163 @@
     <script>
         // Mobile menu toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('nav ul').classList.toggle('show');
+            const nav = document.querySelector('nav ul');
+            nav.classList.toggle('show');
+            this.setAttribute('aria-expanded', nav.classList.contains('show'));
+        });
+
+        // Dropdown menu functionality
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const dropdown = this.closest('.dropdown');
+                const menu = dropdown.querySelector('.dropdown-menu');
+                
+                // Close other dropdowns
+                document.querySelectorAll('.dropdown-menu.active').forEach(activeMenu => {
+                    if (activeMenu !== menu) {
+                        activeMenu.classList.remove('active');
+                        activeMenu.previousElementSibling.classList.remove('active');
+                        activeMenu.previousElementSibling.setAttribute('aria-expanded', 'false');
+                    }
+                });
+                
+                // Toggle current dropdown
+                menu.classList.toggle('active');
+                this.classList.toggle('active');
+                this.setAttribute('aria-expanded', menu.classList.contains('active'));
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown-menu.active').forEach(menu => {
+                    menu.classList.remove('active');
+                    menu.previousElementSibling.classList.remove('active');
+                    menu.previousElementSibling.setAttribute('aria-expanded', 'false');
+                });
+            }
         });
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 if(targetId === '#') return;
                 
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
+                    e.preventDefault();
                     window.scrollTo({
                         top: targetElement.offsetTop - 70,
                         behavior: 'smooth'
                     });
+                    
+                    // Update URL without page jump
+                    history.pushState(null, null, targetId);
+                    
+                    // Close mobile menu if open
+                    const nav = document.querySelector('nav ul');
+                    if (nav.classList.contains('show')) {
+                        nav.classList.remove('show');
+                        document.querySelector('.mobile-menu-btn').setAttribute('aria-expanded', 'false');
+                    }
                 }
             });
         });
 
         // Modal functionality
-        const googleFormModal = document.getElementById('google-form-modal');
-        const faqModal = document.getElementById('faq-modal');
-        const termsModal = document.getElementById('terms-modal');
-        const privacyModal = document.getElementById('privacy-modal');
+        const modals = {
+            googleForm: document.getElementById('google-form-modal'),
+            faq: document.getElementById('faq-modal'),
+            terms: document.getElementById('terms-modal'),
+            privacy: document.getElementById('privacy-modal')
+        };
+
+        const openModal = (modal) => {
+            modal.style.display = 'block';
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeModal = (modal) => {
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = 'auto';
+        };
 
         // Google Form modal
         document.getElementById('book-demo-btn').addEventListener('click', function(e) {
             e.preventDefault();
-            googleFormModal.style.display = 'block';
+            openModal(modals.googleForm);
         });
 
         document.getElementById('close-google-form').addEventListener('click', function() {
-            googleFormModal.style.display = 'none';
+            closeModal(modals.googleForm);
         });
 
         // FAQs modal
         document.getElementById('faq-link').addEventListener('click', function(e) {
             e.preventDefault();
-            faqModal.style.display = 'block';
+            openModal(modals.faq);
         });
         
         document.getElementById('faq-link-footer').addEventListener('click', function(e) {
             e.preventDefault();
-            faqModal.style.display = 'block';
+            openModal(modals.faq);
         });
 
         document.getElementById('close-faq').addEventListener('click', function() {
-            faqModal.style.display = 'none';
+            closeModal(modals.faq);
         });
 
         // Terms & Conditions modal
         document.getElementById('terms-link').addEventListener('click', function(e) {
             e.preventDefault();
-            termsModal.style.display = 'block';
+            openModal(modals.terms);
         });
         
         document.getElementById('terms-link-footer').addEventListener('click', function(e) {
             e.preventDefault();
-            termsModal.style.display = 'block';
+            openModal(modals.terms);
         });
 
         document.getElementById('close-terms').addEventListener('click', function() {
-            termsModal.style.display = 'none';
+            closeModal(modals.terms);
         });
 
         // Privacy Policy modal
         document.getElementById('privacy-link').addEventListener('click', function(e) {
             e.preventDefault();
-            privacyModal.style.display = 'block';
+            openModal(modals.privacy);
         });
         
         document.getElementById('privacy-link-footer').addEventListener('click', function(e) {
             e.preventDefault();
-            privacyModal.style.display = 'block';
+            openModal(modals.privacy);
         });
 
         document.getElementById('close-privacy').addEventListener('click', function() {
-            privacyModal.style.display = 'none';
+            closeModal(modals.privacy);
         });
 
-        // Close modals when clicking outside
+        // Close modals when clicking outside or pressing Escape
         window.addEventListener('click', function(e) {
-            if (e.target === googleFormModal) {
-                googleFormModal.style.display = 'none';
-            }
-            if (e.target === faqModal) {
-                faqModal.style.display = 'none';
-            }
-            if (e.target === termsModal) {
-                termsModal.style.display = 'none';
-            }
-            if (e.target === privacyModal) {
-                privacyModal.style.display = 'none';
+            Object.values(modals).forEach(modal => {
+                if (e.target === modal) {
+                    closeModal(modal);
+                }
+            });
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                Object.values(modals).forEach(modal => {
+                    if (modal.style.display === 'block') {
+                        closeModal(modal);
+                    }
+                });
             }
         });
 
@@ -1514,12 +1839,83 @@
             question.addEventListener('click', function() {
                 this.classList.toggle('active');
                 const answer = this.nextElementSibling;
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                
                 if (answer.style.display === 'block') {
                     answer.style.display = 'none';
+                    this.setAttribute('aria-expanded', 'false');
                 } else {
+                    // Close other FAQs
+                    document.querySelectorAll('.faq-question.active').forEach(activeQuestion => {
+                        if (activeQuestion !== this) {
+                            activeQuestion.classList.remove('active');
+                            activeQuestion.nextElementSibling.style.display = 'none';
+                            activeQuestion.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                    
                     answer.style.display = 'block';
+                    this.setAttribute('aria-expanded', 'true');
                 }
             });
+            
+            // Initialize ARIA attributes
+            question.setAttribute('aria-expanded', 'false');
+            question.setAttribute('aria-controls', question.nextElementSibling.id || 'faq-answer');
+        });
+
+        // Initialize FAQ answers with IDs
+        document.querySelectorAll('.faq-answer').forEach((answer, index) => {
+            answer.id = `faq-answer-${index + 1}`;
+        });
+
+        // Form validation example
+        const contactForm = document.querySelector('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Add form validation logic here
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            });
+        }
+
+        // Lazy load images (placeholder for future implementation)
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Performance optimization: Debounce scroll events
+        let scrollTimer;
+        window.addEventListener('scroll', function() {
+            clearTimeout(scrollTimer);
+            scrollTimer = setTimeout(function() {
+                // Add any scroll-based functionality here
+            }, 100);
+        });
+
+        // Add focus styles for keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-navigation');
+            }
+        });
+
+        document.addEventListener('mousedown', function() {
+            document.body.classList.remove('keyboard-navigation');
         });
     </script>
 </body>
