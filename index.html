@@ -1121,7 +1121,10 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <h1>Ly<span>enk</span></h1>
+                <a href="#home" style="text-decoration: none; display: flex; align-items: center; gap: 12px;">
+                    <img src="./logo.png" alt="Lyenk Logo" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
+                    <h1 style="margin-bottom: 0;">Ly<span>enk</span></h1>
+                </a>
             </div>
             <button class="mobile-menu-btn" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
@@ -1278,6 +1281,83 @@
                         <div class="step-number" aria-hidden="true">4</div>
                         <h3>Measure Impact</h3>
                         <p>Track how customer satisfaction improves as you address their feedback and grow your business.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <style>
+            .pricing-card-animate {
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            }
+            .pricing-card-animate:hover {
+                transform: translateY(-12px) !important;
+                box-shadow: 0 20px 25px -5px rgba(93, 46, 138, 0.15), 0 10px 10px -5px rgba(93, 46, 138, 0.05) !important;
+            }
+            .pricing-btn-animate {
+                transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease, opacity 0.2s ease !important;
+            }
+            .pricing-btn-animate:hover {
+                transform: scale(1.05) !important;
+                opacity: 0.9 !important;
+            }
+            .pricing-btn-animate:active {
+                transform: scale(0.95) !important;
+            }
+        </style>
+        <section class="pricing" id="pricing" style="background-color: var(--white);">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Pricing / Purchase Packages</h2>
+                    <p>Select a package that fits your business needs</p>
+                </div>
+                
+                <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; align-items: center;">
+                    <!-- Starter Batch -->
+                    <div class="pricing-card pricing-card-animate" style="background: var(--white); border: 1px solid #e5e7eb; border-radius: 16px; padding: 40px 30px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer;">
+                        <h3 style="font-size: 1.5rem; color: var(--charcoal); margin-bottom: 15px;">Starter Batch</h3>
+                        <div style="display: flex; justify-content: center; align-items: baseline; margin-bottom: 10px;">
+                            <span style="font-size: 2.5rem; font-weight: 800; color: var(--deep-purple);">$10</span>
+                            <span style="color: #6b7280; margin-left: 5px;">USD</span>
+                        </div>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 25px;">0.10 per credit</p>
+                        <ul style="list-style: none; text-align: left; margin-bottom: 30px; padding: 0;">
+                            <li style="margin-bottom: 15px; color: #4b5563; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #10b981; margin-right: 10px;"></i> 100 Customer Credits</li>
+                            <li style="margin-bottom: 15px; color: #4b5563; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #10b981; margin-right: 10px;"></i> Lifetime validity</li>
+                        </ul>
+                        <a href="https://engine.lyenk.com/auth?mode=login" class="btn pricing-btn-animate" style="width: 100%; background-color: var(--light-lavender); color: var(--deep-purple); border-color: transparent;">Get 100 Credits</a>
+                    </div>
+                    
+                    <!-- Growth Batch -->
+                    <div class="pricing-card pricing-card-animate" style="background: var(--white); border: 2px solid var(--deep-purple); border-radius: 16px; padding: 40px 30px; text-align: center; box-shadow: 0 10px 15px rgba(93, 46, 138, 0.1); position: relative; cursor: pointer;">
+                        <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--antique-gold); color: white; padding: 4px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase;">Best Value</div>
+                        <h3 style="font-size: 1.5rem; color: var(--charcoal); margin-bottom: 15px;">Growth Batch</h3>
+                        <div style="display: flex; justify-content: center; align-items: baseline; margin-bottom: 10px;">
+                            <span style="font-size: 2.5rem; font-weight: 800; color: var(--deep-purple);">$49</span>
+                            <span style="color: #6b7280; margin-left: 5px;">USD</span>
+                        </div>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 25px;">0.10 per credit</p>
+                        <ul style="list-style: none; text-align: left; margin-bottom: 30px; padding: 0;">
+                            <li style="margin-bottom: 15px; color: #4b5563; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #10b981; margin-right: 10px;"></i> 500 Customer Credits</li>
+                            <li style="margin-bottom: 15px; color: #4b5563; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #10b981; margin-right: 10px;"></i> Lifetime validity</li>
+                        </ul>
+                        <a href="https://engine.lyenk.com/auth?mode=login" class="btn pricing-btn-animate" style="width: 100%;">Get 500 Credits</a>
+                    </div>
+                    
+                    <!-- Enterprise Batch -->
+                    <div class="pricing-card pricing-card-animate" style="background: var(--white); border: 1px solid #e5e7eb; border-radius: 16px; padding: 40px 30px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer;">
+                        <h3 style="font-size: 1.5rem; color: var(--charcoal); margin-bottom: 15px;">Enterprise Batch</h3>
+                        <div style="display: flex; justify-content: center; align-items: baseline; margin-bottom: 10px;">
+                            <span style="font-size: 2.5rem; font-weight: 800; color: var(--deep-purple);">$99</span>
+                            <span style="color: #6b7280; margin-left: 5px;">USD</span>
+                        </div>
+                        <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 25px;">0.05 per credit</p>
+                        <ul style="list-style: none; text-align: left; margin-bottom: 30px; padding: 0;">
+                            <li style="margin-bottom: 15px; color: #4b5563; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #10b981; margin-right: 10px;"></i> 2000 Customer Credits</li>
+                            <li style="margin-bottom: 15px; color: #4b5563; display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #10b981; margin-right: 10px;"></i> Lifetime validity</li>
+                        </ul>
+                        <a href="https://engine.lyenk.com/auth?mode=login" class="btn pricing-btn-animate" style="width: 100%; background-color: var(--light-lavender); color: var(--deep-purple); border-color: transparent;">Get 2000 Credits</a>
                     </div>
                 </div>
             </div>
