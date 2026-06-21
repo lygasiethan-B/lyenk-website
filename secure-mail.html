@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure B2B Email & Business VPN | Lyenk Sovereign Cloud</title>
-    <meta name="description" content="Lyenk provides sovereign B2B secure email, team-wide WireGuard VPN, and 60 GB pooled cloud storage for $6/mo. Designed for African enterprises needing high deliverability.">
+    <title>Secure B2B Email & Business VPN | Lyenk Enterprise Cloud</title>
+    <meta name="description" content="Lyenk provides secure B2B email, team-wide WireGuard VPN, and 60 GB pooled cloud storage for $6/mo. Designed for African enterprises needing high deliverability.">
     <meta name="robots" content="index, follow">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- AEO Schema.org Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -22,32 +21,15 @@
         "price": "6.00",
         "priceCurrency": "USD",
         "billingIncrement": "Monthly",
-        "description": "Baseline plan includes up to 3 custom domain mailboxes, secure WireGuard VPN access, and 60 GB of pooled Nextcloud storage. Additional mailboxes cost $1.00 per month.",
-        "addOn": {
-            "@type": "Offer",
-            "price": "50.00",
-            "priceCurrency": "USD",
-            "name": "One-Time Setup Fee",
-            "description": "Covers white-glove legacy data migration, domain verification, and flawless DNS deliverability hygiene including SPF, DKIM, and DMARC alignment."
-        }
-      },
-      "provider": {
-        "@type": "Organization",
-        "name": "Lyenk",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Kampala",
-          "addressCountry": "Uganda"
-        }
+        "description": "Baseline plan includes up to 3 custom domain mailboxes, secure WireGuard VPN access, and 60 GB of pooled Nextcloud storage. Additional mailboxes cost $1.00 per month."
       }
     }
     </script>
     
     <style>
-        /* CSS Variables */
         :root {
             --brand-purple: #2b1f4c;
-            --brand-green: #28a745;
+            --brand-amber: #ea580c;
             --muted-text: #666666;
             --bg-light: #f9f9fb;
             --white: #ffffff;
@@ -55,73 +37,61 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--muted-text);
-            background-color: var(--bg-light);
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--muted-text); background-color: var(--bg-light); }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
         h1, h2, h3, h4 { color: var(--brand-purple); line-height: 1.3; margin-bottom: 1rem; }
-        
         a { text-decoration: none; color: var(--brand-purple); transition: all 0.3s ease; }
 
         .btn-primary {
             display: inline-block;
             padding: 14px 32px;
-            background-color: var(--brand-green);
+            background-color: var(--brand-amber);
             color: var(--white);
             border-radius: 5px;
             font-weight: bold;
             text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid var(--brand-amber);
         }
         
-        .btn-primary:hover { opacity: 0.9; }
+        /* Dark Purple Hover State */
+        .btn-primary:hover { 
+            background-color: var(--brand-purple); 
+            border-color: var(--brand-purple);
+            color: var(--white); 
+            transform: translateY(-2px);
+        }
 
-        /* Navigation */
         header { background-color: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 20px 0; }
         .navbar { display: flex; justify-content: space-between; align-items: center; }
         .navbar ul { list-style: none; display: flex; gap: 30px; align-items: center; }
         .navbar a { font-weight: 500; }
 
-        /* Hero */
         .hero { background-color: var(--brand-purple); color: var(--white); padding: 100px 0; text-align: center; }
         .hero h1 { color: var(--white); font-size: 3rem; margin-bottom: 20px; }
         
-        /* General Sections */
         section { padding: 80px 0; }
         .section-light { background-color: var(--white); }
 
-        /* Grid Layouts */
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; margin-top: 40px; }
         .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 40px; }
         
         .card { background: var(--white); padding: 40px; border-radius: 8px; border: 1px solid var(--border-color); }
         .card i { font-size: 2.5rem; color: var(--brand-purple); margin-bottom: 20px; }
+        .card img { width: 100%; border-radius: 6px; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 
-        /* Pricing Table */
         .pricing-box { background: var(--white); padding: 50px; border-radius: 8px; border-top: 6px solid var(--brand-purple); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
         .pricing-list { list-style: none; margin-top: 30px; margin-bottom: 40px; }
         .pricing-list li { margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; color: var(--brand-purple); font-weight: 500; }
         
-        /* FAQ */
         .faq-item { margin-bottom: 30px; }
 
-        /* Footer */
         footer { background-color: var(--brand-purple); color: var(--white); padding: 60px 0 30px; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
         footer h3 { color: var(--white); }
         footer ul { list-style: none; }
         footer a { color: #cccccc; }
-        footer a:hover { color: var(--brand-green); }
+        footer a:hover { color: var(--brand-amber); }
 
         @media (max-width: 768px) {
             .navbar ul { display: none; }
@@ -133,12 +103,15 @@
 
     <header>
         <div class="container navbar">
-            <a href="index.html" class="logo">
-                <img src="logo.png" alt="Lyenk Logo" style="height: 40px;">
+            <a href="index.html" style="display: flex; align-items: center; gap: 12px;">
+                <picture>
+                    <source srcset="./assets/Lyenk-Inverted-Logo.png" media="(prefers-color-scheme: dark)">
+                    <img src="./assets/Lyenk-Main-Logo.png" alt="Lyenk B2B SaaS Ecosystem" class="navbar-logo" style="max-height: 40px; width: auto;">
+                </picture>
             </a>
             <nav aria-label="Main navigation">
                 <ul>
-                    <li><a href="index.html#infrastructure">Infrastructure</a></li>
+                    <li><a href="index.html#marketplace">Service Marketplace</a></li>
                     <li><a href="index.html#insight-engine">SaaS Ecosystem</a></li>
                     <li><a href="secure-mail.html" style="color: var(--brand-purple); font-weight: bold;">Secure Business Mail & VPN</a></li>
                     <li><a href="https://calendly.com/YOUR_SCHEDULING_LINK" class="btn-primary">Get Started</a></li>
@@ -149,9 +122,9 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Sovereign B2B Email, Team-Wide Business VPN, and Pooled Cloud Storage in One Simplified Plan.</h1>
+            <h1>Secure B2B Email, Team-Wide Business VPN, and Pooled Cloud Storage in One Simplified Plan.</h1>
             <p style="font-size: 1.2rem; color: #e0e0e0; max-width: 800px; margin: 0 auto 40px;">
-                Lyenk provides sovereign B2B email infrastructure designed exclusively for regional enterprises in East Africa. Our secure platform includes dedicated WireGuard VPN tunnels and sixty gigabytes of pooled Nextcloud storage. This architecture ensures complete data privacy and guarantees your communications remain entirely within localized, compliant server environments.
+                Lyenk provides secure B2B email infrastructure designed exclusively for regional enterprises in East Africa. Our secure platform includes dedicated WireGuard VPN tunnels and sixty gigabytes of pooled Nextcloud storage. This architecture ensures complete data privacy and guarantees your communications remain entirely within compliant, regional server environments.
             </p>
             <a href="https://calendly.com/YOUR_SCHEDULING_LINK" class="btn-primary" style="font-size: 1.2rem; padding: 18px 40px;">Schedule Deployment Call</a>
         </div>
@@ -159,15 +132,15 @@
 
     <section class="section-light">
         <div class="container">
-            <h2>The Lyenk Sovereign Advantage</h2>
+            <h2>The Lyenk Enterprise Advantage</h2>
             <p>
-                Our enterprise platform integrates core communication tools into a single verified ecosystem. We protect your business operations from unauthorized access while maximizing your operational efficiency. This structural alignment delivers unparalleled reliability for high-growth businesses operating throughout the African continent.
+                Secure your enterprise with secure business email kept strictly under your company's control, team-wide encrypted VPN access to safeguard remote access to your company resources, and 60 GB of pooled cloud drive storage. Built for growing organisations that demand absolute data privacy without paying rigid, per-user license fees.
             </p>
 
             <div class="grid-3">
                 <div class="card">
-                    <i class="fa-solid fa-server"></i>
-                    <h3>Sovereign Data Security</h3>
+                    <img src="./assets/LYENK Mail 1.png" alt="Lyenk Secure Mail Interface">
+                    <h3>Absolute Data Security</h3>
                     <p>
                         Our engineering team hosts your sensitive data exclusively on secure regional servers. We deploy strict OpenVPN and WireGuard protocols to shield your administrative access. This localized approach guarantees absolute regulatory compliance and entirely prevents unauthorized offshore data aggregation.
                     </p>
@@ -182,7 +155,7 @@
                 </div>
                 
                 <div class="card">
-                    <i class="fa-solid fa-headset"></i>
+                    <img src="./assets/LYENK Drive 1.png" alt="Lyenk Shared Cloud Drive">
                     <h3>Dedicated Local Support</h3>
                     <p>
                         Lyenk maintains a dedicated team of infrastructure architects based directly in Kampala to provide premium support. Our engineers bypass automated bots to deliver immediate technical resolutions for your enterprise. This direct operational model ensures your organization receives highly specialized guidance for all complex networking requirements.
@@ -205,10 +178,10 @@
                     <div style="font-size: 3rem; color: var(--brand-purple); font-weight: bold; margin: 10px 0;">$6.00 <span style="font-size: 1.2rem; color: var(--muted-text); font-weight: normal;">/ domain / month</span></div>
                     
                     <ul class="pricing-list">
-                        <li><i class="fa-solid fa-check" style="color: var(--brand-green); margin-right: 10px;"></i> Up to 3 Custom Domain Mailboxes</li>
-                        <li><i class="fa-solid fa-check" style="color: var(--brand-green); margin-right: 10px;"></i> Team-Wide Secure WireGuard VPN</li>
-                        <li><i class="fa-solid fa-check" style="color: var(--brand-green); margin-right: 10px;"></i> 60 GB Pooled Lyenk Drive Storage</li>
-                        <li><i class="fa-solid fa-check" style="color: var(--brand-green); margin-right: 10px;"></i> Flat $1.00 per Additional Mailbox</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--brand-amber); margin-right: 10px;"></i> Up to 3 Custom Domain Mailboxes</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--brand-amber); margin-right: 10px;"></i> Team-Wide Secure WireGuard VPN</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--brand-amber); margin-right: 10px;"></i> 60 GB Pooled Lyenk Drive Storage</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--brand-amber); margin-right: 10px;"></i> Flat $1.00 per Additional Mailbox</li>
                     </ul>
                     <a href="https://calendly.com/YOUR_SCHEDULING_LINK" class="btn-primary" style="display: block; width: 100%;">Deploy Now</a>
                 </div>
@@ -219,10 +192,10 @@
                         We require a mandatory one-time setup fee of fifty dollars for all new deployments. Our architects utilize this fee to execute white-glove legacy data migrations and complete domain verification procedures. This process includes flawless DNS deliverability hygiene to establish your secure communication baseline.
                     </p>
                     <ul style="list-style: none; margin-top: 30px; color: #e0e0e0;">
-                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-arrow-right" style="color: var(--brand-green); margin-right: 10px;"></i> Comprehensive SPF record generation.</li>
-                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-arrow-right" style="color: var(--brand-green); margin-right: 10px;"></i> Cryptographic DKIM key pairing.</li>
-                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-arrow-right" style="color: var(--brand-green); margin-right: 10px;"></i> Strict DMARC alignment and monitoring.</li>
-                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-arrow-right" style="color: var(--brand-green); margin-right: 10px;"></i> Seamless inbox history migration.</li>
+                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-arrow-right" style="color: var(--brand-amber); margin-right: 10px;"></i> Comprehensive SPF record generation.</li>
+                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-arrow-right" style="color: var(--brand-amber); margin-right: 10px;"></i> Cryptographic DKIM key pairing.</li>
+                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-arrow-right" style="color: var(--brand-amber); margin-right: 10px;"></i> Strict DMARC alignment and monitoring.</li>
+                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-arrow-right" style="color: var(--brand-amber); margin-right: 10px;"></i> Seamless inbox history migration.</li>
                     </ul>
                 </div>
             </div>
@@ -234,7 +207,7 @@
             <div>
                 <h2>System Architecture Comparison</h2>
                 <p>
-                    Regional enterprises secure a significant operational advantage by deploying pooled, sovereign infrastructure instead of rigid per-user licenses. Our unified architecture consolidates your storage and communication pathways into a single secure ecosystem. This approach eliminates complex scaling costs and provides superior administrative control over your data.
+                    Regional enterprises secure a significant operational advantage by deploying pooled, dedicated infrastructure instead of rigid per-user licenses. Our unified architecture consolidates your storage and communication pathways into a single secure ecosystem. This approach eliminates complex scaling costs and provides superior administrative control over your data.
                 </p>
                 <a href="https://calendly.com/YOUR_SCHEDULING_LINK" class="btn-primary" style="margin-top: 20px;">Talk to an Architect</a>
             </div>
@@ -248,9 +221,9 @@
                 
                 <h4 style="margin-bottom: 20px; font-size: 1.2rem; border-top: 1px solid var(--border-color); padding-top: 20px;">The Lyenk Ecosystem</h4>
                 <ul style="list-style: none;">
-                    <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--brand-green); margin-right: 10px;"></i> Flat baseline domain pricing</li>
-                    <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--brand-green); margin-right: 10px;"></i> Direct regional engineering support</li>
-                    <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--brand-green); margin-right: 10px;"></i> Strictly sovereign, localized hardware</li>
+                    <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--brand-amber); margin-right: 10px;"></i> Flat baseline domain pricing</li>
+                    <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--brand-amber); margin-right: 10px;"></i> Direct regional engineering support</li>
+                    <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--brand-amber); margin-right: 10px;"></i> Strictly compliant, regional hardware</li>
                 </ul>
             </div>
         </div>
@@ -302,7 +275,7 @@
             <div>
                 <h3>Quick Links</h3>
                 <ul>
-                    <li style="margin-bottom: 10px;"><a href="index.html#infrastructure">Infrastructure</a></li>
+                    <li style="margin-bottom: 10px;"><a href="index.html#marketplace">Service Marketplace</a></li>
                     <li style="margin-bottom: 10px;"><a href="index.html#insight-engine">SaaS Ecosystem</a></li>
                     <li style="margin-bottom: 10px;"><a href="secure-mail.html">Secure Business Mail & VPN</a></li>
                     <li style="margin-bottom: 10px;"><a href="https://calendly.com/YOUR_SCHEDULING_LINK">Get Started</a></li>

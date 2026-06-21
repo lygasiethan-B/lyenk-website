@@ -162,15 +162,16 @@
         }
 
         .btn-primary {
-            background-color: var(--antique-gold);
-            border: 2px solid var(--antique-gold);
-            color: var(--white);
+            background-color: #ea580c !important;
+            border: 2px solid #ea580c !important;
+            color: var(--white) !important;
         }
 
         .btn-primary:hover,
         .btn-primary:focus {
-            background-color: transparent;
-            color: var(--antique-gold);
+            background-color: var(--deep-purple) !important;
+            border-color: var(--deep-purple) !important;
+            color: var(--white) !important;
         }
 
         section {
@@ -1122,8 +1123,10 @@
         <div class="container header-container">
             <div class="logo">
                 <a href="#home" style="text-decoration: none; display: flex; align-items: center; gap: 12px;">
-                    <img src="./logo.png" alt="Lyenk Logo" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
-                    <h1 style="margin-bottom: 0;">Ly<span>enk</span></h1>
+                    <picture>
+                        <source srcset="./assets/Lyenk-Inverted-Logo.png" media="(prefers-color-scheme: dark)">
+                        <img src="./assets/Lyenk-Main-Logo.png" alt="Lyenk B2B SaaS Ecosystem" class="navbar-logo" style="max-height: 40px; width: auto;">
+                    </picture>
                 </a>
             </div>
             <button class="mobile-menu-btn" aria-label="Toggle menu">
@@ -1131,7 +1134,7 @@
             </button>
             <nav aria-label="Main navigation">
                 <ul>
-                    <li><a href="#infrastructure">Infrastructure</a></li>
+                    <li><a href="#marketplace">Service Marketplace</a></li>
                     <li><a href="#insight-engine">SaaS Ecosystem</a></li>
                     <li><a href="secure-mail.html" style="color: #2b1f4c; font-weight: 600;">Secure Business Mail & VPN</a></li>
                     <li class="dropdown">
@@ -1145,7 +1148,7 @@
                             <li><a href="privacy.html" id="privacy-link">Privacy Policy</a></li>
                         </ul>
                     </li>
-                    <li><a href="https://engine.lyenk.com" class="btn" style="background-color: #28a745; color: #ffffff;">Get Started</a></li>
+                    <li><a href="https://engine.lyenk.com" class="btn btn-primary" style="background-color: #ea580c; border-color: #ea580c; color: #ffffff;">Get Started</a></li>
                 </ul>
             </nav>
         </div>
@@ -1155,16 +1158,16 @@
     <section class="hero" id="home">
         <div class="container">
             <h1>Understand Your Customers, Grow Your Business</h1>
-            <p>Start with our <strong>Advanced Pattern Recognition System</strong> for customer insights and <strong>Service Marketplace</strong> to connect with verified service providers across the region.</p>
+            <p>Power your enterprise with high-performance cloud infrastructure, secure team communications, and modular software built specifically for Africa.</p>
             <div class="hero-btns">
-                <a href="#insight-engine" class="btn">Get Customer Insights</a>
-                <a href="https://app.lyenk.com" class="btn btn-outline">Visit Marketplace</a>
-                <a href="https://engine.lyenk.com" class="btn btn-primary">Try Insight Engine</a>
+                <a href="secure-mail.html" class="btn btn-primary" style="background-color: #ea580c; border-color: #ea580c; color: #ffffff;">Secure business Email & drive</a>
+                <a href="https://engine.lyenk.com" class="btn btn-outline">Get Customer Insights</a>
+                <a href="https://app.lyenk.com" class="btn btn-outline" style="background-color: transparent; border-color: #2b1f4c; color: #2b1f4c;">Visit Marketplace</a>
             </div>
             <div class="solution-card" style="background: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 4px solid #2b1f4c; margin-top: 40px; text-align: left;">
-                <h3 style="color: #2b1f4c; font-size: 1.8rem; margin-bottom: 15px;">Sovereign Cloud Access, Secure Mail & VPN</h3>
-                <p style="color: #666666; font-size: 1.1rem; margin-bottom: 25px; line-height: 1.6;">Protect your enterprise communications with locally hosted, sovereign business email, team-wide encrypted WireGuard VPN access, and 60 GB of pooled Nextcloud storage. Designed specifically for African Small and Growing Businesses (SGBs) seeking zero-noise deliverability and dedicated account management.</p>
-                <a href="secure-mail.html" class="btn" style="background-color: #28a745; color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold; display: inline-block;">Explore Secure Mail ($6/mo)</a>
+                <h3 style="color: #2b1f4c; font-size: 1.8rem; margin-bottom: 15px;">Secure Business Email, Team VPN & Shared Cloud Storage</h3>
+                <p style="color: #666666; font-size: 1.1rem; margin-bottom: 25px; line-height: 1.6;">Secure your enterprise with secure business email kept strictly under your company's control, team-wide encrypted VPN access to safeguard remote access to your company resources, and 60 GB of pooled cloud drive storage. Built for growing organisations that demand absolute data privacy without paying rigid, per-user license fees.</p>
+                <a href="secure-mail.html" class="btn btn-primary" style="background-color: #ea580c; border-color: #ea580c; color: #ffffff; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold; display: inline-block;">Explore Secure Mail ($6/mo)</a>
             </div>
         </div>
     </section>
