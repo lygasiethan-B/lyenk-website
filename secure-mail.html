@@ -166,12 +166,21 @@
             padding: 15px 0;
         }
 
+        /* Footer */
         footer { background-color: var(--brand-purple); color: var(--white); padding: 60px 0 30px; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
-        footer h3 { color: var(--white); }
-        footer ul { list-style: none; }
-        footer a { color: #cccccc; }
-        footer a:hover { color: var(--brand-amber); }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-column h3 { color: var(--white); margin-bottom: 20px; font-size: 1.2rem; }
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 10px; }
+        .footer-column ul li a { color: #ccc; text-decoration: none; }
+        .footer-column ul li a:hover, .footer-column ul li a:focus { color: var(--brand-amber); }
+        .social-links { display: flex; gap: 15px; margin-top: 20px; }
+        .social-links a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: rgba(255, 255, 255, 0.1); border-radius: 50%; color: var(--white); transition: 0.3s; text-decoration: none; }
+        .social-links a:hover, .social-links a:focus { background-color: var(--brand-amber); transform: translateY(-3px); }
+        .copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #ccc; font-size: 0.9rem; }
+        .legal-links { display: flex; justify-content: center; gap: 20px; margin-top: 15px; flex-wrap: wrap; }
+        .legal-links a { color: #ccc; font-size: 0.9rem; text-decoration: none; }
+        .legal-links a:hover, .legal-links a:focus { color: var(--brand-amber); text-decoration: underline; }
 
         @media (max-width: 768px) {
             .navbar ul { display: none; }
@@ -320,33 +329,63 @@
     </section>
 
     <footer>
-        <div class="container footer-grid">
-            <div>
-                <h3>Lyenk</h3>
-                <p style="margin-top: 15px; color: #cccccc;">Lyenk is a hybrid B2B SaaS platform. Find out what your customers think. Then instantly connect with the right experts to make it happen.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Lyenk</h3>
+                    <p>Lyenk is a hybrid B2B SaaS platform. Find out what your customers think. Then instantly connect with the right experts to make it happen.</p>
+                    <p style="margin-top: 15px;">Follow Us</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/lyenk.comm/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://medium.com/@lyenk" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                        <a href="https://www.linkedin.com/company/lyenk/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html#marketplace">Service Marketplace</a></li>
+                        <li><a href="index.html#insight-engine">Insights Engine</a></li>
+                        <li><a href="secure-mail.html">Secure Business Mail</a></li>
+                        <li><a href="https://wa.me/256756180429">Get Started</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="https://medium.com/@lyenk">Blog</a></li>
+                        <li><a href="#" id="faq-link">FAQs</a></li>
+                        <li><a href="https://engine.lyenk.com">Insight Engine</a></li>
+                        <li><a href="https://app.lyenk.com">Marketplace</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="refund.html">Refund Policy</a></li>
+                        <li><a href="cookie.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i> info@lyenk.com</li>
+                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> East Africa</li>
+                    </ul>
+                </div>
             </div>
-            <div>
-                <h3>Quick Links</h3>
-                <ul>
-                    <li style="margin-bottom: 10px;"><a href="index.html#marketplace">Service Marketplace</a></li>
-                    <li style="margin-bottom: 10px;"><a href="index.html#insight-engine">Insights Engine</a></li>
-                    <li style="margin-bottom: 10px;"><a href="secure-mail.html">Secure Business Mail</a></li>
-                    <li style="margin-bottom: 10px;"><a href="https://wa.me/256756180429">Get Started</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3>Resources</h3>
-                <ul>
-                    <li style="margin-bottom: 10px;"><a href="https://medium.com/@lyenk">Blog</a></li>
-                    <li style="margin-bottom: 10px;"><a href="#">FAQs</a></li>
-                    <li style="margin-bottom: 10px;"><a href="terms.html">Terms of Service</a></li>
-                    <li style="margin-bottom: 10px;"><a href="privacy.html">Privacy Policy</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3>Contact Us</h3>
-                <p style="color: #cccccc; margin-bottom: 10px;"><i class="fas fa-envelope"></i> info@lyenk.com</p>
-                <p style="color: #cccccc;"><i class="fas fa-map-marker-alt"></i> Kampala, Uganda</p>
+            <div class="copyright">
+                <p>&copy; 2026 Lyenk. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#" id="faq-link-footer">FAQs</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="refund.html">Refund Policy</a>
+                    <a href="cookie.html">Cookie Policy</a>
+                </div>
+                <p style="margin-top: 15px; font-size: 0.9em; color: rgba(255, 255, 255, 0.7);">A Project by Vectra Consults Limited</p>
             </div>
         </div>
     </footer>
@@ -386,13 +425,20 @@
         // Modal Logic
         const faqModal = document.getElementById('faq-modal');
         const openBtn = document.getElementById('open-faq-modal');
+        const faqLink = document.getElementById('faq-link');
+        const faqLinkFooter = document.getElementById('faq-link-footer');
         const closeBtn = document.getElementById('close-faq');
 
-        if (openBtn && faqModal && closeBtn) {
-            openBtn.addEventListener('click', () => {
+        if (faqModal && closeBtn) {
+            const openModal = (e) => {
+                if (e) e.preventDefault();
                 faqModal.style.display = 'block';
                 faqModal.setAttribute('aria-hidden', 'false');
-            });
+            };
+
+            if (openBtn) openBtn.addEventListener('click', openModal);
+            if (faqLink) faqLink.addEventListener('click', openModal);
+            if (faqLinkFooter) faqLinkFooter.addEventListener('click', openModal);
 
             closeBtn.addEventListener('click', () => {
                 faqModal.style.display = 'none';
