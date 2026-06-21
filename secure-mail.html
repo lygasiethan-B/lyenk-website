@@ -86,6 +86,86 @@
         
         .faq-item { margin-bottom: 30px; }
 
+        /* Modal & Accordion Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background-color: var(--white);
+            margin: 10% auto;
+            padding: 40px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .close-modal {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--muted-text);
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+        .close-modal:hover { color: var(--brand-purple); }
+        .modal-header h2 { margin-bottom: 20px; }
+        
+        .accordion-btn {
+            background-color: var(--bg-light);
+            color: var(--brand-purple);
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: 0.3s;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .accordion-btn.active, .accordion-btn:hover {
+            background-color: #e9ecef;
+        }
+        .accordion-btn:after {
+            content: '\002B';
+            color: var(--brand-purple);
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-left: 10px;
+        }
+        .accordion-btn.active:after {
+            content: "\2212";
+        }
+        .accordion-content {
+            padding: 0 18px;
+            background-color: var(--white);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            margin-bottom: 10px;
+        }
+        .accordion-content p {
+            padding: 15px 0;
+        }
+
         footer { background-color: var(--brand-purple); color: var(--white); padding: 60px 0 30px; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
         footer h3 { color: var(--white); }
@@ -229,39 +309,12 @@
     </section>
 
     <section>
-        <div class="container" style="max-width: 800px;">
-            <h2 style="text-align: center;">Enterprise FAQ</h2>
-            <p style="text-align: center; margin-bottom: 40px;">
+        <div class="container" style="max-width: 800px; text-align: center;">
+            <h2>Enterprise FAQ</h2>
+            <p style="margin-bottom: 30px;">
                 Here are clear answers to the questions we hear most, about security, reliability, storage, and getting started. We've built Lyenk specifically for the needs of small and growing businesses across Africa.
             </p>
-
-            <div class="faq-item">
-                <h3>How does Lyenk secure administrative access?</h3>
-                <p>
-                    We protect all administrative access with encrypted, private connections, so only authorized members of your team can reach your account's backend systems. This significantly reduces the risk of outside interference and keeps your organization's data protected.
-                </p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>How reliable is Lyenk?</h3>
-                <p>
-                    Our infrastructure is built on redundant local servers with automatic failover, so if one system has an issue, another takes over with minimal disruption. Our team monitors every system from our Kampala headquarters around the clock, so problems are caught early and resolved fast.
-                </p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>Can we expand our pooled storage?</h3>
-                <p>
-                    Yes, anytime. You can increase your storage pool directly from your management console, no migrations, no downtime, no waiting. Your storage grows with your business, whenever you need it to.
-                </p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>How long does migration take?</h3>
-                <p>
-                    Most full migrations are complete within twenty-four to forty-eight hours. Our onboarding team securely moves over your emails, contacts, and calendar events from your previous provider, so your team experiences as little disruption as possible.
-                </p>
-            </div>
+            <button id="open-faq-modal" class="btn-primary" style="cursor: pointer; border: none; font-size: 1rem;">View Enterprise FAQ</button>
         </div>
     </section>
 
@@ -297,5 +350,83 @@
         </div>
     </footer>
 
+    <!-- FAQ Modal -->
+    <div id="faq-modal" class="modal" role="dialog" aria-labelledby="faq-modal-title" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close-modal" id="close-faq" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <h2 id="faq-modal-title">Enterprise FAQ</h2>
+            </div>
+            <div class="modal-body">
+                <button class="accordion-btn active">How does Lyenk secure administrative access?</button>
+                <div class="accordion-content" style="max-height: 1000px;">
+                    <p>We protect all administrative access with encrypted, private connections, so only authorized members of your team can reach your account's backend systems. This significantly reduces the risk of outside interference and keeps your organization's data protected.</p>
+                </div>
+                
+                <button class="accordion-btn">How reliable is Lyenk?</button>
+                <div class="accordion-content">
+                    <p>Our infrastructure is built on redundant local servers with automatic failover, so if one system has an issue, another takes over with minimal disruption. Our team monitors every system from our Kampala headquarters around the clock, so problems are caught early and resolved fast.</p>
+                </div>
+                
+                <button class="accordion-btn">Can we expand our pooled storage?</button>
+                <div class="accordion-content">
+                    <p>Yes, anytime. You can increase your storage pool directly from your management console, no migrations, no downtime, no waiting. Your storage grows with your business, whenever you need it to.</p>
+                </div>
+                
+                <button class="accordion-btn">How long does migration take?</button>
+                <div class="accordion-content">
+                    <p>Most full migrations are complete within twenty-four to forty-eight hours. Our onboarding team securely moves over your emails, contacts, and calendar events from your previous provider, so your team experiences as little disruption as possible.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal Logic
+        const faqModal = document.getElementById('faq-modal');
+        const openBtn = document.getElementById('open-faq-modal');
+        const closeBtn = document.getElementById('close-faq');
+
+        if (openBtn && faqModal && closeBtn) {
+            openBtn.addEventListener('click', () => {
+                faqModal.style.display = 'block';
+                faqModal.setAttribute('aria-hidden', 'false');
+            });
+
+            closeBtn.addEventListener('click', () => {
+                faqModal.style.display = 'none';
+                faqModal.setAttribute('aria-hidden', 'true');
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target === faqModal) {
+                    faqModal.style.display = 'none';
+                    faqModal.setAttribute('aria-hidden', 'true');
+                }
+            });
+        }
+
+        // Accordion Logic
+        const acc = document.getElementsByClassName("accordion-btn");
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                // Close all others
+                for (let j = 0; j < acc.length; j++) {
+                    if (acc[j] !== this && acc[j].classList.contains("active")) {
+                        acc[j].classList.remove("active");
+                        acc[j].nextElementSibling.style.maxHeight = null;
+                    }
+                }
+                
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
