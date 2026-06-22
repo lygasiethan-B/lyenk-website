@@ -41,20 +41,34 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Lyenk",
-      "url": "https://lyenk.com",
-      "logo": "https://lyenk.com/logo.png",
-      "description": "Customer Insight Engine (engine.lyenk.com) and Service Marketplace (app.lyenk.com) for East African businesses",
-      "email": "info@lyenk.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressRegion": "East Africa"
-      },
-      "sameAs": [
-        "https://www.instagram.com/lyenk.comm/",
-        "https://medium.com/@lyenk",
-        "https://www.linkedin.com/company/lyenk/"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://lyenk.com/#website",
+          "url": "https://lyenk.com/",
+          "name": "Lyenk",
+          "description": "Enterprise Email, Cloud Architecture & Customer Insights Platform"
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://lyenk.com/#organization",
+          "name": "Lyenk",
+          "url": "https://lyenk.com/",
+          "logo": "https://lyenk.com/logo.png",
+          "sameAs": [
+            "https://www.instagram.com/lyenk.comm/",
+            "https://medium.com/@lyenk",
+            "https://www.linkedin.com/company/lyenk/"
+          ]
+        },
+        {
+          "@type": "Service",
+          "serviceType": "B2B SaaS Cloud Infrastructure and Analytics",
+          "provider": {
+            "@id": "https://lyenk.com/#organization"
+          },
+          "description": "Provides secure business email, pooled network drive storage, and pattern recognition systems for customer insights."
+        }
       ]
     }
     </script>
