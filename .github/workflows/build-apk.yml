@@ -1,0 +1,50 @@
+name: Build and Deploy APK
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'mobile-app/**' # Only run when mobile app code changes
+
+permissions:
+  contents: write # Needed to commit the APK back to the repo
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+
+      - name: Install dependencies
+        working-directory: mobile-app
+        run: flutter pub get
+
+      - name: Build APK
+        working-directory: mobile-app
+        run: flutter build apk --release
+
+      - name: Copy APK to root
+        run: cp mobile-app/build/app/outputs/flutter-apk/app-release.apk ./mail-lyenk.apk
+
+      - name: Commit and Push APK
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add mail-lyenk.apk
+          # Only commit if there are changes to the APK
+          git commit -m "Automated CI: Update LYENK Mail APK" || echo "No changes to commit"
+          git push origin main
