@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -33,10 +34,25 @@ class WebmailScreen extends StatefulWidget {
 
 class _WebmailScreenState extends State<WebmailScreen> {
   late final WebViewController _controller;
+  bool _isLoading = true;
+  int _currentImageIndex = 0;
+  Timer? _timer;
+
+  final List<String> _images = [
+    'assets/logo.png',
+    'assets/logo2.png',
+    'assets/logo3.png',
+  ];
 
   @override
   void initState() {
     super.initState();
+    
+    _timer = Timer.periodic(const Duration(seconds: 2), (timer) {
+      setState(() {
+        _currentImageIndex = (_currentImageIndex + 1) % _images.length;
+      });
+    });
     
     _controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
@@ -44,9 +60,21 @@ class _WebmailScreenState extends State<WebmailScreen> {
       ..setNavigationDelegate(
         NavigationDelegate(
           onProgress: (int progress) {},
-          onPageStarted: (String url) {},
-          onPageFinished: (String url) {},
-          onWebResourceError: (WebResourceError error) {},
+          onPageStarted: (String url) {
+            setState(() {
+              _isLoading = true;
+            });
+          },
+          onPageFinished: (String url) {
+            setState(() {
+              _isLoading = false;
+            });
+          },
+          onWebResourceError: (WebResourceError error) {
+            setState(() {
+              _isLoading = false;
+            });
+          },
           onNavigationRequest: (NavigationRequest request) async {
             final uri = Uri.parse(request.url);
             
@@ -75,6 +103,12 @@ class _WebmailScreenState extends State<WebmailScreen> {
   }
 
   @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       // We add an AppBar with a refresh button as a fallback since native Pull-To-Refresh
@@ -90,9 +124,30 @@ class _WebmailScreenState extends State<WebmailScreen> {
         ],
       ),
       body: SafeArea(
-        child: RefreshIndicator(
-          onRefresh: _handleRefresh,
-          child: WebViewWidget(controller: _controller),
+        child: Stack(
+          children: [
+            RefreshIndicator(
+              onRefresh: _handleRefresh,
+              child: WebViewWidget(controller: _controller),
+            ),
+            if (_isLoading)
+              Container(
+                color: Colors.white,
+                width: double.infinity,
+                height: double.infinity,
+                child: Center(
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 500),
+                    child: Image.asset(
+                      _images[_currentImageIndex],
+                      key: ValueKey<int>(_currentImageIndex),
+                      width: 250,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+              ),
+          ],
         ),
       ),
     );
