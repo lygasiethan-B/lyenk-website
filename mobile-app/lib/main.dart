@@ -41,7 +41,7 @@ class _WebmailScreenState extends State<WebmailScreen> {
   void initState() {
     super.initState();
     
-    _videoController = VideoPlayerController.asset('assets/app_icon_anim.mp4')
+    _videoController = VideoPlayerController.asset('assets/app_icon_anim/app_icon_anim.mp4')
       ..initialize().then((_) {
         _videoController.setLooping(true);
         _videoController.play();
