@@ -1,7 +1,7 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:video_player/video_player.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,25 +34,19 @@ class WebmailScreen extends StatefulWidget {
 
 class _WebmailScreenState extends State<WebmailScreen> {
   late final WebViewController _controller;
+  late final VideoPlayerController _videoController;
   bool _isLoading = true;
-  int _currentImageIndex = 0;
-  Timer? _timer;
-
-  final List<String> _images = [
-    'assets/logo.png',
-    'assets/logo2.png',
-    'assets/logo3.png',
-  ];
 
   @override
   void initState() {
     super.initState();
     
-    _timer = Timer.periodic(const Duration(seconds: 2), (timer) {
-      setState(() {
-        _currentImageIndex = (_currentImageIndex + 1) % _images.length;
+    _videoController = VideoPlayerController.asset('assets/app_icon_anim.mp4')
+      ..initialize().then((_) {
+        _videoController.setLooping(true);
+        _videoController.play();
+        setState(() {}); // Ensure the first frame is shown
       });
-    });
     
     _controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
@@ -78,19 +72,14 @@ class _WebmailScreenState extends State<WebmailScreen> {
           onNavigationRequest: (NavigationRequest request) async {
             final uri = Uri.parse(request.url);
             
-            // Allow navigation to the mail server
             if (uri.host.contains('mail.lyenk.com')) {
-              // But check if it's a file download typically ending with a file extension
-              // If it's a clear file download, we could route it out, but SOGo usually handles this dynamically.
               return NavigationDecision.navigate;
             }
 
-            // For external links, open in the native browser
             if (await canLaunchUrl(uri)) {
               await launchUrl(uri, mode: LaunchMode.externalApplication);
             }
             
-            // Prevent the webview from navigating to the external link
             return NavigationDecision.prevent;
           },
         ),
@@ -104,15 +93,13 @@ class _WebmailScreenState extends State<WebmailScreen> {
 
   @override
   void dispose() {
-    _timer?.cancel();
+    _videoController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // We add an AppBar with a refresh button as a fallback since native Pull-To-Refresh
-      // doesn't reliably trigger through a platform WebView widget on all devices.
       appBar: AppBar(
         title: const Text('LYENK Mail'),
         actions: [
@@ -136,15 +123,12 @@ class _WebmailScreenState extends State<WebmailScreen> {
                 width: double.infinity,
                 height: double.infinity,
                 child: Center(
-                  child: AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 500),
-                    child: Image.asset(
-                      _images[_currentImageIndex],
-                      key: ValueKey<int>(_currentImageIndex),
-                      width: 250,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
+                  child: _videoController.value.isInitialized
+                      ? AspectRatio(
+                          aspectRatio: _videoController.value.aspectRatio,
+                          child: VideoPlayer(_videoController),
+                        )
+                      : const CircularProgressIndicator(),
                 ),
               ),
           ],
