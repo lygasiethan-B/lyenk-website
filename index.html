@@ -59,7 +59,23 @@
           "@id": "https://lyenk.com/#organization",
           "name": "Lyenk",
           "url": "https://lyenk.com/",
-          "logo": "https://lyenk.com/logo.png",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyenk.com/assets/lyenk-main-logo.png"
+          },
+          "email": "info@lyenk.com",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "availableLanguage": "English",
+            "hoursAvailable": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "09:00",
+              "closes": "18:00"
+            },
+            "url": "https://wa.me/256756180429"
+          },
           "sameAs": [
             "https://www.instagram.com/lyenk.comm/",
             "https://medium.com/@lyenk",
