@@ -3,7 +3,14 @@
 > Hybrid B2B SaaS platform delivering secure business infrastructure, advanced pattern recognition analytics, and regional technical solutions.
 
 ## Core Offerings
-* **Enterprise Email:** Sovereign, secure communication architecture optimized for regional corporate networks.
-* **Pooled Cloud Storage:** High-capacity, dedicated secure storage infrastructure for corporate resources.
-* **Advanced Insights Engine:** Pattern recognition frameworks built for deep consumer data analysis and regional market evaluation.
-* **Service Marketplace:** A verified marketplace connecting organizations with screened technical and creative professionals.
+* **[Enterprise Email](https://lyenk.com/#features):** Sovereign, secure communication architecture optimized for regional corporate networks.
+* **[Pooled Cloud Storage](https://lyenk.com/#features):** High-capacity, dedicated secure storage infrastructure for corporate resources.
+* **[Advanced Insights Engine](https://lyenk.com/#insight-engine):** Pattern recognition frameworks built for deep consumer data analysis and regional market evaluation.
+* **[Service Marketplace](https://lyenk.com/#marketplace):** A verified marketplace connecting organizations with screened technical and creative professionals.
+
+## Key Links
+* **Main Website:** [https://lyenk.com/](https://lyenk.com/)
+* **Pricing & Plans:** [https://lyenk.com/#pricing](https://lyenk.com/#pricing)
+* **FAQs:** [https://lyenk.com/#faq-modal](https://lyenk.com/#faq-modal)
+* **Privacy Policy:** [https://lyenk.com/privacy.html](https://lyenk.com/privacy.html)
+* **Terms of Service:** [https://lyenk.com/terms.html](https://lyenk.com/terms.html)
