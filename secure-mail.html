@@ -220,27 +220,47 @@
         }
         .navbar ul { list-style: none; display: flex; gap: 12px; align-items: center; }
         .navbar a { 
-            font-weight: 600; 
-            font-size: 0.95rem;
+            font-weight: 700; 
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
             color: #ffffff;
             padding: 8px 16px;
-            border-radius: 8px;
+            border-radius: 6px;
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
         }
         .navbar a:hover {
             color: #b39253;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.08);
         }
         .navbar .btn-primary {
-            background-color: #b28f51;
-            color: #ffffff;
+            background-color: #ffffff;
+            color: #1C0C2E;
+            font-weight: 800;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
             padding: 10px 20px;
-            border-radius: 8px;
+            border-radius: 6px;
+            border: none;
         }
         .navbar .btn-primary:hover {
-            background-color: #99783d;
-            color: #ffffff;
+            background-color: #f3f4f6;
+            color: #1C0C2E;
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 768px) {
+            .telemetry-bar .telemetry-col {
+                border-right: none !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+                padding-bottom: 20px !important;
+            }
+            .telemetry-bar .telemetry-col:last-child {
+                border-bottom: none !important;
+                padding-bottom: 0 !important;
+            }
         }
 
         /* Hero Grid Responsive Layout */
@@ -611,10 +631,10 @@
             </button>
             <nav aria-label="Main navigation">
                 <ul>
-                    <li><a href="/secure-mail" style="color: #ffffff; font-weight: 600;">Business Email</a></li>
+                    <li><a href="/secure-mail" style="color: #ffffff; font-weight: 700;">Business Email</a></li>
                     <li><a href="/#insight-engine">Insights Engine</a></li>
                     <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="https://wa.me/256756180429" class="btn-primary">Get Started</a></li>
+                    <li><a href="https://wa.me/256756180429" class="btn" style="background-color: #ffffff; color: #1C0C2E; font-weight: 800; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px 20px; border-radius: 6px; text-decoration: none; transition: all 0.2s;">Get Started</a></li>
                 </ul>
             </nav>
         </div>
@@ -705,27 +725,26 @@
     </aside>
 
     <!-- Hero Section -->
-    <section class="hero" id="home" style="padding: 140px 0 80px; background: linear-gradient(135deg, #1C0C2E 0%, #2A1442 45%, #5D2E8A 85%, #241138 100%); color: #ffffff; position: relative; overflow: hidden;">
+    <section class="hero" id="home" style="padding: 140px 0 80px; background: linear-gradient(135deg, #1C0C2E 0%, #2A1442 45%, #5D2E8A 85%, #1C0C2E 100%); color: #ffffff; position: relative; overflow: hidden;">
         <div class="container">
             <div class="hero-grid">
                 <div>
-                    <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(179,146,83,0.4); padding: 6px 16px; border-radius: 999px; margin-bottom: 20px;">
-                        <i class="fas fa-shield-alt" style="color: #b39253;"></i>
-                        <span style="color: #ffffff; font-size: 13px; font-weight: 600;">Sovereign Business Email & Cloud Workspace</span>
+                    <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #b39253; margin-bottom: 18px; display: inline-flex; align-items: center; gap: 8px;">
+                        <span style="display:inline-block; width: 6px; height: 6px; background:#b39253; border-radius: 50%;"></span> SOVEREIGN INFRASTRUCTURE
                     </div>
-                    <h1 style="margin-bottom: 20px; font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 800; line-height: 1.15; color: #ffffff;">
-                        Everything Your Business Needs to <span style="color: #b39253;">Work & Communicate Securely</span>, in One Plan.
+                    <h1 style="margin-bottom: 22px; font-size: clamp(2.4rem, 4.5vw, 3.8rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; color: #ffffff; text-transform: uppercase;">
+                        Everything Your Business Needs to <span style="color: #b39253;">Work & Communicate Securely</span>.
                     </h1>
-                    <p style="font-size: 1.1rem; line-height: 1.6; margin: 0 0 30px 0; color: #e9d5ff; max-width: 580px;">
+                    <p style="font-size: 1.15rem; line-height: 1.7; margin: 0 0 32px 0; color: #e9d5ff; max-width: 560px;">
                         Your business runs on trust, your email should too. Sovereign business email, encrypted WireGuard VPN access, and 60 GB pooled cloud storage — built for organizations that demand total data privacy without rigid per-user license fees.
                     </p>
                     
                     <div class="hero-btns-wrapper" style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
-                        <a href="https://wa.me/256756180429" class="btn btn-primary" style="background-color: #b28f51; border-color: #b28f51; color: #ffffff; padding: 16px 32px; font-size: 1.05rem; font-weight: bold; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); text-decoration: none;">
+                        <a href="https://wa.me/256756180429" class="btn" style="background: #ffffff; color: #1C0C2E; padding: 16px 36px; font-size: 0.88rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; border-radius: 6px; text-decoration: none; box-shadow: 0 10px 30px rgba(0,0,0,0.35); transition: all 0.2s;">
                             Schedule Deployment Call &rarr;
                         </a>
-                        <a href="#pricing" class="hero-chip" style="padding: 14px 22px; border-radius: 12px; background-color: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #ffffff; font-size: 14px; text-decoration: none; font-weight: 600; transition: all 0.2s;">
-                            View Flat Pricing ($6/mo) &darr;
+                        <a href="#pricing" class="hero-chip" style="padding: 16px 26px; border-radius: 6px; background-color: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.25); color: #ffffff; font-size: 0.88rem; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; transition: all 0.2s;">
+                            View Specifications &darr;
                         </a>
                     </div>
                 </div>
@@ -734,6 +753,30 @@
                     <div style="background: rgba(255,255,255,0.08); padding: 12px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); backdrop-filter: blur(10px); max-width: 560px; margin: 0 auto;">
                         <img src="assets/secure-mail-showcase.jpg" alt="Lyenk Business Email & Cloud Drive Interface" style="width: 100%; border-radius: 14px; display: block; object-fit: cover;">
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Starlink-Inspired Telemetry Spec Bar -->
+    <section class="telemetry-bar" style="background: #150824; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 36px 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; text-align: center;">
+                <div class="telemetry-col" style="border-right: 1px solid rgba(255,255,255,0.08); padding: 0 15px;">
+                    <div style="font-size: 2.6rem; font-weight: 800; color: #ffffff; line-height: 1; letter-spacing: -0.02em;">3 <span style="font-size: 1.3rem; color: #b39253;">BOXES</span></div>
+                    <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #d8b4fe; margin-top: 8px;">Custom Domain Mailboxes</div>
+                </div>
+                <div class="telemetry-col" style="border-right: 1px solid rgba(255,255,255,0.08); padding: 0 15px;">
+                    <div style="font-size: 2.6rem; font-weight: 800; color: #ffffff; line-height: 1; letter-spacing: -0.02em;">60 <span style="font-size: 1.3rem; color: #b39253;">GB</span></div>
+                    <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #d8b4fe; margin-top: 8px;">Pooled Cloud Storage</div>
+                </div>
+                <div class="telemetry-col" style="border-right: 1px solid rgba(255,255,255,0.08); padding: 0 15px;">
+                    <div style="font-size: 2.6rem; font-weight: 800; color: #ffffff; line-height: 1; letter-spacing: -0.02em;">256-BIT</div>
+                    <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #d8b4fe; margin-top: 8px;">WireGuard VPN Protocol</div>
+                </div>
+                <div class="telemetry-col" style="padding: 0 15px;">
+                    <div style="font-size: 2.6rem; font-weight: 800; color: #ffffff; line-height: 1; letter-spacing: -0.02em;">$6 <span style="font-size: 1.3rem; color: #b39253;">/ MO</span></div>
+                    <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #d8b4fe; margin-top: 8px;">Flat Rate for 3 Users ($72/YR)</div>
                 </div>
             </div>
         </div>
