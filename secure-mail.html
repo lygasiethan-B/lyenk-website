@@ -36,17 +36,98 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Lyenk Secure Mail & VPN",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "All",
-      "offers": {
-        "@type": "Offer",
-        "price": "6.00",
-        "priceCurrency": "USD",
-        "billingIncrement": "Monthly",
-        "description": "Baseline plan includes up to 3 custom domain mailboxes, secure WireGuard VPN access, and 60 GB of pooled Nextcloud storage. Additional mailboxes cost $1.00 per month."
-      }
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Lyenk Secure Mail & VPN",
+          "url": "https://lyenk.com/secure-mail.html",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "All",
+          "description": "Sovereign business email, WireGuard VPN remote access, and pooled Nextcloud cloud storage — fully under your organisation's control.",
+          "offers": {
+            "@type": "Offer",
+            "price": "6.00",
+            "priceCurrency": "USD",
+            "description": "Baseline plan includes up to 3 custom domain mailboxes, secure WireGuard VPN access, and 60 GB of pooled Nextcloud storage. Additional mailboxes cost $1.00 per month."
+          },
+          "provider": {
+            "@id": "https://lyenk.com/#organization"
+          }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://lyenk.com/#organization",
+          "name": "Lyenk",
+          "url": "https://lyenk.com/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://lyenk.com/assets/lyenk-main-logo.png"
+          },
+          "email": "info@lyenk.com",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "availableLanguage": "English",
+            "hoursAvailable": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+              "opens": "09:00",
+              "closes": "18:00"
+            },
+            "url": "https://wa.me/256756180429"
+          },
+          "sameAs": [
+            "https://www.instagram.com/lyenk.comm/",
+            "https://medium.com/@lyenk",
+            "https://www.linkedin.com/company/lyenk/"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is included in the Lyenk Secure Business Email plan?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The plan includes 3 custom domain mailboxes (e.g. you@yourcompany.com), encrypted WireGuard VPN for secure remote access, and 60 GB of pooled Nextcloud cloud storage, all billed annually at $6/user/month."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I add more mailboxes to my plan?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. You can add extra mailboxes at any time for just $12 per year each (equivalent to $1/month per mailbox)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is my business email data stored on shared servers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Lyenk deploys dedicated infrastructure for each organisation. Your email, VPN, and cloud storage run on isolated servers — not shared hosting — giving you full data sovereignty."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is WireGuard VPN and why does my business need it?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "WireGuard is a modern, high-performance VPN protocol. Lyenk uses it to give your team encrypted remote access to internal systems from anywhere, protecting sensitive business communications from interception."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I get started with Lyenk Secure Business Email?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Click the 'Request Quote' button on this page to reach our team directly via WhatsApp. We will set up your dedicated infrastructure and custom domain mailboxes within 24–48 hours."
+              }
+            }
+          ]
+        }
+      ]
     }
     </script>
     
