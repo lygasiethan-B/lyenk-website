@@ -30,6 +30,18 @@
     <meta name="twitter:description" content="Secure email &amp; cloud infrastructure under your control. Real customer insights &amp; verified service providers.">
     <meta name="twitter:image" content="https://lyenk.com/assets/lyenk-og-final.png">
     
+    <!-- Clean URL Canonical Normalization -->
+    <script>
+        (function() {
+            var p = window.location.pathname;
+            if (p.endsWith('.html') || p.includes('/index.html')) {
+                var clean = p.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+                if (!clean) clean = '/';
+                window.location.replace(clean + window.location.search + window.location.hash);
+            }
+        })();
+    </script>
+    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCSVB2VNKN"></script>
     <script>
@@ -1241,7 +1253,7 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <a href="#home" style="text-decoration: none; display: flex; align-items: center; gap: 12px;">
+                <a href="/" style="text-decoration: none; display: flex; align-items: center; gap: 12px;">
                     <img src="./Lyenk-Main-Logo.png" alt="Lyenk B2B SaaS Ecosystem" class="navbar-logo" style="max-height: 40px; width: auto;">
                 </a>
             </div>

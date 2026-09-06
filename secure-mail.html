@@ -19,6 +19,18 @@
     <meta name="twitter:title" content="Secure B2B Email & Business VPN | Lyenk Enterprise Cloud">
     <meta name="twitter:description" content="Lyenk provides secure B2B email, team-wide WireGuard VPN, and 60 GB pooled cloud storage for $6/mo. Designed for African enterprises needing high deliverability.">
     
+    <!-- Clean URL Canonical Normalization -->
+    <script>
+        (function() {
+            var p = window.location.pathname;
+            if (p.endsWith('.html') || p.includes('/index.html')) {
+                var clean = p.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+                if (!clean) clean = '/';
+                window.location.replace(clean + window.location.search + window.location.hash);
+            }
+        })();
+    </script>
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCSVB2VNKN"></script>
     <script>
