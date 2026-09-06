@@ -181,7 +181,7 @@
 
         /* Header Styles - Deep Luxury Purple Frosted Glassmorphism */
         header { 
-            background-color: rgba(42, 20, 66, 0.85); 
+            background-color: rgba(28, 12, 46, 0.92); 
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             box-shadow: 0 2px 10px rgba(0,0,0,0.3); 
@@ -193,7 +193,7 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         header.scrolled {
-            background-color: rgba(28, 12, 46, 0.96);
+            background-color: rgba(28, 12, 46, 0.98);
             box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
             border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         }
@@ -208,13 +208,15 @@
             padding: 10px 0;
         }
         .navbar-logo {
-            max-height: 22px;
+            height: 16px;
+            max-height: 16px;
             width: auto;
             display: block;
-            transition: max-height 0.3s ease;
+            transition: all 0.3s ease;
         }
         header.scrolled .navbar-logo {
-            max-height: 19px;
+            height: 15px;
+            max-height: 15px;
         }
         .navbar ul { list-style: none; display: flex; gap: 12px; align-items: center; }
         .navbar a { 
@@ -241,20 +243,70 @@
             color: #ffffff;
         }
 
-        .hero { background-color: var(--brand-purple); color: var(--white); padding: 100px 0; text-align: center; }
-        .hero h1 { color: var(--white); font-size: 3rem; margin-bottom: 20px; }
+        /* Hero Grid Responsive Layout */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: center;
+            text-align: left;
+            width: 100%;
+        }
+
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            .hero-grid p {
+                margin: 0 auto 30px auto !important;
+            }
+            .hero-btns-wrapper {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-btns-wrapper {
+                flex-direction: column;
+                width: 100%;
+            }
+            .hero-btns-wrapper a {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+            }
+        }
+
+        .hero-chip:hover {
+            background-color: #ffffff !important;
+            color: #b39253 !important;
+        }
+
+        .feature-card-modern:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(42, 20, 66, 0.08) !important;
+            border-color: rgba(179, 146, 83, 0.3) !important;
+        }
+
+        .hero { background: linear-gradient(135deg, #1C0C2E 0%, #2A1442 45%, #5D2E8A 85%, #241138 100%); color: var(--white); padding: 140px 0 90px; }
+        .hero h1 { color: var(--white); font-size: clamp(2.2rem, 4vw, 3.4rem); margin-bottom: 20px; }
         
         section { padding: 80px 0; }
         .section-light { background-color: var(--white); }
 
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; margin-top: 40px; }
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; margin-top: 40px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px; }
+        @media (max-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr; }
+        }
         
-        .card { background: var(--white); padding: 40px; border-radius: 8px; border: 1px solid var(--border-color); }
+        .card { background: var(--white); padding: 40px; border-radius: 16px; border: 1px solid var(--border-color); }
         .card i { font-size: 2.5rem; color: var(--brand-purple); margin-bottom: 20px; }
-        .card img { width: 100%; border-radius: 6px; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .card img { width: 100%; border-radius: 10px; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 
-        .pricing-box { background: var(--white); padding: 50px; border-radius: 8px; border-top: 6px solid var(--brand-purple); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .pricing-box { background: var(--white); padding: 50px; border-radius: 16px; border-top: 6px solid var(--brand-purple); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
         .pricing-list { list-style: none; margin-top: 30px; margin-bottom: 40px; }
         .pricing-list li { margin-bottom: 15px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; color: var(--brand-purple); font-weight: 500; }
         
@@ -341,7 +393,7 @@
         }
 
         /* Footer */
-        footer { background-color: #2A1442; border-top: 1px solid rgba(255, 255, 255, 0.1); color: var(--white); padding: 60px 0 30px; }
+        footer { background-color: #1C0C2E; border-top: 1px solid rgba(255, 255, 255, 0.1); color: var(--white); padding: 60px 0 30px; }
         .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
         .footer-column h3 { color: var(--white); margin-bottom: 20px; font-size: 1.2rem; }
         .footer-column ul { list-style: none; }
@@ -551,17 +603,17 @@
 
     <header>
         <div class="container navbar">
-            <a href="/" style="display: flex; align-items: center; gap: 12px;">
-                <img src="assets/lyenk-logo-white.png" alt="Lyenk" class="navbar-logo">
+            <a href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none;">
+                <img src="assets/lyenk-logo-white.png" alt="Lyenk" class="navbar-logo" style="height: 16px; max-height: 16px; width: auto; display: block;">
             </a>
             <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars"></i>
             </button>
             <nav aria-label="Main navigation">
                 <ul>
-                    <li><a href="/secure-mail" style="color: #ffffff; font-weight: 600;">Secure Business Mail</a></li>
+                    <li><a href="/secure-mail" style="color: #ffffff; font-weight: 600;">Business Email</a></li>
                     <li><a href="/#insight-engine">Insights Engine</a></li>
-                    <li><a href="/#pricing">Pricing</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
                     <li><a href="https://wa.me/256756180429" class="btn-primary">Get Started</a></li>
                 </ul>
             </nav>
@@ -575,7 +627,7 @@
     <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
         <div class="drawer-header">
             <div class="drawer-logo">
-                <img src="assets/lyenk-logo-white.png" alt="Lyenk" style="max-height: 20px; width: auto; display: block;">
+                <img src="assets/lyenk-logo-white.png" alt="Lyenk" style="height: 16px; max-height: 16px; width: auto; display: block;">
             </div>
             <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close navigation menu">
                 <i class="fas fa-times"></i>
@@ -604,13 +656,13 @@
                     </div>
                     <div class="drawer-item-text">
                         <div class="drawer-item-title">
-                            <span>Secure Business Mail</span>
+                            <span>Business Email</span>
                         </div>
                         <div class="drawer-item-desc">Sovereign email & cloud storage</div>
                     </div>
                 </a>
 
-                <a href="/#pricing" class="drawer-nav-item">
+                <a href="#pricing" class="drawer-nav-item">
                     <div class="drawer-icon-box" style="background: rgba(16, 185, 129, 0.2); color: #34d399;">
                         <i class="fas fa-tags"></i>
                     </div>
@@ -618,7 +670,7 @@
                         <div class="drawer-item-title">
                             <span>Pricing & Plans</span>
                         </div>
-                        <div class="drawer-item-desc">Transparent $15, $30, $49/mo tiers</div>
+                        <div class="drawer-item-desc">Flat $6/mo for 3 users ($72/yr)</div>
                     </div>
                 </a>
             </nav>
@@ -645,161 +697,286 @@
         </div>
 
         <div class="drawer-footer">
-            <a href="https://engine.lyenk.com/#/auth" class="btn" style="width: 100%; text-align: center; background: linear-gradient(135deg, #b39253 0%, #99783d 100%); color: #fff; padding: 14px; border-radius: 12px; font-weight: 700; margin-bottom: 10px; text-decoration: none; display: block; box-shadow: 0 4px 15px rgba(179,146,83,0.3);">
-                Start Free Trial (25 Responses) &rarr;
+            <a href="https://wa.me/256756180429" class="btn" style="width: 100%; text-align: center; background: linear-gradient(135deg, #b39253 0%, #99783d 100%); color: #fff; padding: 14px; border-radius: 12px; font-weight: 700; margin-bottom: 10px; text-decoration: none; display: block; box-shadow: 0 4px 15px rgba(179,146,83,0.3);">
+                Schedule Deployment Call &rarr;
             </a>
-            <p style="font-size: 0.75rem; color: #d8b4fe; text-align: center; margin: 0;">No credit card required</p>
+            <p style="font-size: 0.75rem; color: #d8b4fe; text-align: center; margin: 0;">White-glove migration included</p>
         </div>
     </aside>
 
-    <section class="hero">
+    <!-- Hero Section -->
+    <section class="hero" id="home" style="padding: 140px 0 80px; background: linear-gradient(135deg, #1C0C2E 0%, #2A1442 45%, #5D2E8A 85%, #241138 100%); color: #ffffff; position: relative; overflow: hidden;">
         <div class="container">
-            <h1>Everything Your Business Needs to Communicate and Work Securely, in One Plan.</h1>
-            <p style="font-size: 1.2rem; color: #e0e0e0; max-width: 800px; margin: 0 auto 40px;">
-                Your business runs on trust, your email should too. Our Mail and Drive puts your company's communication and data fully under your control: secure business email, encrypted remote access for your whole team, and 60 GB of shared cloud storage, all in one place.<br><br>Built for Small and Growing Businesses (SGB) and organisations that demand absolute data privacy without paying rigid, per-user license fees.
-            </p>
-            <a href="https://wa.me/256756180429" class="btn-primary" style="font-size: 1.2rem; padding: 18px 40px;">Schedule Deployment Call</a>
-        </div>
-    </section>
-
-    <section class="section-light">
-        <div class="container">
-            <h2>The Lyenk Enterprise Advantage</h2>
-            <p>
-                Your business runs on trust, your email should too. Our Mail and Drive puts your company's communication and data fully under your control: secure business email, encrypted remote access for your whole team, and 60 GB of shared cloud storage, all in one place.<br><br>
-                Built for growing organisations that demand absolute data privacy without paying rigid, per-user license fees.
-            </p>
-
-            <div class="grid-3">
-                <div class="card">
-                    <img src="./logos/LYENK Mail 1.png" alt="Lyenk Secure Mail Interface">
-                    <h3>Absolute Data Security</h3>
-                    <p>
-                        Our engineering team hosts your sensitive data exclusively on secure regional servers. We use strict encryption protocols to protect your administrative access and keep your information shielded from unauthorized entry. This localized approach supports regulatory compliance and keeps your data out of unauthorized offshore systems.
+            <div class="hero-grid">
+                <div>
+                    <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(179,146,83,0.4); padding: 6px 16px; border-radius: 999px; margin-bottom: 20px;">
+                        <i class="fas fa-shield-alt" style="color: #b39253;"></i>
+                        <span style="color: #ffffff; font-size: 13px; font-weight: 600;">Sovereign Business Email & Cloud Workspace</span>
+                    </div>
+                    <h1 style="margin-bottom: 20px; font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 800; line-height: 1.15; color: #ffffff;">
+                        Everything Your Business Needs to <span style="color: #b39253;">Work & Communicate Securely</span>, in One Plan.
+                    </h1>
+                    <p style="font-size: 1.1rem; line-height: 1.6; margin: 0 0 30px 0; color: #e9d5ff; max-width: 580px;">
+                        Your business runs on trust, your email should too. Sovereign business email, encrypted WireGuard VPN access, and 60 GB pooled cloud storage — built for organizations that demand total data privacy without rigid per-user license fees.
                     </p>
-                </div>
-                
-                <div class="card">
-                    <img src="./logos/LYENK Drive 1.png" alt="Lyenk Shared Cloud Drive">
-                    <h3>Dedicated Online Support</h3>
-                    <p>
-                        Lyenk maintains a dedicated team of infrastructure engineers available online to provide premium support. You speak directly with our engineers, not automated bots, for fast, reliable technical resolutions. This hands-on approach means your business gets specialized guidance for even your most complex networking needs.
-                    </p>
-                </div>
-                
-                <div class="card">
-                    <img src="./logos/Lyenk-Platfomr-Logo.png" alt="Lyenk Platform">
-                    <h3>Trusted Inbox Delivery</h3>
-                    <p>
-                        Our platform is configured with industry-standard email authentication to protect your domain and maximize inbox placement. We align every layer of your email infrastructure to prevent domain spoofing and keep your communications trusted by major email providers.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section style="background-color: var(--brand-purple); color: var(--white);">
-        <div class="container">
-            <h2 style="color: var(--white); text-align: center;">Simple, Honest Pricing</h2>
-            <p style="color: #e0e0e0; text-align: center; max-width: 800px; margin: 0 auto;">
-                One flat rate for 3 users, billed annually. Your plan includes three custom mailboxes, secure team-wide remote access, and sixty gigabytes of pooled storage. Need more mailboxes? Add them anytime for just $12/year each.
-            </p>
-            
-            <div class="grid-2" style="max-width: 900px; margin: 50px auto 0;">
-                <div class="pricing-box">
-                    <h3 style="font-size: 2rem;">The Baseline Plan</h3>
-                    <div style="font-size: 3rem; color: var(--brand-purple); font-weight: bold; margin: 10px 0;">$6 <span style="font-size: 1.2rem; color: var(--muted-text); font-weight: normal;">USD/mo for 3 users</span></div>
-                    <div style="font-size: 1rem; color: var(--muted-text); font-weight: 500; margin-bottom: 20px;">Billed annually at $72/year upfront</div>
                     
-                    <ul class="pricing-list">
-                        <li><i class="fa-solid fa-check" style="color: var(--brand-amber); margin-right: 10px;"></i> Up to 3 Custom Domain Mailboxes</li>
-                        <li><i class="fa-solid fa-check" style="color: var(--brand-amber); margin-right: 10px;"></i> Secure Team-Wide Remote Access</li>
-                        <li><i class="fa-solid fa-check" style="color: var(--brand-amber); margin-right: 10px;"></i> 60 GB Pooled Lyenk Drive Storage</li>
-                        <li><i class="fa-solid fa-check" style="color: var(--brand-amber); margin-right: 10px;"></i> +$1 USD/mo per extra user, billed at $12/year</li>
-                    </ul>
-                    <a href="https://wa.me/256756180429" class="btn-primary" style="display: block; width: 100%;">Request Quote</a>
+                    <div class="hero-btns-wrapper" style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+                        <a href="https://wa.me/256756180429" class="btn btn-primary" style="background-color: #b28f51; border-color: #b28f51; color: #ffffff; padding: 16px 32px; font-size: 1.05rem; font-weight: bold; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.2); text-decoration: none;">
+                            Schedule Deployment Call &rarr;
+                        </a>
+                        <a href="#pricing" class="hero-chip" style="padding: 14px 22px; border-radius: 12px; background-color: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #ffffff; font-size: 14px; text-decoration: none; font-weight: 600; transition: all 0.2s;">
+                            View Flat Pricing ($6/mo) &darr;
+                        </a>
+                    </div>
                 </div>
 
-                <div class="card" style="background: transparent; border: none; color: var(--white); padding: 0;">
-                    <h3 style="color: var(--white);">White-Glove Setup, Included</h3>
-                    <p style="color: #e0e0e0;">
-                        Every new account includes a one-time setup of fifty dollars. Our team handles your entire migration personally, moving your existing inbox history, verifying your domain, and configuring everything needed for strong email delivery, so you don't have to touch a single technical setting.
-                    </p>
-                    <ul style="list-style: none; margin-top: 30px; color: #e0e0e0;">
-                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-arrow-right" style="color: var(--brand-amber); margin-right: 10px;"></i> We set up your domain authentication correctly, the first time.</li>
-                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-arrow-right" style="color: var(--brand-amber); margin-right: 10px;"></i> Your existing emails move over safely, nothing lost.</li>
-                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-arrow-right" style="color: var(--brand-amber); margin-right: 10px;"></i> Your account is ready to send and receive, fully verified.</li>
-                        <li style="margin-bottom: 15px;"><i class="fa-solid fa-arrow-right" style="color: var(--brand-amber); margin-right: 10px;"></i> You get a dedicated person, not a help article.</li>
-                    </ul>
+                <div style="text-align: center; position: relative;">
+                    <div style="background: rgba(255,255,255,0.08); padding: 12px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); backdrop-filter: blur(10px); max-width: 560px; margin: 0 auto;">
+                        <img src="assets/secure-mail-showcase.jpg" alt="Lyenk Business Email & Cloud Drive Interface" style="width: 100%; border-radius: 14px; display: block; object-fit: cover;">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section-light">
-        <div class="container grid-2" style="align-items: center;">
-            <div>
-                <h2>Why Businesses Choose Lyenk</h2>
-                <p>
-                    Most businesses secure a real advantage by choosing one provider that handles everything, instead of stitching together expensive per-user licenses. Lyenk combines your storage and communication into one simple, secure plan. That means fewer costs to track, fewer tools to manage, and full control over where your data actually lives.
+    <!-- Enterprise Advantage Section -->
+    <section class="section-light" id="features" style="background-color: #f7f4fa; padding: 90px 0;">
+        <div class="container">
+            <div style="text-align: center; max-width: 760px; margin: 0 auto 50px;">
+                <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(93, 46, 138, 0.08); border: 1px solid rgba(93, 46, 138, 0.2); padding: 6px 16px; border-radius: 999px; margin-bottom: 16px;">
+                    <i class="fas fa-crown" style="color: #b39253;"></i>
+                    <span style="color: #2A1442; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Enterprise Architecture</span>
+                </div>
+                <h2 style="font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 800; color: #1C0C2E; line-height: 1.2; margin-bottom: 16px;">
+                    The Lyenk Enterprise Advantage
+                </h2>
+                <p style="color: #5D2E8A; font-size: 1.1rem; line-height: 1.6;">
+                    Built for Small and Growing Businesses (SGBs) and organizations that demand absolute data privacy without paying rigid, per-user license fees.
                 </p>
-                <a href="https://wa.me/256756180429" class="btn-primary" style="margin-top: 20px;">Talk to Our Team</a>
             </div>
-            <div style="background: var(--bg-light); padding: 40px; border-radius: 8px; border: 1px solid var(--border-color);">
-                <h4 style="margin-bottom: 20px; font-size: 1.2rem;">Big Tech Alternatives</h4>
-                <ul style="list-style: none; margin-bottom: 30px;">
-                    <li style="margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="color: #dc3545; margin-right: 10px;"></i> High per-user licensing costs</li>
-                    <li style="margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="color: #dc3545; margin-right: 10px;"></i> Automated, non-responsive support bots</li>
-                    <li style="margin-bottom: 10px;"><i class="fa-solid fa-xmark" style="color: #dc3545; margin-right: 10px;"></i> Opaque foreign data aggregation</li>
+
+            <div class="grid-3" style="gap: 30px;">
+                <div class="feature-card-modern" style="background: #ffffff; padding: 36px 30px; border-radius: 20px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 10px 30px rgba(42, 20, 66, 0.04); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div style="width: 54px; height: 54px; border-radius: 14px; background: rgba(93, 46, 138, 0.1); color: #5D2E8A; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 22px;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 style="font-size: 1.35rem; font-weight: 700; color: #1C0C2E; margin-bottom: 12px;">Absolute Data Security</h3>
+                    <p style="color: #6b7280; font-size: 0.95rem; line-height: 1.65; margin: 0;">
+                        Our engineering team hosts your sensitive data exclusively on secure regional servers. We use strict encryption protocols to protect your administrative access and keep your information shielded from unauthorized entry.
+                    </p>
+                </div>
+                
+                <div class="feature-card-modern" style="background: #ffffff; padding: 36px 30px; border-radius: 20px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 10px 30px rgba(42, 20, 66, 0.04); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div style="width: 54px; height: 54px; border-radius: 14px; background: rgba(179, 146, 83, 0.15); color: #b39253; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 22px;">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 style="font-size: 1.35rem; font-weight: 700; color: #1C0C2E; margin-bottom: 12px;">Dedicated Support Engineers</h3>
+                    <p style="color: #6b7280; font-size: 0.95rem; line-height: 1.65; margin: 0;">
+                        Lyenk maintains a dedicated team of infrastructure engineers available online to provide premium support. You speak directly with our engineers on WhatsApp, not automated bots, for fast, reliable technical resolutions.
+                    </p>
+                </div>
+                
+                <div class="feature-card-modern" style="background: #ffffff; padding: 36px 30px; border-radius: 20px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 10px 30px rgba(42, 20, 66, 0.04); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div style="width: 54px; height: 54px; border-radius: 14px; background: rgba(16, 185, 129, 0.12); color: #10b981; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 22px;">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
+                    <h3 style="font-size: 1.35rem; font-weight: 700; color: #1C0C2E; margin-bottom: 12px;">Trusted Inbox Placement</h3>
+                    <p style="color: #6b7280; font-size: 0.95rem; line-height: 1.65; margin: 0;">
+                        Our platform is configured with industry-standard email authentication (SPF, DKIM, DMARC, PTR) to protect your domain and maximize inbox placement without landing in spam filters.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" style="background: linear-gradient(180deg, #1C0C2E 0%, #241138 100%); color: #ffffff; padding: 100px 0;">
+        <div class="container">
+            <div style="text-align: center; max-width: 760px; margin: 0 auto 60px;">
+                <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.08); border: 1px solid rgba(179,146,83,0.4); padding: 6px 16px; border-radius: 999px; margin-bottom: 16px;">
+                    <i class="fas fa-tags" style="color: #b39253;"></i>
+                    <span style="color: #ffffff; font-size: 13px; font-weight: 600;">Transparent Flat Pricing</span>
+                </div>
+                <h2 style="font-size: clamp(2.2rem, 3.5vw, 3rem); font-weight: 800; color: #ffffff; margin-bottom: 16px;">
+                    Simple, Honest Pricing
+                </h2>
+                <p style="color: #d8b4fe; font-size: 1.1rem; line-height: 1.6;">
+                    One flat rate for 3 users, billed annually. Your plan includes three custom mailboxes, secure team-wide remote access, and sixty gigabytes of pooled storage.
+                </p>
+            </div>
+            
+            <div class="grid-2" style="max-width: 960px; margin: 0 auto; align-items: stretch; gap: 36px;">
+                <!-- Main Pricing Box -->
+                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(179,146,83,0.4); padding: 48px 40px; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.4); backdrop-filter: blur(12px); display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+                    <div style="position: absolute; top: -14px; right: 30px; background: linear-gradient(135deg, #b39253 0%, #99783d 100%); color: #fff; font-size: 12px; font-weight: 700; padding: 4px 14px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(179,146,83,0.4);">
+                        Most Popular for SGBs
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.8rem; font-weight: 800; color: #ffffff; margin-bottom: 10px;">The Baseline Plan</h3>
+                        <div style="display: flex; align-items: baseline; gap: 8px; margin: 15px 0 6px;">
+                            <span style="font-size: 3.4rem; font-weight: 800; color: #b39253; line-height: 1;">$6</span>
+                            <span style="font-size: 1.1rem; color: #d8b4fe; font-weight: 500;">USD/mo for 3 users</span>
+                        </div>
+                        <div style="font-size: 0.95rem; color: #e9d5ff; font-weight: 500; margin-bottom: 30px;">
+                            Billed annually at $72/year upfront
+                        </div>
+                        
+                        <ul style="list-style: none; padding: 0; margin: 0 0 36px 0;">
+                            <li style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.08); color: #ffffff; font-size: 0.98rem;">
+                                <i class="fas fa-check-circle" style="color: #b39253; font-size: 1.1rem;"></i> Up to 3 Custom Domain Mailboxes
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.08); color: #ffffff; font-size: 0.98rem;">
+                                <i class="fas fa-check-circle" style="color: #b39253; font-size: 1.1rem;"></i> Secure Team-Wide WireGuard VPN
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.08); color: #ffffff; font-size: 0.98rem;">
+                                <i class="fas fa-check-circle" style="color: #b39253; font-size: 1.1rem;"></i> 60 GB Pooled Nextcloud Storage
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 12px; padding: 12px 0; color: #ffffff; font-size: 0.98rem;">
+                                <i class="fas fa-check-circle" style="color: #b39253; font-size: 1.1rem;"></i> +$1 USD/mo per extra user ($12/yr)
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="https://wa.me/256756180429" class="btn" style="display: block; width: 100%; text-align: center; background: linear-gradient(135deg, #b39253 0%, #99783d 100%); color: #ffffff; padding: 16px; border-radius: 12px; font-weight: 700; font-size: 1.05rem; text-decoration: none; box-shadow: 0 4px 20px rgba(179,146,83,0.35); transition: all 0.2s ease;">
+                        Request Deployment on WhatsApp &rarr;
+                    </a>
+                </div>
+
+                <!-- White-Glove Setup Card -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 48px 40px; border-radius: 24px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(179,146,83,0.15); border: 1px solid rgba(179,146,83,0.3); padding: 4px 12px; border-radius: 999px; margin-bottom: 18px;">
+                            <span style="color: #b39253; font-size: 12px; font-weight: 700;">$50 ONE-TIME SETUP</span>
+                        </div>
+                        <h3 style="font-size: 1.8rem; font-weight: 800; color: #ffffff; margin-bottom: 16px;">White-Glove Migration & Onboarding</h3>
+                        <p style="color: #d8b4fe; line-height: 1.65; margin-bottom: 24px; font-size: 0.98rem;">
+                            Our engineers handle your entire migration personally. We move existing inbox history, verify DNS keys, and configure deliverability protocols so your staff doesn't touch a single terminal.
+                        </p>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; color: #e9d5ff; font-size: 0.95rem;">
+                                <i class="fas fa-shield-halved" style="color: #b39253; margin-top: 4px;"></i>
+                                <span>Complete SPF, DKIM, and DMARC verification</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; color: #e9d5ff; font-size: 0.95rem;">
+                                <i class="fas fa-database" style="color: #b39253; margin-top: 4px;"></i>
+                                <span>Zero-loss historical inbox and contact transfer</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; color: #e9d5ff; font-size: 0.95rem;">
+                                <i class="fas fa-lock" style="color: #b39253; margin-top: 4px;"></i>
+                                <span>Encrypted WireGuard profiles configured for mobile/desktop</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 12px; color: #e9d5ff; font-size: 0.95rem;">
+                                <i class="fab fa-whatsapp" style="color: #25d366; margin-top: 4px;"></i>
+                                <span>Direct WhatsApp access to your assigned setup engineer</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Businesses Choose Lyenk -->
+    <section class="section-light" style="background: #ffffff; padding: 90px 0;">
+        <div class="container grid-2" style="align-items: center; gap: 50px;">
+            <div>
+                <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(93,46,138,0.08); border: 1px solid rgba(93,46,138,0.2); padding: 6px 14px; border-radius: 999px; margin-bottom: 16px;">
+                    <i class="fas fa-check-double" style="color: #5D2E8A;"></i>
+                    <span style="color: #2A1442; font-size: 13px; font-weight: 700;">THE SMARTER ALTERNATIVE</span>
+                </div>
+                <h2 style="font-size: clamp(2rem, 3.2vw, 2.6rem); font-weight: 800; color: #1C0C2E; line-height: 1.25; margin-bottom: 18px;">
+                    Why Growing Businesses Choose Lyenk
+                </h2>
+                <p style="color: #4b5563; font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px;">
+                    Most businesses secure a real competitive advantage by choosing one provider that handles everything, instead of stitching together expensive per-user licenses. Lyenk combines your storage, communication, and encrypted access into one simple, sovereign plan.
+                </p>
+                <a href="https://wa.me/256756180429" class="btn" style="display: inline-flex; align-items: center; gap: 10px; background: #2A1442; color: #ffffff; padding: 14px 28px; border-radius: 12px; font-weight: 700; text-decoration: none;">
+                    <i class="fab fa-whatsapp" style="color: #25d366; font-size: 1.2rem;"></i> Talk to Our Engineers
+                </a>
+            </div>
+            <div style="background: #fdfbf7; padding: 40px; border-radius: 20px; border: 1px solid rgba(179,146,83,0.25); box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
+                <h4 style="margin-bottom: 16px; font-size: 1.15rem; font-weight: 700; color: #dc2626; display: flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-times-circle"></i> Big Tech Alternatives
+                </h4>
+                <ul style="list-style: none; margin-bottom: 28px; padding: 0;">
+                    <li style="margin-bottom: 12px; color: #4b5563; font-size: 0.95rem; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-times" style="color: #dc2626; width: 16px;"></i> High per-user licensing costs ($7–$15/user/month)
+                    </li>
+                    <li style="margin-bottom: 12px; color: #4b5563; font-size: 0.95rem; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-times" style="color: #dc2626; width: 16px;"></i> Automated, non-responsive support tickets & bots
+                    </li>
+                    <li style="color: #4b5563; font-size: 0.95rem; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-times" style="color: #dc2626; width: 16px;"></i> Opaque foreign data aggregation & policy changes
+                    </li>
                 </ul>
                 
-                <h4 style="margin-bottom: 20px; font-size: 1.2rem; border-top: 1px solid var(--border-color); padding-top: 20px;">The Lyenk Plan</h4>
-                <ul style="list-style: none;">
-                    <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--brand-amber); margin-right: 10px;"></i> One flat price per domain</li>
-                    <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--brand-amber); margin-right: 10px;"></i> A real person on your support team</li>
-                    <li style="margin-bottom: 10px;"><i class="fa-solid fa-check" style="color: var(--brand-amber); margin-right: 10px;"></i> Your data, hosted close to home</li>
+                <h4 style="margin-bottom: 16px; font-size: 1.15rem; font-weight: 700; color: #16a34a; border-top: 1px solid rgba(0,0,0,0.08); padding-top: 24px; display: flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-check-circle"></i> The Lyenk Sovereign Plan
+                </h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 12px; color: #1f2937; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-check" style="color: #16a34a; width: 16px;"></i> One flat price per domain ($6/mo for 3 mailboxes)
+                    </li>
+                    <li style="margin-bottom: 12px; color: #1f2937; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-check" style="color: #16a34a; width: 16px;"></i> A real infrastructure engineer on WhatsApp
+                    </li>
+                    <li style="color: #1f2937; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-check" style="color: #16a34a; width: 16px;"></i> Your data hosted locally with 256-bit encryption
+                    </li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section>
-        <div class="container" style="max-width: 800px; text-align: center;">
-            <h2>Enterprise FAQ</h2>
-            <p style="margin-bottom: 30px;">
-                Here are clear answers to the questions we hear most, about security, reliability, storage, and getting started. We've built Lyenk specifically for the needs of small and growing businesses across Africa.
-            </p>
-            <button id="open-faq-modal" class="btn-primary" style="cursor: pointer; border: none; font-size: 1rem;">View Enterprise FAQ</button>
-            <div class="section-title">
-                <h2>Why Organisations Choose Sovereign Mail</h2>
-                <p>Enterprise reliability meets local deployment agility.</p>
+    <!-- Specifications Grid & FAQ Section -->
+    <section style="background: #f7f4fa; padding: 90px 0;">
+        <div class="container" style="max-width: 900px; text-align: center;">
+            <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(93,46,138,0.08); border: 1px solid rgba(93,46,138,0.2); padding: 6px 16px; border-radius: 999px; margin-bottom: 16px;">
+                <i class="fas fa-server" style="color: #b39253;"></i>
+                <span style="color: #2A1442; font-size: 13px; font-weight: 700;">ENTERPRISE SPECIFICATIONS</span>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Anti-Spam & Deliverability</h3>
-                    <p>Configured with strict SPF, DKIM, DMARC, and PTR records. Your outgoing communications reach recipient inboxes without landing in spam filters.</p>
+            <h2 style="font-size: clamp(2rem, 3.2vw, 2.6rem); font-weight: 800; color: #1C0C2E; margin-bottom: 16px;">
+                Why Organisations Choose Sovereign Mail
+            </h2>
+            <p style="color: #6b7280; font-size: 1.05rem; margin-bottom: 40px;">Enterprise reliability meets local deployment agility.</p>
+
+            <div class="grid-3" style="text-align: left; gap: 24px; margin-bottom: 50px;">
+                <div style="background: #ffffff; padding: 30px 24px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                    <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(93, 46, 138, 0.1); color: #5D2E8A; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 16px;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; color: #1C0C2E; margin-bottom: 8px;">Anti-Spam & Deliverability</h3>
+                    <p style="color: #6b7280; font-size: 0.9rem; line-height: 1.6; margin: 0;">Configured with strict SPF, DKIM, DMARC, and PTR records. Your outgoing communications reach recipient inboxes reliably.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-network-wired"></i></div>
-                    <h3>Team VPN Remote Access</h3>
-                    <p>Encrypted WireGuard VPN tunnels connect your branch offices, remote staff, and mobile workforce directly to secure internal services.</p>
+                <div style="background: #ffffff; padding: 30px 24px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                    <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(179, 146, 83, 0.15); color: #b39253; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 16px;">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; color: #1C0C2E; margin-bottom: 8px;">Team WireGuard VPN</h3>
+                    <p style="color: #6b7280; font-size: 0.9rem; line-height: 1.6; margin: 0;">Encrypted WireGuard VPN tunnels connect your branch offices, remote staff, and mobile workforce securely.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon"><i class="fas fa-hdd"></i></div>
-                    <h3>60 GB Pooled Storage</h3>
-                    <p>Flexible cloud storage pool shared across all team members, powered by sovereign Nextcloud / Object Storage without per-seat storage penalties.</p>
+                <div style="background: #ffffff; padding: 30px 24px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+                    <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(16, 185, 129, 0.12); color: #10b981; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 16px;">
+                        <i class="fas fa-hdd"></i>
+                    </div>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; color: #1C0C2E; margin-bottom: 8px;">60 GB Pooled Storage</h3>
+                    <p style="color: #6b7280; font-size: 0.9rem; line-height: 1.6; margin: 0;">Flexible cloud storage pool shared across all team members, powered by sovereign Nextcloud without per-seat penalties.</p>
                 </div>
             </div>
+
+            <button id="open-faq-modal" class="btn" style="background: linear-gradient(135deg, #b39253 0%, #99783d 100%); color: #ffffff; padding: 14px 32px; border-radius: 12px; font-weight: 700; border: none; cursor: pointer; box-shadow: 0 4px 15px rgba(179,146,83,0.3); font-size: 1rem;">
+                View Enterprise FAQ &rarr;
+            </button>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Lyenk</h3>
-                    <p>Lyenk is a hybrid B2B SaaS platform. Find out what your customers think. Then instantly connect with the right experts to make it happen.</p>
+                    <p>Lyenk powers high-converting customer feedback engines and sovereign enterprise communication infrastructure for modern businesses.</p>
                     <p style="margin-top: 15px;">Follow Us</p>
                     <div class="social-links">
                         <a href="https://www.instagram.com/lyenk.comm/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -811,8 +988,8 @@
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="/#insight-engine">Insights Engine</a></li>
-                        <li><a href="/#pricing">Pricing & Plans</a></li>
-                        <li><a href="/secure-mail">Secure Business Mail</a></li>
+                        <li><a href="#pricing">Pricing & Plans</a></li>
+                        <li><a href="/secure-mail">Business Email</a></li>
                         <li><a href="https://wa.me/256756180429">Get Started</a></li>
                         <li><a href="mail-lyenk.apk" download>Download Mail App</a></li>
                     </ul>
@@ -839,6 +1016,7 @@
                     <ul>
                         <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Rest of Africa</li>
                         <li><i class="fas fa-envelope" aria-hidden="true"></i> Email Us: info@lyenk.com</li>
+                        <li><a href="https://wa.me/256756180429" target="_blank" rel="noopener noreferrer" style="color: #25d366; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;"><i class="fab fa-whatsapp" aria-hidden="true" style="font-size: 1.1rem; color: #25d366;"></i> WhatsApp Us</a></li>
                         <li><i class="fas fa-clock" aria-hidden="true"></i> Monday to Friday (09:00 AM to 6:00 PM)</li>
                     </ul>
                 </div>

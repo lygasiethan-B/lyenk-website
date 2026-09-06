@@ -325,7 +325,7 @@
 
         /* Header Styles - Deep Luxury Purple Frosted Glassmorphism */
         header {
-            background-color: rgba(42, 20, 66, 0.85);
+            background-color: rgba(28, 12, 46, 0.92);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -337,7 +337,7 @@
         }
 
         header.scrolled {
-            background-color: rgba(28, 12, 46, 0.96);
+            background-color: rgba(28, 12, 46, 0.98);
             box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
             border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         }
@@ -360,14 +360,16 @@
         }
 
         .navbar-logo {
-            max-height: 22px;
+            height: 16px;
+            max-height: 16px;
             width: auto;
             display: block;
-            transition: max-height 0.3s ease, transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         header.scrolled .navbar-logo {
-            max-height: 19px;
+            height: 15px;
+            max-height: 15px;
         }
 
         .logo h1 {
@@ -956,7 +958,7 @@
 
         /* Footer */
         footer {
-            background-color: #2A1442;
+            background-color: #1C0C2E;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--white);
             padding: 60px 0 30px;
@@ -1395,7 +1397,7 @@
         <div class="container header-container">
             <div class="logo">
                 <a href="/" style="text-decoration: none; display: flex; align-items: center; gap: 12px;">
-                    <img src="assets/lyenk-logo-white.png" alt="Lyenk" class="navbar-logo">
+                    <img src="assets/lyenk-logo-white.png" alt="Lyenk" class="navbar-logo" style="height: 16px; max-height: 16px; width: auto; display: block;">
                 </a>
             </div>
             <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
@@ -1403,7 +1405,7 @@
             </button>
             <nav aria-label="Main navigation">
                 <ul>
-                    <li><a href="/secure-mail" style="color: #ffffff; font-weight: 600;">Secure Business Mail</a></li>
+                    <li><a href="/secure-mail" style="color: #ffffff; font-weight: 600;">Business Email</a></li>
                     <li><a href="#insight-engine">Insights Engine</a></li>
                     <li><a href="#pricing">Pricing</a></li>
                     <li><a href="https://wa.me/256756180429" class="btn btn-primary" style="background-color: #b28f51; border-color: #b28f51; color: #ffffff;">Get Started</a></li>
@@ -1419,7 +1421,7 @@
     <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
         <div class="drawer-header">
             <div class="drawer-logo">
-                <img src="assets/lyenk-logo-white.png" alt="Lyenk" style="max-height: 20px; width: auto; display: block;">
+                <img src="assets/lyenk-logo-white.png" alt="Lyenk" style="height: 16px; max-height: 16px; width: auto; display: block;">
             </div>
             <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close navigation menu">
                 <i class="fas fa-times"></i>
@@ -1448,7 +1450,7 @@
                     </div>
                     <div class="drawer-item-text">
                         <div class="drawer-item-title">
-                            <span>Secure Business Mail</span>
+                            <span>Business Email</span>
                         </div>
                         <div class="drawer-item-desc">Sovereign email & cloud storage</div>
                     </div>
@@ -1517,7 +1519,7 @@
                             Start Free Trial (25 Responses) &rarr;
                         </a>
                         <a href="/secure-mail" class="hero-chip" style="padding: 14px 22px; border-radius: 12px; background-color: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #ffffff; font-size: 14px; text-decoration: none; font-weight: 600; transition: all 0.2s;">
-                            Business Mail & Drive
+                            Business Email
                         </a>
                     </div>
                 </div>
@@ -1703,7 +1705,7 @@
                 <p>Start collecting verified ratings, boosting your 5-star Google reviews, and generating luxury social proof cards with 25 free responses.</p>
                 <div class="hero-btns">
                     <a href="https://engine.lyenk.com/#/auth" class="btn">Start Free Trial (25 Responses)</a>
-                    <a href="/secure-mail" class="btn btn-outline">Explore Secure Business Mail</a>
+                    <a href="/secure-mail" class="btn btn-outline">Explore Business Email</a>
                 </div>
             </div>
         </section>
@@ -1730,7 +1732,7 @@
                     <ul>
                         <li><a href="#insight-engine">Insights Engine</a></li>
                         <li><a href="#pricing">Pricing & Plans</a></li>
-                        <li><a href="/secure-mail">Secure Business Mail</a></li>
+                        <li><a href="/secure-mail">Business Email</a></li>
                         <li><a href="https://wa.me/256756180429">Get Started</a></li>
                     </ul>
                 </div>
@@ -1757,6 +1759,7 @@
                     <ul>
                         <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Rest of Africa</li>
                         <li><i class="fas fa-envelope" aria-hidden="true"></i> Email Us: info@lyenk.com</li>
+                        <li><a href="https://wa.me/256756180429" target="_blank" rel="noopener noreferrer" style="color: #25d366; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;"><i class="fab fa-whatsapp" aria-hidden="true" style="font-size: 1.1rem; color: #25d366;"></i> WhatsApp Us</a></li>
                         <li><i class="fas fa-clock" aria-hidden="true"></i> Monday to Friday (09:00 AM to 6:00 PM)</li>
                     </ul>
                 </div>
@@ -1796,7 +1799,7 @@
                 <h2 id="faq-modal-title">Frequently Asked Questions</h2>
             </div>
             <div class="modal-body">
-                <p>Find answers to the most common questions about using Lyenk Insight Engine and Secure Business Mail.</p>
+                <p>Find answers to the most common questions about using Lyenk Insight Engine and Business Email.</p>
                 
                 <div class="faq-item">
                     <button class="faq-question">What is Lyenk Insight Engine?</button>
