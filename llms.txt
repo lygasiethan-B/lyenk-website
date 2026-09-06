@@ -10,7 +10,7 @@ Lyenk solves three critical problems for African businesses:
 
 ## Core Products
 
-### Secure Business Email & Cloud (lyenk.com/secure-mail.html)
+### Secure Business Email & Cloud (lyenk.com/secure-mail)
 * Custom domain mailboxes (e.g. you@yourcompany.com) on dedicated servers
 * WireGuard VPN for encrypted team-wide remote access
 * 60 GB pooled Nextcloud cloud storage per organisation
@@ -46,13 +46,13 @@ Lyenk solves three critical problems for African businesses:
 
 ## Key Pages
 * **Homepage:** https://lyenk.com/
-* **Secure Business Email & VPN:** https://lyenk.com/secure-mail.html
+* **Secure Business Email & VPN:** https://lyenk.com/secure-mail
 * **Customer Insights Engine:** https://engine.lyenk.com
 * **Service Marketplace:** https://app.lyenk.com
 * **Pricing:** https://lyenk.com/#pricing
-* **Privacy Policy:** https://lyenk.com/privacy.html
-* **Terms of Service:** https://lyenk.com/terms.html
-* **Refund Policy:** https://lyenk.com/refund.html
+* **Privacy Policy:** https://lyenk.com/privacy
+* **Terms of Service:** https://lyenk.com/terms
+* **Refund Policy:** https://lyenk.com/refund
 
 ## Frequently Asked Questions
 
