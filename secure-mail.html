@@ -179,13 +179,13 @@
             transform: translateY(-2px);
         }
 
-        /* Header Styles - Frosted Glassmorphism */
+        /* Header Styles - Deep Luxury Purple Frosted Glassmorphism */
         header { 
-            background-color: rgba(255, 255, 255, 0.82); 
+            background-color: rgba(42, 20, 66, 0.85); 
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.04); 
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3); 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             position: fixed;
             width: 100%;
             top: 0;
@@ -193,9 +193,9 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         header.scrolled {
-            background-color: rgba(255, 255, 255, 0.94);
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            background-color: rgba(28, 12, 46, 0.96);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         }
         .navbar { 
             display: flex; 
@@ -208,26 +208,27 @@
             padding: 10px 0;
         }
         .navbar-logo {
-            max-height: 40px;
+            max-height: 36px;
             width: auto;
+            display: block;
             transition: max-height 0.3s ease;
         }
         header.scrolled .navbar-logo {
-            max-height: 36px;
+            max-height: 32px;
         }
         .navbar ul { list-style: none; display: flex; gap: 12px; align-items: center; }
         .navbar a { 
             font-weight: 600; 
             font-size: 0.95rem;
-            color: #374151;
-            padding: 8px 14px;
+            color: #ffffff;
+            padding: 8px 16px;
             border-radius: 8px;
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
         }
         .navbar a:hover {
-            color: var(--brand-purple);
-            background-color: rgba(93, 46, 138, 0.06);
+            color: #b39253;
+            background-color: rgba(255, 255, 255, 0.1);
         }
         .navbar .btn-primary {
             background-color: #b28f51;
@@ -357,35 +358,36 @@
 
         .mobile-menu-btn {
             display: none;
-            background: rgba(93, 46, 138, 0.06);
-            border: 1px solid rgba(93, 46, 138, 0.12);
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
-            color: var(--brand-purple);
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            color: #ffffff;
             cursor: pointer;
             padding: 0;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .mobile-menu-btn:hover {
-            background: rgba(93, 46, 138, 0.12);
+        .mobile-menu-btn:hover,
+        .mobile-menu-btn:active {
+            background: rgba(255, 255, 255, 0.22);
             transform: scale(1.04);
         }
 
-        /* Mobile Drawer Styles */
+        /* Mobile Drawer Styles - Luxury Dark Purple */
         .mobile-drawer-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(15, 23, 42, 0.45);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
+            background: rgba(10, 5, 20, 0.65);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s;
@@ -404,11 +406,11 @@
             bottom: 0;
             width: min(340px, 85vw);
             height: 100vh;
-            background: rgba(255, 255, 255, 0.98);
+            background: linear-gradient(180deg, #241138 0%, #150824 100%);
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
-            border-left: 1px solid rgba(0, 0, 0, 0.08);
-            box-shadow: -10px 0 35px rgba(0, 0, 0, 0.15);
+            border-left: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: -15px 0 40px rgba(0, 0, 0, 0.6);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -428,27 +430,26 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 24px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .drawer-close-btn {
             width: 38px;
             height: 38px;
             border-radius: 50%;
-            background: rgba(0, 0, 0, 0.04);
-            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.1rem;
-            color: var(--charcoal);
+            color: #ffffff;
             cursor: pointer;
             transition: all 0.2s ease;
         }
 
         .drawer-close-btn:hover {
-            background: rgba(0, 0, 0, 0.08);
-            color: var(--brand-purple);
+            background: rgba(255, 255, 255, 0.2);
             transform: rotate(90deg);
         }
 
@@ -462,14 +463,14 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            color: #9ca3af;
+            color: #d8b4fe;
             margin-bottom: 12px;
         }
 
         .drawer-nav {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
         }
 
         .drawer-nav-item {
@@ -477,15 +478,18 @@
             align-items: center;
             gap: 14px;
             padding: 12px 14px;
-            border-radius: 12px;
+            border-radius: 14px;
             text-decoration: none;
-            color: var(--charcoal);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.2s ease;
         }
 
         .drawer-nav-item:hover,
         .drawer-nav-item:active {
-            background: rgba(93, 46, 138, 0.06);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(179, 146, 83, 0.4);
+            transform: translateX(-2px);
         }
 
         .drawer-icon-box {
@@ -506,7 +510,7 @@
         .drawer-item-title {
             font-size: 0.95rem;
             font-weight: 600;
-            color: #1f2937;
+            color: #ffffff;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -516,22 +520,23 @@
             font-size: 0.65rem;
             font-weight: 700;
             text-transform: uppercase;
-            background: #fef3c7;
-            color: #92400e;
-            padding: 2px 7px;
+            background: #b39253;
+            color: #ffffff;
+            padding: 2px 8px;
             border-radius: 999px;
+            box-shadow: 0 2px 6px rgba(179, 146, 83, 0.3);
         }
 
         .drawer-item-desc {
             font-size: 0.78rem;
-            color: #6b7280;
+            color: #e9d5ff;
             margin-top: 2px;
         }
 
         .drawer-footer {
             padding: 20px 24px 28px;
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
-            background: rgba(249, 250, 251, 0.8);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(15, 6, 26, 0.5);
         }
 
         @media (max-width: 768px) {
@@ -547,14 +552,14 @@
     <header>
         <div class="container navbar">
             <a href="/" style="display: flex; align-items: center; gap: 12px;">
-                <img src="./logos/LYENK Mail 1.png" alt="Lyenk Secure Mail Logo" class="navbar-logo" style="max-height: 40px; width: auto;">
+                <img src="assets/lyenk-logo-white.png" alt="Lyenk" class="navbar-logo">
             </a>
             <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars"></i>
             </button>
             <nav aria-label="Main navigation">
                 <ul>
-                    <li><a href="/secure-mail" style="color: var(--brand-purple); font-weight: bold;">Secure Business Mail</a></li>
+                    <li><a href="/secure-mail" style="color: #ffffff; font-weight: 600;">Secure Business Mail</a></li>
                     <li><a href="/#insight-engine">Insights Engine</a></li>
                     <li><a href="/#pricing">Pricing</a></li>
                     <li><a href="https://wa.me/256756180429" class="btn-primary">Get Started</a></li>
@@ -570,7 +575,7 @@
     <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
         <div class="drawer-header">
             <div class="drawer-logo">
-                <img src="./logos/LYENK Mail 1.png" alt="Lyenk Mail" style="max-height: 32px; width: auto;">
+                <img src="assets/lyenk-logo-white.png" alt="Lyenk" style="max-height: 28px; width: auto; display: block;">
             </div>
             <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close navigation menu">
                 <i class="fas fa-times"></i>
@@ -581,7 +586,7 @@
             <div class="drawer-section-label">Products & Solutions</div>
             <nav class="drawer-nav">
                 <a href="/#insight-engine" class="drawer-nav-item">
-                    <div class="drawer-icon-box" style="background: rgba(93, 46, 138, 0.1); color: #5D2E8A;">
+                    <div class="drawer-icon-box" style="background: rgba(179, 146, 83, 0.2); color: #b39253;">
                         <i class="fas fa-sparkles"></i>
                     </div>
                     <div class="drawer-item-text">
@@ -594,7 +599,7 @@
                 </a>
 
                 <a href="/secure-mail" class="drawer-nav-item">
-                    <div class="drawer-icon-box" style="background: rgba(178, 143, 81, 0.15); color: #b28f51;">
+                    <div class="drawer-icon-box" style="background: rgba(147, 51, 234, 0.2); color: #c084fc;">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <div class="drawer-item-text">
@@ -606,7 +611,7 @@
                 </a>
 
                 <a href="/#pricing" class="drawer-nav-item">
-                    <div class="drawer-icon-box" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
+                    <div class="drawer-icon-box" style="background: rgba(16, 185, 129, 0.2); color: #34d399;">
                         <i class="fas fa-tags"></i>
                     </div>
                     <div class="drawer-item-text">
@@ -621,7 +626,7 @@
             <div class="drawer-section-label" style="margin-top: 25px;">Direct Access</div>
             <nav class="drawer-nav">
                 <a href="https://engine.lyenk.com/#/auth" class="drawer-nav-item">
-                    <div class="drawer-icon-box" style="background: rgba(107, 114, 128, 0.1); color: #4b5563;">
+                    <div class="drawer-icon-box" style="background: rgba(255, 255, 255, 0.1); color: #e9d5ff;">
                         <i class="fas fa-sign-in-alt"></i>
                     </div>
                     <div class="drawer-item-text">
@@ -629,7 +634,7 @@
                     </div>
                 </a>
                 <a href="https://wa.me/256756180429" class="drawer-nav-item">
-                    <div class="drawer-icon-box" style="background: rgba(37, 211, 102, 0.1); color: #25d366;">
+                    <div class="drawer-icon-box" style="background: rgba(37, 211, 102, 0.2); color: #25d366;">
                         <i class="fab fa-whatsapp"></i>
                     </div>
                     <div class="drawer-item-text">
@@ -640,10 +645,10 @@
         </div>
 
         <div class="drawer-footer">
-            <a href="https://engine.lyenk.com/#/auth" class="btn" style="width: 100%; text-align: center; background-color: var(--brand-purple); color: #fff; padding: 14px; border-radius: 10px; font-weight: 700; margin-bottom: 10px; text-decoration: none; display: block;">
+            <a href="https://engine.lyenk.com/#/auth" class="btn" style="width: 100%; text-align: center; background: linear-gradient(135deg, #b39253 0%, #99783d 100%); color: #fff; padding: 14px; border-radius: 12px; font-weight: 700; margin-bottom: 10px; text-decoration: none; display: block; box-shadow: 0 4px 15px rgba(179,146,83,0.3);">
                 Start Free Trial (25 Responses) &rarr;
             </a>
-            <p style="font-size: 0.75rem; color: #9ca3af; text-align: center; margin: 0;">No credit card required</p>
+            <p style="font-size: 0.75rem; color: #d8b4fe; text-align: center; margin: 0;">No credit card required</p>
         </div>
     </aside>
 
