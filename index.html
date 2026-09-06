@@ -482,12 +482,181 @@
 
         .mobile-menu-btn {
             display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
+            background: rgba(93, 46, 138, 0.06);
+            border: 1px solid rgba(93, 46, 138, 0.12);
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
             color: var(--deep-purple);
             cursor: pointer;
-            padding: 5px;
+            padding: 0;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobile-menu-btn:hover {
+            background: rgba(93, 46, 138, 0.12);
+            transform: scale(1.04);
+        }
+
+        /* Mobile Drawer Styles */
+        .mobile-drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s;
+            z-index: 1050;
+        }
+
+        .mobile-drawer-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: min(340px, 85vw);
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-left: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: -10px 0 35px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transform: translateX(100%);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1060;
+            overflow-y: auto;
+            overscroll-behavior: contain;
+        }
+
+        .mobile-drawer.active {
+            transform: translateX(0);
+        }
+
+        .drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 24px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .drawer-close-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.04);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .drawer-close-btn:hover {
+            background: rgba(0, 0, 0, 0.08);
+            color: var(--deep-purple);
+            transform: rotate(90deg);
+        }
+
+        .drawer-body {
+            padding: 24px;
+            flex: 1;
+        }
+
+        .drawer-section-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #9ca3af;
+            margin-bottom: 12px;
+        }
+
+        .drawer-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .drawer-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 14px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--charcoal);
+            transition: all 0.2s ease;
+        }
+
+        .drawer-nav-item:hover,
+        .drawer-nav-item:active {
+            background: rgba(93, 46, 138, 0.06);
+        }
+
+        .drawer-icon-box {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .drawer-item-text {
+            flex: 1;
+        }
+
+        .drawer-item-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #1f2937;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .drawer-badge {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 2px 7px;
+            border-radius: 999px;
+        }
+
+        .drawer-item-desc {
+            font-size: 0.78rem;
+            color: #6b7280;
+            margin-top: 2px;
+        }
+
+        .drawer-footer {
+            padding: 20px 24px 28px;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            background: rgba(249, 250, 251, 0.8);
         }
 
         /* Hero Section */
@@ -1147,61 +1316,11 @@
             }
 
             .mobile-menu-btn {
-                display: block;
+                display: flex;
             }
 
             nav ul {
-                position: fixed;
-                top: 65px;
-                left: 0;
-                width: 100%;
-                background: rgba(255, 255, 255, 0.96);
-                backdrop-filter: blur(20px);
-                -webkit-backdrop-filter: blur(20px);
-                flex-direction: column;
-                padding: 24px 20px;
-                box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-                border-bottom: 1px solid rgba(0,0,0,0.08);
-                transform: translateY(-120%);
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                z-index: 999;
-            }
-
-            nav ul.show {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-            }
-
-            nav ul li {
-                margin: 6px 0;
-                width: 100%;
-            }
-
-            nav ul li > a,
-            .dropdown-toggle {
-                width: 100%;
-                justify-content: space-between;
-                padding: 12px 16px;
-            }
-
-            .dropdown-menu {
-                position: static;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                box-shadow: none;
-                background: rgba(93, 46, 138, 0.04);
-                border: 1px solid rgba(93, 46, 138, 0.1);
-                border-radius: 8px;
-                margin-top: 8px;
                 display: none;
-            }
-
-            .dropdown-menu.active {
-                display: block;
             }
 
             .hero {
@@ -1309,7 +1428,7 @@
                     <img src="./Lyenk-Main-Logo.png" alt="Lyenk B2B SaaS Ecosystem" class="navbar-logo" style="max-height: 40px; width: auto;">
                 </a>
             </div>
-            <button class="mobile-menu-btn" aria-label="Toggle menu">
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars"></i>
             </button>
             <nav aria-label="Main navigation">
@@ -1322,6 +1441,90 @@
             </nav>
         </div>
     </header>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+
+    <!-- Mobile Slide Drawer -->
+    <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+        <div class="drawer-header">
+            <div class="drawer-logo">
+                <img src="./Lyenk-Main-Logo.png" alt="Lyenk" style="max-height: 32px; width: auto;">
+            </div>
+            <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close navigation menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="drawer-body">
+            <div class="drawer-section-label">Products & Solutions</div>
+            <nav class="drawer-nav">
+                <a href="#insight-engine" class="drawer-nav-item">
+                    <div class="drawer-icon-box" style="background: rgba(93, 46, 138, 0.1); color: #5D2E8A;">
+                        <i class="fas fa-sparkles"></i>
+                    </div>
+                    <div class="drawer-item-text">
+                        <div class="drawer-item-title">
+                            <span>Insight Engine 2.0</span>
+                            <span class="drawer-badge">25 Free</span>
+                        </div>
+                        <div class="drawer-item-desc">Google review booster & social cards</div>
+                    </div>
+                </a>
+
+                <a href="/secure-mail" class="drawer-nav-item">
+                    <div class="drawer-icon-box" style="background: rgba(178, 143, 81, 0.15); color: #b28f51;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="drawer-item-text">
+                        <div class="drawer-item-title">
+                            <span>Secure Business Mail</span>
+                        </div>
+                        <div class="drawer-item-desc">Sovereign email & cloud storage</div>
+                    </div>
+                </a>
+
+                <a href="#pricing" class="drawer-nav-item">
+                    <div class="drawer-icon-box" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <div class="drawer-item-text">
+                        <div class="drawer-item-title">
+                            <span>Pricing & Plans</span>
+                        </div>
+                        <div class="drawer-item-desc">Transparent $15, $30, $49/mo tiers</div>
+                    </div>
+                </a>
+            </nav>
+
+            <div class="drawer-section-label" style="margin-top: 25px;">Direct Access</div>
+            <nav class="drawer-nav">
+                <a href="https://engine.lyenk.com/#/auth" class="drawer-nav-item">
+                    <div class="drawer-icon-box" style="background: rgba(107, 114, 128, 0.1); color: #4b5563;">
+                        <i class="fas fa-sign-in-alt"></i>
+                    </div>
+                    <div class="drawer-item-text">
+                        <div class="drawer-item-title">Sign In to Dashboard</div>
+                    </div>
+                </a>
+                <a href="https://wa.me/256756180429" class="drawer-nav-item">
+                    <div class="drawer-icon-box" style="background: rgba(37, 211, 102, 0.1); color: #25d366;">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="drawer-item-text">
+                        <div class="drawer-item-title">WhatsApp Support</div>
+                    </div>
+                </a>
+            </nav>
+        </div>
+
+        <div class="drawer-footer">
+            <a href="https://engine.lyenk.com/#/auth" class="btn" style="width: 100%; text-align: center; background-color: var(--deep-purple); color: #fff; padding: 14px; border-radius: 10px; font-weight: 700; margin-bottom: 10px; text-decoration: none; display: block;">
+                Start Free Trial (25 Responses) &rarr;
+            </a>
+            <p style="font-size: 0.75rem; color: #9ca3af; text-align: center; margin: 0;">No credit card required</p>
+        </div>
+    </aside>
 
     <!-- Hero Section -->
     <section class="hero" id="home" style="padding: 140px 0 80px; background: linear-gradient(135deg, #2A1442 0%, #5D2E8A 50%, #3D1C60 100%); color: #ffffff; position: relative; overflow: hidden;">
@@ -1886,45 +2089,32 @@
         window.addEventListener('scroll', handleHeaderScroll, { passive: true });
         handleHeaderScroll();
 
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            const nav = document.querySelector('nav ul');
-            nav.classList.toggle('show');
-            this.setAttribute('aria-expanded', nav.classList.contains('show'));
-        });
+        // Mobile Slide Drawer functionality
+        const drawerOverlay = document.getElementById('mobile-drawer-overlay');
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const drawerCloseBtn = document.getElementById('drawer-close-btn');
 
-        // Dropdown menu functionality
-        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-            toggle.addEventListener('click', function(e) {
-                e.stopPropagation();
-                const dropdown = this.closest('.dropdown');
-                const menu = dropdown.querySelector('.dropdown-menu');
-                
-                // Close other dropdowns
-                document.querySelectorAll('.dropdown-menu.active').forEach(activeMenu => {
-                    if (activeMenu !== menu) {
-                        activeMenu.classList.remove('active');
-                        activeMenu.previousElementSibling.classList.remove('active');
-                        activeMenu.previousElementSibling.setAttribute('aria-expanded', 'false');
-                    }
-                });
-                
-                // Toggle current dropdown
-                menu.classList.toggle('active');
-                this.classList.toggle('active');
-                this.setAttribute('aria-expanded', menu.classList.contains('active'));
+        function openDrawer() {
+            drawerOverlay?.classList.add('active');
+            mobileDrawer?.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDrawer() {
+            drawerOverlay?.classList.remove('active');
+            mobileDrawer?.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn?.addEventListener('click', openDrawer);
+        drawerCloseBtn?.addEventListener('click', closeDrawer);
+        drawerOverlay?.addEventListener('click', closeDrawer);
+
+        document.querySelectorAll('.drawer-nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                closeDrawer();
             });
-        });
-
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.dropdown')) {
-                document.querySelectorAll('.dropdown-menu.active').forEach(menu => {
-                    menu.classList.remove('active');
-                    menu.previousElementSibling.classList.remove('active');
-                    menu.previousElementSibling.setAttribute('aria-expanded', 'false');
-                });
-            }
         });
 
         // Smooth scrolling for anchor links
@@ -1944,12 +2134,8 @@
                     // Update URL without page jump
                     history.pushState(null, null, targetId);
                     
-                    // Close mobile menu if open
-                    const nav = document.querySelector('nav ul');
-                    if (nav.classList.contains('show')) {
-                        nav.classList.remove('show');
-                        document.querySelector('.mobile-menu-btn').setAttribute('aria-expanded', 'false');
-                    }
+                    // Close mobile drawer if open
+                    closeDrawer();
                 }
             });
         });
