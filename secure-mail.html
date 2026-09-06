@@ -724,8 +724,8 @@
         </div>
     </aside>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home" style="padding: 140px 0 80px; background: linear-gradient(135deg, #1C0C2E 0%, #2A1442 45%, #5D2E8A 85%, #1C0C2E 100%); color: #ffffff; position: relative; overflow: hidden;">
+    <!-- Hero Section (Section 1: Image BG) -->
+    <section class="hero" id="home" style="padding: 140px 0 80px; background: linear-gradient(135deg, rgba(28, 12, 46, 0.92) 0%, rgba(42, 20, 66, 0.88) 100%), url('assets/secure-mail-showcase.jpg') center/cover no-repeat; color: #ffffff; position: relative; overflow: hidden;">
         <div class="container">
             <div class="hero-grid">
                 <div>
@@ -758,17 +758,13 @@
         </div>
     </section>
 
-    <!-- Starlink-Inspired Telemetry Spec Bar -->
+    <!-- Starlink-Inspired Telemetry Spec Bar (Section 2: Purple BG Start) -->
     <section class="telemetry-bar" style="background: #150824; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 36px 0;">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; text-align: center;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; text-align: center;">
                 <div class="telemetry-col" style="border-right: 1px solid rgba(255,255,255,0.08); padding: 0 15px;">
                     <div style="font-size: 2.6rem; font-weight: 800; color: #ffffff; line-height: 1; letter-spacing: -0.02em;">$15 <span style="font-size: 1.3rem; color: #b39253;">/ YR</span></div>
-                    <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #d8b4fe; margin-top: 8px;">Solo Starter User ($1.25/mo)</div>
-                </div>
-                <div class="telemetry-col" style="border-right: 1px solid rgba(255,255,255,0.08); padding: 0 15px;">
-                    <div style="font-size: 2.6rem; font-weight: 800; color: #ffffff; line-height: 1; letter-spacing: -0.02em;">10 <span style="font-size: 1.3rem; color: #b39253;">GB</span></div>
-                    <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #d8b4fe; margin-top: 8px;">Secure Inbox Storage</div>
+                    <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #d8b4fe; margin-top: 8px;">Single User Plan ($1.25/mo)</div>
                 </div>
                 <div class="telemetry-col" style="border-right: 1px solid rgba(255,255,255,0.08); padding: 0 15px;">
                     <div style="font-size: 2.6rem; font-weight: 800; color: #ffffff; line-height: 1; letter-spacing: -0.02em;">100%</div>
@@ -782,63 +778,112 @@
         </div>
     </section>
 
-    <!-- Enterprise Advantage Section -->
-    <section class="section-light" id="features" style="background-color: #f7f4fa; padding: 90px 0;">
+    <!-- Enterprise Advantage Section (Section 2: Purple BG Continued) -->
+    <section class="section-light" id="features" style="background-color: #1C0C2E; padding: 90px 0; color: #ffffff;">
         <div class="container">
             <div style="text-align: center; max-width: 760px; margin: 0 auto 50px;">
-                <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(93, 46, 138, 0.08); border: 1px solid rgba(93, 46, 138, 0.2); padding: 6px 16px; border-radius: 999px; margin-bottom: 16px;">
-                    <i class="fas fa-crown" style="color: #b39253;"></i>
-                    <span style="color: #2A1442; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Enterprise Architecture</span>
+                <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #b39253; margin-bottom: 16px;">
+                    ENTERPRISE ARCHITECTURE
                 </div>
-                <h2 style="font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 800; color: #1C0C2E; line-height: 1.2; margin-bottom: 16px;">
+                <h2 style="font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 800; color: #ffffff; line-height: 1.2; margin-bottom: 16px;">
                     The Lyenk Enterprise Advantage
                 </h2>
-                <p style="color: #5D2E8A; font-size: 1.1rem; line-height: 1.6;">
-                    Built for Small and Growing Businesses (SGBs) and organizations that demand absolute data privacy without paying rigid, per-user license fees.
+                <p style="color: #e9d5ff; font-size: 1.05rem; line-height: 1.6;">
+                    Total data privacy and verified inbox placement without rigid per-user license fees.
                 </p>
             </div>
 
             <div class="grid-3" style="gap: 30px;">
-                <div class="feature-card-modern" style="background: #ffffff; padding: 36px 30px; border-radius: 20px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 10px 30px rgba(42, 20, 66, 0.04); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div style="width: 54px; height: 54px; border-radius: 14px; background: rgba(93, 46, 138, 0.1); color: #5D2E8A; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 22px;">
+                <div class="feature-card-modern" style="background: rgba(255, 255, 255, 0.04); padding: 36px 30px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div style="width: 54px; height: 54px; border-radius: 14px; background: rgba(93, 46, 138, 0.3); color: #d8b4fe; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 22px;">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; color: #1C0C2E; margin-bottom: 12px;">Absolute Data Security</h3>
-                    <p style="color: #6b7280; font-size: 0.95rem; line-height: 1.65; margin: 0;">
-                        Our engineering team hosts your sensitive data exclusively on secure regional servers. We use strict encryption protocols to protect your administrative access and keep your information shielded from unauthorized entry.
+                    <h3 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin-bottom: 12px;">Data Sovereignty</h3>
+                    <p style="color: #e9d5ff; font-size: 0.92rem; line-height: 1.6; margin: 0;">
+                        Hosted on dedicated regional cloud instances with end-to-end encryption protocols.
                     </p>
                 </div>
                 
-                <div class="feature-card-modern" style="background: #ffffff; padding: 36px 30px; border-radius: 20px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 10px 30px rgba(42, 20, 66, 0.04); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div style="width: 54px; height: 54px; border-radius: 14px; background: rgba(179, 146, 83, 0.15); color: #b39253; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 22px;">
+                <div class="feature-card-modern" style="background: rgba(255, 255, 255, 0.04); padding: 36px 30px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div style="width: 54px; height: 54px; border-radius: 14px; background: rgba(179, 146, 83, 0.25); color: #b39253; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 22px;">
                         <i class="fas fa-headset"></i>
                     </div>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; color: #1C0C2E; margin-bottom: 12px;">Dedicated Support Engineers</h3>
-                    <p style="color: #6b7280; font-size: 0.95rem; line-height: 1.65; margin: 0;">
-                        Lyenk maintains a dedicated team of infrastructure engineers available online to provide premium support. You speak directly with our engineers on WhatsApp, not automated bots, for fast, reliable technical resolutions.
+                    <h3 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin-bottom: 12px;">Direct WhatsApp Support</h3>
+                    <p style="color: #e9d5ff; font-size: 0.92rem; line-height: 1.6; margin: 0;">
+                        Work directly with real infrastructure engineers on WhatsApp, not automated bots.
                     </p>
                 </div>
                 
-                <div class="feature-card-modern" style="background: #ffffff; padding: 36px 30px; border-radius: 20px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 10px 30px rgba(42, 20, 66, 0.04); transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div style="width: 54px; height: 54px; border-radius: 14px; background: rgba(16, 185, 129, 0.12); color: #10b981; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 22px;">
+                <div class="feature-card-modern" style="background: rgba(255, 255, 255, 0.04); padding: 36px 30px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div style="width: 54px; height: 54px; border-radius: 14px; background: rgba(16, 185, 129, 0.2); color: #34d399; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 22px;">
                         <i class="fas fa-paper-plane"></i>
                     </div>
-                    <h3 style="font-size: 1.35rem; font-weight: 700; color: #1C0C2E; margin-bottom: 12px;">Trusted Inbox Placement</h3>
-                    <p style="color: #6b7280; font-size: 0.95rem; line-height: 1.65; margin: 0;">
-                        Our platform is configured with industry-standard email authentication (SPF, DKIM, DMARC, PTR) to protect your domain and maximize inbox placement without landing in spam filters.
+                    <h3 style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin-bottom: 12px;">Trusted Deliverability</h3>
+                    <p style="color: #e9d5ff; font-size: 0.92rem; line-height: 1.6; margin: 0;">
+                        Strict SPF, DKIM, and DMARC authentication to protect your domain and bypass spam filters.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" style="background: linear-gradient(180deg, #1C0C2E 0%, #241138 100%); color: #ffffff; padding: 100px 0;">
+    <!-- Why Businesses Choose Lyenk (Section 3: Image BG) -->
+    <section class="section-light" style="background: linear-gradient(135deg, rgba(21, 8, 36, 0.94) 0%, rgba(28, 12, 46, 0.94) 100%), url('assets/features-showcase.jpg') center/cover no-repeat; padding: 90px 0; color: #ffffff;">
+        <div class="container grid-2" style="align-items: center; gap: 50px;">
+            <div>
+                <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #b39253; margin-bottom: 16px;">
+                    THE SMARTER ALTERNATIVE
+                </div>
+                <h2 style="font-size: clamp(2rem, 3.2vw, 2.6rem); font-weight: 800; color: #ffffff; line-height: 1.25; margin-bottom: 18px;">
+                    Why Growing Businesses Choose Lyenk
+                </h2>
+                <p style="color: #e9d5ff; font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px;">
+                    Stop paying escalating per-user fees to Big Tech. Lyenk gives you sovereign domain email, private cloud storage, and encrypted VPN access in one simple setup.
+                </p>
+                <a href="https://wa.me/256756180429" class="btn" style="display: inline-flex; align-items: center; gap: 10px; background: #ffffff; color: #1C0C2E; padding: 14px 28px; border-radius: 6px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; text-decoration: none;">
+                    Talk to Our Engineers
+                </a>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.04); padding: 40px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                <h4 style="margin-bottom: 16px; font-size: 1.15rem; font-weight: 700; color: #f87171;">
+                    Big Tech Alternatives
+                </h4>
+                <ul style="list-style: none; margin-bottom: 28px; padding: 0;">
+                    <li style="margin-bottom: 12px; color: #e9d5ff; font-size: 0.95rem;">
+                        Rigid per-user pricing ($7–$15/user/month)
+                    </li>
+                    <li style="margin-bottom: 12px; color: #e9d5ff; font-size: 0.95rem;">
+                        Automated ticket bots and absent support
+                    </li>
+                    <li style="color: #e9d5ff; font-size: 0.95rem;">
+                        Shared foreign servers with opaque privacy policies
+                    </li>
+                </ul>
+                
+                <h4 style="margin-bottom: 16px; font-size: 1.15rem; font-weight: 700; color: #4ade80; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px;">
+                    The Lyenk Sovereign Plan
+                </h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 12px; color: #ffffff; font-weight: 600; font-size: 0.95rem;">
+                        From $15/yr single user or $50/yr unlimited
+                    </li>
+                    <li style="margin-bottom: 12px; color: #ffffff; font-weight: 600; font-size: 0.95rem;">
+                        Direct WhatsApp line to your assigned engineer
+                    </li>
+                    <li style="color: #ffffff; font-weight: 600; font-size: 0.95rem;">
+                        Dedicated regional hosting with 256-bit encryption
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section (Section 4: Purple BG) -->
+    <section id="pricing" style="background: #150824; color: #ffffff; padding: 100px 0;">
         <div class="container">
             <div style="text-align: center; max-width: 760px; margin: 0 auto 60px;">
-                <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.08); border: 1px solid rgba(179,146,83,0.4); padding: 6px 16px; border-radius: 999px; margin-bottom: 16px;">
-                    <i class="fas fa-tags" style="color: #b39253;"></i>
-                    <span style="color: #ffffff; font-size: 13px; font-weight: 600;">Transparent Flat Pricing</span>
+                <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #b39253; margin-bottom: 16px;">
+                    TRANSPARENT FLAT PRICING
                 </div>
                 <h2 style="font-size: clamp(2.2rem, 3.5vw, 3rem); font-weight: 800; color: #ffffff; margin-bottom: 16px;">
                     Simple, Honest Pricing
@@ -930,96 +975,43 @@
         </div>
     </section>
 
-    <!-- Why Businesses Choose Lyenk -->
-    <section class="section-light" style="background: #ffffff; padding: 90px 0;">
-        <div class="container grid-2" style="align-items: center; gap: 50px;">
-            <div>
-                <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(93,46,138,0.08); border: 1px solid rgba(93,46,138,0.2); padding: 6px 14px; border-radius: 999px; margin-bottom: 16px;">
-                    <i class="fas fa-check-double" style="color: #5D2E8A;"></i>
-                    <span style="color: #2A1442; font-size: 13px; font-weight: 700;">THE SMARTER ALTERNATIVE</span>
-                </div>
-                <h2 style="font-size: clamp(2rem, 3.2vw, 2.6rem); font-weight: 800; color: #1C0C2E; line-height: 1.25; margin-bottom: 18px;">
-                    Why Growing Businesses Choose Lyenk
-                </h2>
-                <p style="color: #4b5563; font-size: 1.05rem; line-height: 1.7; margin-bottom: 24px;">
-                    Most businesses secure a real competitive advantage by choosing one provider that handles everything, instead of stitching together expensive per-user licenses. Lyenk combines your storage, communication, and encrypted access into one simple, sovereign plan.
-                </p>
-                <a href="https://wa.me/256756180429" class="btn" style="display: inline-flex; align-items: center; gap: 10px; background: #2A1442; color: #ffffff; padding: 14px 28px; border-radius: 12px; font-weight: 700; text-decoration: none;">
-                    <i class="fab fa-whatsapp" style="color: #25d366; font-size: 1.2rem;"></i> Talk to Our Engineers
-                </a>
-            </div>
-            <div style="background: #fdfbf7; padding: 40px; border-radius: 20px; border: 1px solid rgba(179,146,83,0.25); box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
-                <h4 style="margin-bottom: 16px; font-size: 1.15rem; font-weight: 700; color: #dc2626; display: flex; align-items: center; gap: 10px;">
-                    <i class="fas fa-times-circle"></i> Big Tech Alternatives
-                </h4>
-                <ul style="list-style: none; margin-bottom: 28px; padding: 0;">
-                    <li style="margin-bottom: 12px; color: #4b5563; font-size: 0.95rem; display: flex; align-items: center; gap: 10px;">
-                        <i class="fas fa-times" style="color: #dc2626; width: 16px;"></i> High per-user licensing costs ($7–$15/user/month)
-                    </li>
-                    <li style="margin-bottom: 12px; color: #4b5563; font-size: 0.95rem; display: flex; align-items: center; gap: 10px;">
-                        <i class="fas fa-times" style="color: #dc2626; width: 16px;"></i> Automated, non-responsive support tickets & bots
-                    </li>
-                    <li style="color: #4b5563; font-size: 0.95rem; display: flex; align-items: center; gap: 10px;">
-                        <i class="fas fa-times" style="color: #dc2626; width: 16px;"></i> Opaque foreign data aggregation & policy changes
-                    </li>
-                </ul>
-                
-                <h4 style="margin-bottom: 16px; font-size: 1.15rem; font-weight: 700; color: #16a34a; border-top: 1px solid rgba(0,0,0,0.08); padding-top: 24px; display: flex; align-items: center; gap: 10px;">
-                    <i class="fas fa-check-circle"></i> The Lyenk Sovereign Plan
-                </h4>
-                <ul style="list-style: none; padding: 0; margin: 0;">
-                    <li style="margin-bottom: 12px; color: #1f2937; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; gap: 10px;">
-                        <i class="fas fa-check" style="color: #16a34a; width: 16px;"></i> One flat price per domain ($6/mo for 3 mailboxes)
-                    </li>
-                    <li style="margin-bottom: 12px; color: #1f2937; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; gap: 10px;">
-                        <i class="fas fa-check" style="color: #16a34a; width: 16px;"></i> A real infrastructure engineer on WhatsApp
-                    </li>
-                    <li style="color: #1f2937; font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; gap: 10px;">
-                        <i class="fas fa-check" style="color: #16a34a; width: 16px;"></i> Your data hosted locally with 256-bit encryption
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Specifications Grid & FAQ Section -->
-    <section style="background: #f7f4fa; padding: 90px 0;">
+    <!-- Specifications Grid & FAQ Section (Section 5: Image BG) -->
+    <section style="background: linear-gradient(135deg, rgba(28, 12, 46, 0.94) 0%, rgba(21, 8, 36, 0.94) 100%), url('assets/hero-showcase.jpg') center/cover no-repeat; padding: 90px 0; color: #ffffff;">
         <div class="container" style="max-width: 900px; text-align: center;">
-            <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(93,46,138,0.08); border: 1px solid rgba(93,46,138,0.2); padding: 6px 16px; border-radius: 999px; margin-bottom: 16px;">
-                <i class="fas fa-server" style="color: #b39253;"></i>
-                <span style="color: #2A1442; font-size: 13px; font-weight: 700;">ENTERPRISE SPECIFICATIONS</span>
+            <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #b39253; margin-bottom: 16px;">
+                ENTERPRISE SPECIFICATIONS
             </div>
-            <h2 style="font-size: clamp(2rem, 3.2vw, 2.6rem); font-weight: 800; color: #1C0C2E; margin-bottom: 16px;">
+            <h2 style="font-size: clamp(2rem, 3.2vw, 2.6rem); font-weight: 800; color: #ffffff; margin-bottom: 16px;">
                 Why Organisations Choose Sovereign Mail
             </h2>
-            <p style="color: #6b7280; font-size: 1.05rem; margin-bottom: 40px;">Enterprise reliability meets local deployment agility.</p>
+            <p style="color: #e9d5ff; font-size: 1.05rem; margin-bottom: 40px;">Enterprise reliability meets local deployment agility.</p>
 
             <div class="grid-3" style="text-align: left; gap: 24px; margin-bottom: 50px;">
-                <div style="background: #ffffff; padding: 30px 24px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
-                    <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(93, 46, 138, 0.1); color: #5D2E8A; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 16px;">
+                <div style="background: rgba(255, 255, 255, 0.04); padding: 30px 24px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                    <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(93, 46, 138, 0.3); color: #d8b4fe; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 16px;">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3 style="font-size: 1.15rem; font-weight: 700; color: #1C0C2E; margin-bottom: 8px;">Anti-Spam & Deliverability</h3>
-                    <p style="color: #6b7280; font-size: 0.9rem; line-height: 1.6; margin: 0;">Configured with strict SPF, DKIM, DMARC, and PTR records. Your outgoing communications reach recipient inboxes reliably.</p>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; color: #ffffff; margin-bottom: 8px;">Anti-Spam & Deliverability</h3>
+                    <p style="color: #e9d5ff; font-size: 0.9rem; line-height: 1.6; margin: 0;">Configured with strict SPF, DKIM, and DMARC records so communications reach recipient inboxes reliably.</p>
                 </div>
-                <div style="background: #ffffff; padding: 30px 24px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
-                    <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(179, 146, 83, 0.15); color: #b39253; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 16px;">
+                <div style="background: rgba(255, 255, 255, 0.04); padding: 30px 24px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                    <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(179, 146, 83, 0.25); color: #b39253; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 16px;">
                         <i class="fas fa-network-wired"></i>
                     </div>
-                    <h3 style="font-size: 1.15rem; font-weight: 700; color: #1C0C2E; margin-bottom: 8px;">Team WireGuard VPN</h3>
-                    <p style="color: #6b7280; font-size: 0.9rem; line-height: 1.6; margin: 0;">Encrypted WireGuard VPN tunnels connect your branch offices, remote staff, and mobile workforce securely.</p>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; color: #ffffff; margin-bottom: 8px;">Team WireGuard VPN</h3>
+                    <p style="color: #e9d5ff; font-size: 0.9rem; line-height: 1.6; margin: 0;">Encrypted WireGuard VPN tunnels connect remote staff and branch offices securely.</p>
                 </div>
-                <div style="background: #ffffff; padding: 30px 24px; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
-                    <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(16, 185, 129, 0.12); color: #10b981; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 16px;">
+                <div style="background: rgba(255, 255, 255, 0.04); padding: 30px 24px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                    <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(16, 185, 129, 0.2); color: #34d399; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 16px;">
                         <i class="fas fa-hdd"></i>
                     </div>
-                    <h3 style="font-size: 1.15rem; font-weight: 700; color: #1C0C2E; margin-bottom: 8px;">60 GB Pooled Storage</h3>
-                    <p style="color: #6b7280; font-size: 0.9rem; line-height: 1.6; margin: 0;">Flexible cloud storage pool shared across all team members, powered by sovereign Nextcloud without per-seat penalties.</p>
+                    <h3 style="font-size: 1.15rem; font-weight: 700; color: #ffffff; margin-bottom: 8px;">60 GB Pooled Storage</h3>
+                    <p style="color: #e9d5ff; font-size: 0.9rem; line-height: 1.6; margin: 0;">Flexible cloud storage pool shared across team members powered by sovereign Nextcloud.</p>
                 </div>
             </div>
 
-            <button id="open-faq-modal" class="btn" style="background: linear-gradient(135deg, #b39253 0%, #99783d 100%); color: #ffffff; padding: 14px 32px; border-radius: 12px; font-weight: 700; border: none; cursor: pointer; box-shadow: 0 4px 15px rgba(179,146,83,0.3); font-size: 1rem;">
-                View Enterprise FAQ &rarr;
+            <button id="open-faq-modal" class="btn" style="background: #ffffff; color: #1C0C2E; padding: 14px 32px; border-radius: 6px; font-weight: 800; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem;">
+                View Enterprise FAQ
             </button>
         </div>
     </section>
