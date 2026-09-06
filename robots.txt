@@ -16,4 +16,8 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
+# AI Engine & LLMs Plain Text Context
+# https://llmstxt.org/
+# https://lyenk.com/llms.txt
+
 Sitemap: https://lyenk.com/sitemap.xml
