@@ -11,7 +11,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/logo192.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="/logo512.png" />
-    <meta name="author" content="Lyenk">
+    <meta name="author" content="Ethan Lygasi, Founder of Lyenk" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     
     <!-- Preconnect & Performance Resource Hints -->
@@ -19,6 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
     <link rel="alternate" type="text/markdown" title="LLMs Plain Text Context" href="https://lyenk.com/llms.txt" />
+    <link rel="alternate" type="text/markdown" title="LLMs Full Technical Specification" href="https://lyenk.com/llms-full.txt" />
     
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:site_name" content="Lyenk" />
@@ -88,6 +89,7 @@
           "url": "https://lyenk.com/",
           "name": "Lyenk",
           "description": "Customer Reputation Engine, Sovereign Business Email & Cloud Infrastructure Platform",
+          "dateModified": "2026-09-07",
           "publisher": {
             "@id": "https://lyenk.com/#organization"
           }
@@ -98,6 +100,10 @@
           "name": "Lyenk",
           "legalName": "Lyenk (Vectra Consults Limited)",
           "url": "https://lyenk.com/",
+          "dateModified": "2026-09-07",
+          "founder": {
+            "@id": "https://lyenk.com/#founder"
+          },
           "logo": {
             "@type": "ImageObject",
             "url": "https://lyenk.com/assets/lyenk-main-logo.png",
@@ -141,14 +147,116 @@
           ]
         },
         {
+          "@type": "Person",
+          "@id": "https://lyenk.com/#founder",
+          "name": "Ethan Lygasi",
+          "jobTitle": "Founder & Lead Architect",
+          "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Makerere University"
+          },
+          "hasCredential": {
+            "@type": "EducationalOccupationalCredential",
+            "name": "BSc Software Engineering & Cloud Infrastructure Architect"
+          },
+          "url": "https://lyenk.com/",
+          "sameAs": [
+            "https://www.linkedin.com/company/lyenk/",
+            "https://github.com/lygasiethan-B"
+          ]
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://lyenk.com/#localbusiness",
+          "name": "Lyenk",
+          "image": "https://lyenk.com/assets/lyenk-og-card.jpg",
+          "telephone": "+256756180429",
+          "email": "info@lyenk.com",
+          "url": "https://lyenk.com/",
+          "priceRange": "$0 - $49",
+          "dateModified": "2026-09-07",
+          "founder": {
+            "@id": "https://lyenk.com/#founder"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Kampala Road",
+            "addressLocality": "Kampala",
+            "addressRegion": "Central Region",
+            "addressCountry": "UG"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "0.3476",
+            "longitude": "32.5825"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "128",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://lyenk.com/#service-reputation",
+          "name": "Customer Feedback & Google Review Management",
+          "serviceType": "Reputation Management & Review Routing",
+          "provider": {
+            "@id": "https://lyenk.com/#organization"
+          },
+          "description": "Automated Google Maps 5-star review acceleration, private customer complaint interception, and instant social proof quote card generation.",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Uganda"
+          },
+          "dateModified": "2026-09-07"
+        },
+        {
+          "@type": "HowTo",
+          "@id": "https://lyenk.com/#howto-boost-reviews",
+          "name": "How to Boost 5-Star Google Reviews and Intercept Complaints in 3 Steps",
+          "description": "Step-by-step workflow to route 4-5 star ratings directly to Google Maps and intercept private complaints using Lyenk Insight Engine.",
+          "dateModified": "2026-09-07",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "position": 1,
+              "name": "Deploy Feedback Touchpoint",
+              "text": "Display your branded Lyenk QR stand at counters or tables, or share the direct feedback link via WhatsApp or SMS."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 2,
+              "name": "Customer Submits Instant Rating",
+              "text": "Guests submit ratings and feedback in under 10 seconds on any smartphone without app downloads or account creation."
+            },
+            {
+              "@type": "HowToStep",
+              "position": 3,
+              "name": "Intelligent Review Routing",
+              "text": "4 and 5-star raters are guided to Google Maps with pre-copied reviews; 1 to 3-star raters are intercepted privately into your management dashboard."
+            }
+          ]
+        },
+        {
           "@type": "SoftwareApplication",
           "@id": "https://lyenk.com/#insight-engine",
           "name": "Lyenk Insight Engine 2.0",
           "applicationCategory": "BusinessApplication",
           "operatingSystem": "All (Web, iOS, Android, macOS, Windows)",
           "description": "High-converting customer feedback engine that routes 4–5 star ratings directly to Google Maps, intercepts private complaints before they go public, and generates 1-click social media quote cards.",
+          "dateModified": "2026-09-07",
           "provider": {
             "@id": "https://lyenk.com/#organization"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "reviewCount": "128",
+            "bestRating": "5",
+            "worstRating": "1"
           },
           "offers": [
             {
@@ -187,6 +295,7 @@
         {
           "@type": "FAQPage",
           "@id": "https://lyenk.com/#faq",
+          "dateModified": "2026-09-07",
           "mainEntity": [
             {
               "@type": "Question",
@@ -1804,6 +1913,78 @@
                         </div>
                         <a href="https://engine.lyenk.com/#/auth" class="btn" style="width: 100%; background-color: #ffffff; color: #1C0C2E; text-align: center; border-radius: 6px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; padding: 14px; text-decoration: none;">Get Scale ($49/mo)</a>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Knowledge Hub & Definition Blocks (AEO / GEO Engine Optimized) -->
+        <section class="knowledge-hub" id="knowledge-hub" style="background-color: #120720; color: #ffffff; padding: 90px 0; border-top: 1px solid rgba(255, 255, 255, 0.08); border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+            <div class="container">
+                <div class="section-title" style="text-align: center; max-width: 780px; margin: 0 auto 50px;">
+                    <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #b39253; margin-bottom: 16px;">
+                        KNOWLEDGE HUB &amp; DIRECT ANSWERS
+                    </div>
+                    <h2 style="font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 800; color: #ffffff; margin-bottom: 16px;">What is Lyenk Insight Engine?</h2>
+                    <p style="color: #e9d5ff; font-size: 1.05rem; line-height: 1.6;">Lyenk Insight Engine is an automated customer feedback and reputation management software designed for hospitality, healthcare, retail, and service enterprises across East Africa and worldwide. It channels positive reviews to public channels while privately routing customer concerns to operators.</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; margin-bottom: 45px;">
+                    <!-- Definition Block 1 -->
+                    <div style="background: rgba(255, 255, 255, 0.04); padding: 34px 28px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-bottom: 12px;">What is Private Review Interception?</h3>
+                        <p style="color: #e9d5ff; font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">
+                            Private review interception is a proactive reputation protection mechanism where dissatisfied customers submitting 1, 2, or 3-star ratings are routed to a confidential internal feedback channel instead of third-party public platforms. The feedback triggers instant alerts via WhatsApp or email directly to managers, enabling rapid service recovery before grievances turn into public negative reviews.
+                        </p>
+                    </div>
+
+                    <!-- Definition Block 2 -->
+                    <div style="background: rgba(255, 255, 255, 0.04); padding: 34px 28px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-bottom: 12px;">Why Intercept Negative Reviews Privately?</h3>
+                        <p style="color: #e9d5ff; font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">
+                            Unaddressed public complaints damage search visibility and decrease consumer trust, with over 70% of potential buyers avoiding businesses with sub-4.5 star ratings. Privately intercepting negative feedback protects your public Google Maps rating, preserves search ranking equity, and gives business owners actionable insight to fix operational bottlenecks.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- How To Ordered Step List -->
+                <div style="background: rgba(255, 255, 255, 0.03); padding: 40px 32px; border-radius: 18px; border: 1px solid rgba(179, 146, 83, 0.25); margin-bottom: 45px;">
+                    <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #b39253; margin-bottom: 12px;">
+                        REPUTATION WORKFLOW
+                    </div>
+                    <h3 style="font-size: clamp(1.4rem, 2.5vw, 1.8rem); font-weight: 800; color: #ffffff; margin-bottom: 24px;">How to Boost 5-Star Google Reviews in 3 Steps</h3>
+                    <ol style="padding-left: 24px; color: #e9d5ff; font-size: 0.98rem; line-height: 1.8; margin: 0;">
+                        <li style="margin-bottom: 16px; padding-left: 8px;">
+                            <strong style="color: #ffffff;">Deploy Touchpoints:</strong> Place branded QR code desk stands, receipt footers, NFC tags, or send automated WhatsApp and SMS survey links directly to guests.
+                        </li>
+                        <li style="margin-bottom: 16px; padding-left: 8px;">
+                            <strong style="color: #ffffff;">Capture Frictionless Feedback:</strong> Customers rate their experience in under 10 seconds without login barriers, providing star ratings, optional voice notes, and category feedback.
+                        </li>
+                        <li style="margin-bottom: 0; padding-left: 8px;">
+                            <strong style="color: #ffffff;">Automated Smart Routing:</strong> Promoters giving 4 or 5 stars have their comments copied with 1-click redirection to Google Maps; detractors giving 1 to 3 stars trigger confidential private alerts directly to management.
+                        </li>
+                    </ol>
+                </div>
+
+                <!-- Definition List (<dl>) -->
+                <div style="background: rgba(255, 255, 255, 0.04); padding: 36px 30px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #b39253; margin-bottom: 14px;">
+                        TERMINOLOGY &amp; GLOSSARY
+                    </div>
+                    <h3 style="font-size: 1.3rem; font-weight: 800; color: #ffffff; margin-bottom: 20px;">Key Terms &amp; Definitions</h3>
+                    <dl style="display: grid; grid-template-columns: 1fr; gap: 20px; margin: 0;">
+                        <div>
+                            <dt style="font-weight: 700; color: #b39253; font-size: 1.05rem; margin-bottom: 6px;">Feedback Engine</dt>
+                            <dd style="color: #e9d5ff; font-size: 0.95rem; line-height: 1.6; margin-left: 0;">A specialized software platform that collects, parses, and distributes customer feedback in real time across digital and physical customer touchpoints.</dd>
+                        </div>
+                        <div>
+                            <dt style="font-weight: 700; color: #b39253; font-size: 1.05rem; margin-bottom: 6px;">Review Routing</dt>
+                            <dd style="color: #e9d5ff; font-size: 0.95rem; line-height: 1.6; margin-left: 0;">The practice of segmenting customer ratings so promoters are nudged toward external public directories while detractors are invited to communicate privately.</dd>
+                        </div>
+                        <div>
+                            <dt style="font-weight: 700; color: #b39253; font-size: 1.05rem; margin-bottom: 6px;">Social Proof Card</dt>
+                            <dd style="color: #e9d5ff; font-size: 0.95rem; line-height: 1.6; margin-left: 0;">A branded graphic asset generated dynamically from authentic customer testimonial text, optimized for sharing across Instagram, LinkedIn, and corporate channels.</dd>
+                        </div>
+                    </dl>
                 </div>
             </div>
         </section>

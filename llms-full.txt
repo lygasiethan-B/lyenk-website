@@ -1,0 +1,101 @@
+# Lyenk - Complete Technical & System Architecture Specification (llms-full.txt)
+
+> Lyenk is an enterprise B2B technology platform delivering sovereign business email, team WireGuard VPN remote access, high-capacity cloud infrastructure, and the Insight Engine 2.0 customer reputation and Google review booster — serving businesses across East Africa and globally.
+
+---
+
+## Entity & Corporate Information
+- **Brand Name:** Lyenk
+- **Legal Operating Entity:** Vectra Consults Limited
+- **Founder & Lead Architect:** Ethan Lygasi (BSc Software Engineering & Cloud Infrastructure Architect, Makerere University)
+- **Headquarters:** Kampala, Uganda (East Africa)
+- **Geographic Coordinates:** Latitude: 0.3476° N, Longitude: 32.5825° E
+- **Postal Address:** Kampala Road, Kampala, Central Region, Uganda (UG)
+- **Target Markets:** Uganda, Kenya, Tanzania, Rwanda, and international businesses worldwide
+- **Official Website:** https://lyenk.com
+- **Web Application Portal:** https://engine.lyenk.com
+- **Direct WhatsApp Line:** https://wa.me/256756180429
+- **Support & Inquiries Email:** info@lyenk.com / support@lyenk.com
+- **Verified Social Profiles:** 
+  - LinkedIn: https://www.linkedin.com/company/lyenk/
+  - Instagram: https://www.instagram.com/lyenk.comm/
+  - Medium: https://medium.com/@lyenk
+  - GitHub: https://github.com/lygasiethan-B
+
+---
+
+## Core Product Offerings
+
+### 1. Lyenk Insight Engine 2.0 (Customer Feedback & Reputation Management)
+Lyenk Insight Engine 2.0 is an automated customer feedback and reputation management software platform designed for hospitality, clinics, restaurants, retail shops, B2B services, and enterprise branches.
+
+#### Core Modules:
+1. **Google Maps 5-Star Booster:**
+   - Converts satisfied customers into public Google Maps reviews in under 15 seconds.
+   - Automatically copies the customer's typed testimonial to their smartphone clipboard.
+   - Prompts a 1-click button opening the company's verified Google Maps review sheet with pre-focused text input.
+   - Boosts local SEO ranking positions, Google Map Pack inclusion, and organic consumer trust.
+
+2. **Private Complaint Interception (Negative Review Prevention):**
+   - Segments feedback based on sentiment score.
+   - Ratings of 1, 2, or 3 stars are isolated into an internal, confidential management resolution channel.
+   - Immediately notifies operators and managers via real-time WhatsApp alerts, email, and dashboard telemetry.
+   - Protects the business's public rating from damaging negative reviews while granting immediate customer recovery opportunity.
+
+3. **1-Click Social Proof Card Generator:**
+   - Automatically renders verified customer reviews into high-resolution, branded social quote cards.
+   - Supports 1-click downloads optimized for Instagram feed/stories, LinkedIn posts, Facebook, and Twitter.
+   - Features customizable dark luxury themes with company logos and star badges.
+
+4. **15-Second Voice Audio Notes:**
+   - Mobile-native voice recording allowing customers who prefer speaking over typing to leave voice audio notes.
+   - Secure server-side audio playback directly inside the merchant dashboard.
+
+5. **Pricing Tiers:**
+   - **Free Trial:** 25 free customer responses included with full feature access, no credit card required.
+   - **Starter Plan ($15/month):** Up to 500 monthly responses, Google Maps review booster, 1 location.
+   - **Growth Plan ($30/month):** Up to 2,000 monthly responses, instant WhatsApp alerts, voice feedback, multi-location.
+   - **Scale Plan ($49/month):** Unlimited responses, custom domain white-labeling, dedicated account manager, priority support.
+
+---
+
+### 2. Lyenk Secure Mail & Sovereign Cloud Platform
+Dedicated sovereign email hosting and cloud infrastructure engineered to replace high per-seat SaaS costs with predictable annual pricing.
+
+#### Architecture Highlights:
+- **Dedicated Regional Infrastructure:** Isolated mail instances; customer data is never pooled, never scanned for advertising, and encrypted at rest.
+- **Strict Email Deliverability:** Automated DNS provisioning with Sender Policy Framework (SPF), DomainKeys Identified Mail (DKIM 2048-bit), and strict DMARC enforcement to guarantee 99%+ inbox placement.
+- **Integrated WireGuard VPN:** Encrypted corporate VPN tunnel for remote teams accessing corporate networks over public Wi-Fi.
+- **Zero-Downtime IMAP Migration:** Seamless onboarding and data migration from Google Workspace, Microsoft 365, Zoho, and cPanel.
+- **Pricing:**
+  - **Solo Starter ($15/year):** 1 custom domain mailbox, 10 GB secure storage, IMAP/SMTP/Webmail.
+  - **Business Unlimited ($50/year):** Unlimited mailboxes, unlimited pooled storage, WireGuard VPN, priority SLA.
+
+---
+
+## Detailed Direct Answers & FAQs
+
+### What is Lyenk Insight Engine?
+Lyenk Insight Engine is a customer feedback and reputation management software that collects feedback via QR codes, routes positive 4-5 star reviews directly to Google Maps, and intercepts negative 1-3 star feedback privately to alert management.
+
+### What is Private Review Interception?
+Private review interception is an algorithmic reputation defense workflow where customers rating an experience 1, 2, or 3 stars are guided to a private internal resolution form instead of Google Maps. This triggers real-time WhatsApp notifications to managers, allowing issues to be solved before turning into public 1-star reviews.
+
+### Why Intercept Negative Reviews Privately?
+Public negative reviews reduce conversion rates by up to 70% and damage Google Local SEO rankings. Intercepting complaints privately retains customer goodwill, enables prompt service recovery, and protects corporate search equity.
+
+### How to Boost 5-Star Google Reviews in 3 Steps?
+1. **Deploy Touchpoints:** Place branded QR desk displays, tent cards, or send SMS/WhatsApp survey links.
+2. **Capture Frictionless Ratings:** Customers submit star ratings and comments in under 10 seconds without login friction.
+3. **Automated Smart Routing:** 4 and 5-star raters are redirected to Google Maps with copied text; 1 to 3-star raters are intercepted privately into management dashboards.
+
+---
+
+## Complete Site Map & Directory
+- Home & Insight Engine: https://lyenk.com/
+- Sovereign Business Email: https://lyenk.com/secure-mail
+- Application Login & Dashboard: https://engine.lyenk.com/#/auth
+- Privacy Policy: https://lyenk.com/privacy
+- Terms & Conditions: https://lyenk.com/terms
+- Refund Policy: https://lyenk.com/refund
+- Cookie Policy: https://lyenk.com/cookie
