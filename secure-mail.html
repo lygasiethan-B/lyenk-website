@@ -743,6 +743,143 @@
             .navbar ul { display: none; }
             .grid-2 { grid-template-columns: 1fr; }
         }
+
+        /* ==========================================================================
+           Lyenk Lightweight Animation & Transition Engine (Zero JS Dependencies)
+           ========================================================================== */
+
+        /* 1. Scroll-Driven Keyframes (Hardware GPU Composited) */
+        @keyframes lyenkScrollFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px) scale(0.985);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* 2. Scroll Reveal Utility Classes */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal-on-scroll.is-revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Progressive Enhancement: Native CSS View Timelines for supported engines */
+        @supports ((animation-timeline: view()) and (animation-range: entry)) {
+            .reveal-on-scroll {
+                animation: lyenkScrollFadeUp auto cubic-bezier(0.16, 1, 0.3, 1) both;
+                animation-timeline: view();
+                animation-range: entry 10% cover 28%;
+            }
+        }
+
+        /* Stagger Delays for Grid Children */
+        .stagger-children > *:nth-child(1) { transition-delay: 40ms; }
+        .stagger-children > *:nth-child(2) { transition-delay: 120ms; }
+        .stagger-children > *:nth-child(3) { transition-delay: 200ms; }
+        .stagger-children > *:nth-child(4) { transition-delay: 280ms; }
+        .stagger-children > *:nth-child(5) { transition-delay: 360ms; }
+        .stagger-children > *:nth-child(6) { transition-delay: 440ms; }
+
+        /* 3. Section Ambient Glow Dividers */
+        .section-ambient-divider {
+            position: relative;
+        }
+        .section-ambient-divider::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(177, 143, 77, 0.38), transparent);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* 4. Luxury Card & Button Hover Elevations */
+        .hover-elevate {
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.35s ease !important;
+            will-change: transform, box-shadow;
+        }
+
+        .hover-elevate:hover {
+            transform: translateY(-6px);
+            border-color: rgba(177, 143, 77, 0.45) !important;
+            box-shadow: 0 18px 36px -10px rgba(12, 6, 22, 0.65), 0 0 24px -4px rgba(177, 143, 77, 0.22) !important;
+        }
+
+        /* Interactive Button Sheen */
+        .btn {
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                        background-color 0.25s ease,
+                        color 0.25s ease,
+                        border-color 0.25s ease !important;
+            will-change: transform, box-shadow;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px -4px rgba(177, 143, 77, 0.35);
+        }
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        /* 5. Subtle Metric Glow Animation */
+        @keyframes metricGlow {
+            0%, 100% {
+                text-shadow: 0 0 14px rgba(177, 143, 77, 0.18);
+            }
+            50% {
+                text-shadow: 0 0 28px rgba(177, 143, 77, 0.45);
+            }
+        }
+        .telemetry-col {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .telemetry-col:hover {
+            transform: translateY(-4px);
+        }
+        .telemetry-col > div:first-child {
+            animation: metricGlow 4s ease-in-out infinite;
+        }
+
+        /* 6. Strict Reduced Motion Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .reveal-on-scroll {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .hover-elevate:hover,
+            .btn:hover,
+            .telemetry-col:hover {
+                transform: none !important;
+            }
+            .telemetry-col > div:first-child {
+                animation: none !important;
+            }
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -854,7 +991,7 @@
     <!-- Hero Section (Section 1: Image BG) -->
     <section class="hero" id="home" style="padding: 160px 0 100px; background: linear-gradient(to right, rgba(12, 6, 22, 0.8) 0%, rgba(12, 6, 22, 0.4) 45%, rgba(12, 6, 22, 0) 80%), url('assets/mail-hero.jpg') center/cover no-repeat; color: #ffffff; position: relative; overflow: hidden; min-height: 85vh; display: flex; align-items: center;">
         <div class="container" style="width: 100%;">
-            <div style="max-width: 580px; text-align: left;">
+            <div class="reveal-on-scroll" style="max-width: 580px; text-align: left;">
                 <h1 style="margin-bottom: 18px; font-size: clamp(2.4rem, 4.5vw, 3.8rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; color: #ffffff;">
                     A small thing that changes how you feel.
                 </h1>
@@ -880,18 +1017,18 @@
     </section>
 
     <!-- Starlink-Inspired Telemetry Spec Bar (Section 2: Purple BG Start) -->
-    <section class="telemetry-bar" style="background: #150824; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 36px 0;">
+    <section class="telemetry-bar section-ambient-divider reveal-on-scroll" style="background: #150824; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 36px 0;">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; text-align: center;">
-                <div class="telemetry-col" style="border-right: 1px solid rgba(255,255,255,0.08); padding: 0 15px;">
+            <div class="stagger-children" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; text-align: center;">
+                <div class="telemetry-col hover-elevate" style="border-right: 1px solid rgba(255,255,255,0.08); padding: 0 15px;">
                     <div style="font-size: 2.6rem; font-weight: 800; color: #ffffff; line-height: 1; letter-spacing: -0.02em;">$15 <span style="font-size: 1.3rem; color: #b39253;">/ YR</span></div>
                     <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #d8b4fe; margin-top: 8px;">Single User ($1.25/mo)</div>
                 </div>
-                <div class="telemetry-col" style="border-right: 1px solid rgba(255,255,255,0.08); padding: 0 15px;">
+                <div class="telemetry-col hover-elevate" style="border-right: 1px solid rgba(255,255,255,0.08); padding: 0 15px;">
                     <div style="font-size: 2.6rem; font-weight: 800; color: #ffffff; line-height: 1; letter-spacing: -0.02em;">100%</div>
                     <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #d8b4fe; margin-top: 8px;">Guaranteed Deliverability</div>
                 </div>
-                <div class="telemetry-col" style="padding: 0 15px;">
+                <div class="telemetry-col hover-elevate" style="padding: 0 15px;">
                     <div style="font-size: 2.6rem; font-weight: 800; color: #ffffff; line-height: 1; letter-spacing: -0.02em;">$50 <span style="font-size: 1.3rem; color: #b39253;">/ YR</span></div>
                     <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #d8b4fe; margin-top: 8px;">Unlimited Team Mailboxes</div>
                 </div>
@@ -900,9 +1037,9 @@
     </section>
 
     <!-- Enterprise Advantage Section (Section 2: Purple BG Continued) -->
-    <section class="section-light" id="features" style="background-color: #1C0C2E; padding: 90px 0; color: #ffffff;">
+    <section class="section-light section-ambient-divider" id="features" style="background-color: #1C0C2E; padding: 90px 0; color: #ffffff;">
         <div class="container">
-            <div style="text-align: center; max-width: 760px; margin: 0 auto 50px;">
+            <div class="reveal-on-scroll" style="text-align: center; max-width: 760px; margin: 0 auto 50px;">
                 <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #b39253; margin-bottom: 16px;">
                     ENTERPRISE ARCHITECTURE
                 </div>
@@ -914,8 +1051,8 @@
                 </p>
             </div>
 
-            <div class="grid-3" style="gap: 30px;">
-                <div class="feature-card-modern" style="background: rgba(255, 255, 255, 0.04); padding: 36px 30px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.08);">
+            <div class="grid-3 stagger-children" style="gap: 30px;">
+                <div class="feature-card-modern hover-elevate reveal-on-scroll" style="background: rgba(255, 255, 255, 0.04); padding: 36px 30px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.08);">
                     <div style="width: 54px; height: 54px; border-radius: 14px; background: rgba(93, 46, 138, 0.3); color: #d8b4fe; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 22px;">
                         <i class="fas fa-shield-alt"></i>
                     </div>
@@ -925,7 +1062,7 @@
                     </p>
                 </div>
                 
-                <div class="feature-card-modern" style="background: rgba(255, 255, 255, 0.04); padding: 36px 30px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <div class="feature-card-modern hover-elevate reveal-on-scroll" style="background: rgba(255, 255, 255, 0.04); padding: 36px 30px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.08);">
                     <div style="width: 54px; height: 54px; border-radius: 14px; background: rgba(179, 146, 83, 0.25); color: #b39253; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 22px;">
                         <i class="fas fa-headset"></i>
                     </div>
@@ -935,7 +1072,7 @@
                     </p>
                 </div>
                 
-                <div class="feature-card-modern" style="background: rgba(255, 255, 255, 0.04); padding: 36px 30px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <div class="feature-card-modern hover-elevate reveal-on-scroll" style="background: rgba(255, 255, 255, 0.04); padding: 36px 30px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.08);">
                     <div style="width: 54px; height: 54px; border-radius: 14px; background: rgba(16, 185, 129, 0.2); color: #34d399; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 22px;">
                         <i class="fas fa-paper-plane"></i>
                     </div>
@@ -949,9 +1086,9 @@
     </section>
 
     <!-- Why Businesses Choose Lyenk / Infrastructure (Section 3: Image BG) -->
-    <section class="section-light section-server-bg" style="background: linear-gradient(to right, rgba(12, 6, 22, 0.82) 0%, rgba(12, 6, 22, 0.45) 45%, rgba(12, 6, 22, 0) 80%), url('assets/sovereign-server.jpg') center/cover no-repeat; padding: 120px 0; min-height: 85vh; color: #ffffff; display: flex; align-items: center;">
+    <section class="section-light section-server-bg section-ambient-divider" style="background: linear-gradient(to right, rgba(12, 6, 22, 0.82) 0%, rgba(12, 6, 22, 0.45) 45%, rgba(12, 6, 22, 0) 80%), url('assets/sovereign-server.jpg') center/cover no-repeat; padding: 120px 0; min-height: 85vh; color: #ffffff; display: flex; align-items: center;">
         <div class="container" style="width: 100%;">
-            <div style="max-width: 560px; text-align: left;">
+            <div class="reveal-on-scroll" style="max-width: 560px; text-align: left;">
                 <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #b39253; margin-bottom: 14px;">
                     SOVEREIGN INFRASTRUCTURE
                 </div>
@@ -969,9 +1106,9 @@
     </section>
 
     <!-- Pricing Section (Section 4: Purple BG) -->
-    <section id="pricing" style="background: #150824; color: #ffffff; padding: 100px 0;">
+    <section id="pricing" class="section-ambient-divider" style="background: #150824; color: #ffffff; padding: 100px 0;">
         <div class="container">
-            <div style="text-align: center; max-width: 760px; margin: 0 auto 60px;">
+            <div class="reveal-on-scroll" style="text-align: center; max-width: 760px; margin: 0 auto 60px;">
                 <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #b39253; margin-bottom: 16px;">
                     TRANSPARENT FLAT PRICING
                 </div>
@@ -983,9 +1120,9 @@
                 </p>
             </div>
             
-            <div class="grid-2" style="max-width: 960px; margin: 0 auto; align-items: stretch; gap: 36px;">
+            <div class="grid-2 stagger-children" style="max-width: 960px; margin: 0 auto; align-items: stretch; gap: 36px;">
                 <!-- Solo Starter Plan -->
-                <div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(179,146,83,0.4); padding: 48px 40px; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.4); backdrop-filter: blur(12px); display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+                <div class="hover-elevate reveal-on-scroll" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(179,146,83,0.4); padding: 48px 40px; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.4); backdrop-filter: blur(12px); display: flex; flex-direction: column; justify-content: space-between; position: relative;">
                     <div style="position: absolute; top: -14px; right: 30px; background: linear-gradient(135deg, #b39253 0%, #99783d 100%); color: #fff; font-size: 12px; font-weight: 700; padding: 4px 14px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(179,146,83,0.4);">
                         Solo Starter
                     </div>
@@ -1024,7 +1161,7 @@
                 </div>
 
                 <!-- Business Unlimited Plan -->
-                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.15); padding: 48px 40px; border-radius: 24px; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+                <div class="hover-elevate reveal-on-scroll" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.15); padding: 48px 40px; border-radius: 24px; display: flex; flex-direction: column; justify-content: space-between; position: relative;">
                     <div style="position: absolute; top: -14px; right: 30px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 12px; font-weight: 700; padding: 4px 14px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.05em;">
                         Best for Teams
                     </div>
@@ -1066,32 +1203,34 @@
     </section>
 
     <!-- Specifications Grid & FAQ Section (Section 5: Image BG) -->
-    <section class="section-security-bg" style="background: linear-gradient(to right, rgba(12, 6, 22, 0.82) 0%, rgba(12, 6, 22, 0.5) 50%, rgba(12, 6, 22, 0.82) 100%), url('assets/corp-security.jpg') center/cover no-repeat; padding: 100px 0; color: #ffffff;">
+    <section class="section-security-bg section-ambient-divider" style="background: linear-gradient(to right, rgba(12, 6, 22, 0.82) 0%, rgba(12, 6, 22, 0.5) 50%, rgba(12, 6, 22, 0.82) 100%), url('assets/corp-security.jpg') center/cover no-repeat; padding: 100px 0; color: #ffffff;">
         <div class="container" style="max-width: 900px; text-align: center;">
-            <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #b39253; margin-bottom: 16px;">
-                ENTERPRISE SPECIFICATIONS
+            <div class="reveal-on-scroll">
+                <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #b39253; margin-bottom: 16px;">
+                    ENTERPRISE SPECIFICATIONS
+                </div>
+                <h2 style="font-size: clamp(2rem, 3.2vw, 2.6rem); font-weight: 800; color: #ffffff; margin-bottom: 16px;">
+                    Why Organisations Choose Sovereign Mail
+                </h2>
+                <p style="color: #e9d5ff; font-size: 1.05rem; margin-bottom: 40px;">Enterprise reliability meets local agility.</p>
             </div>
-            <h2 style="font-size: clamp(2rem, 3.2vw, 2.6rem); font-weight: 800; color: #ffffff; margin-bottom: 16px;">
-                Why Organisations Choose Sovereign Mail
-            </h2>
-            <p style="color: #e9d5ff; font-size: 1.05rem; margin-bottom: 40px;">Enterprise reliability meets local agility.</p>
 
-            <div class="grid-3" style="text-align: left; gap: 24px; margin-bottom: 50px;">
-                <div style="background: rgba(255, 255, 255, 0.04); padding: 30px 24px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+            <div class="grid-3 stagger-children" style="text-align: left; gap: 24px; margin-bottom: 50px;">
+                <div class="hover-elevate reveal-on-scroll" style="background: rgba(255, 255, 255, 0.04); padding: 30px 24px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
                     <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(93, 46, 138, 0.3); color: #d8b4fe; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 16px;">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3 style="font-size: 1.15rem; font-weight: 700; color: #ffffff; margin-bottom: 8px;">Deliverability</h3>
                     <p style="color: #e9d5ff; font-size: 0.9rem; line-height: 1.6; margin: 0;">Strict SPF, DKIM, and DMARC records ensure communications reach inboxes.</p>
                 </div>
-                <div style="background: rgba(255, 255, 255, 0.04); padding: 30px 24px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                <div class="hover-elevate reveal-on-scroll" style="background: rgba(255, 255, 255, 0.04); padding: 30px 24px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
                     <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(179, 146, 83, 0.25); color: #b39253; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 16px;">
                         <i class="fas fa-network-wired"></i>
                     </div>
                     <h3 style="font-size: 1.15rem; font-weight: 700; color: #ffffff; margin-bottom: 8px;">WireGuard VPN</h3>
                     <p style="color: #e9d5ff; font-size: 0.9rem; line-height: 1.6; margin: 0;">Encrypted VPN tunnels connect branch offices and remote staff securely.</p>
                 </div>
-                <div style="background: rgba(255, 255, 255, 0.04); padding: 30px 24px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                <div class="hover-elevate reveal-on-scroll" style="background: rgba(255, 255, 255, 0.04); padding: 30px 24px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
                     <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(16, 185, 129, 0.2); color: #34d399; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 16px;">
                         <i class="fas fa-hdd"></i>
                     </div>
@@ -1100,9 +1239,11 @@
                 </div>
             </div>
 
-            <button id="open-faq-modal" class="btn" style="background: #ffffff; color: #1C0C2E; padding: 14px 32px; border-radius: 6px; font-weight: 800; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem;">
+            <button id="open-faq-modal" class="btn hover-elevate" style="background: #ffffff; color: #1C0C2E; padding: 14px 32px; border-radius: 6px; font-weight: 800; border: none; cursor: pointer; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem;">
                 View Enterprise FAQ
             </button>
+        </div>
+    </section>
         </div>
     </section>
 
@@ -1293,6 +1434,30 @@
                 } else {
                     panel.style.maxHeight = panel.scrollHeight + "px";
                 }
+            });
+        }
+
+        // Lightweight Native Scroll Reveal Observer (Zero Dependencies)
+        if ('IntersectionObserver' in window) {
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.08,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+                revealObserver.observe(el);
+            });
+        } else {
+            // Fallback for older browsers
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+                el.classList.add('is-revealed');
             });
         }
     </script>

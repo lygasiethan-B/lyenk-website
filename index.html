@@ -1625,6 +1625,141 @@
                 break-inside: avoid;
             }
         }
+
+        /* ==========================================================================
+           Lyenk Lightweight Animation & Transition Engine (Zero JS Dependencies)
+           ========================================================================== */
+
+        /* 1. Scroll-Driven Keyframes (Hardware GPU Composited) */
+        @keyframes lyenkScrollFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px) scale(0.985);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* 2. Scroll Reveal Utility Classes (Works seamlessly with IntersectionObserver) */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal-on-scroll.is-revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Progressive Enhancement: Native CSS View Timelines for supported engines */
+        @supports ((animation-timeline: view()) and (animation-range: entry)) {
+            .reveal-on-scroll {
+                animation: lyenkScrollFadeUp auto cubic-bezier(0.16, 1, 0.3, 1) both;
+                animation-timeline: view();
+                animation-range: entry 10% cover 28%;
+            }
+        }
+
+        /* Stagger Delays for Grid Children */
+        .stagger-children > *:nth-child(1) { transition-delay: 40ms; }
+        .stagger-children > *:nth-child(2) { transition-delay: 130ms; }
+        .stagger-children > *:nth-child(3) { transition-delay: 220ms; }
+        .stagger-children > *:nth-child(4) { transition-delay: 310ms; }
+
+        /* 3. Section Ambient Glow Dividers */
+        .section-ambient-divider {
+            position: relative;
+        }
+        .section-ambient-divider::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(177, 143, 77, 0.38), transparent);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        /* 4. Luxury Card & Button Hover Elevations */
+        .hover-elevate {
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.35s ease !important;
+            will-change: transform, box-shadow;
+        }
+
+        .hover-elevate:hover {
+            transform: translateY(-6px);
+            border-color: rgba(177, 143, 77, 0.45) !important;
+            box-shadow: 0 18px 36px -10px rgba(12, 6, 22, 0.65), 0 0 24px -4px rgba(177, 143, 77, 0.22) !important;
+        }
+
+        /* Interactive Button Sheen */
+        .btn {
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                        background-color 0.25s ease,
+                        color 0.25s ease,
+                        border-color 0.25s ease !important;
+            will-change: transform, box-shadow;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px -4px rgba(177, 143, 77, 0.35);
+        }
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        /* 5. Subtle Metric Glow Animation */
+        @keyframes metricGlow {
+            0%, 100% {
+                text-shadow: 0 0 14px rgba(177, 143, 77, 0.18);
+            }
+            50% {
+                text-shadow: 0 0 28px rgba(177, 143, 77, 0.45);
+            }
+        }
+        .telemetry-col {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .telemetry-col:hover {
+            transform: translateY(-4px);
+        }
+        .telemetry-col > div:first-child {
+            animation: metricGlow 4s ease-in-out infinite;
+        }
+
+        /* 6. Strict Reduced Motion Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .reveal-on-scroll {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .hover-elevate:hover,
+            .btn:hover,
+            .telemetry-col:hover {
+                transform: none !important;
+            }
+            .telemetry-col > div:first-child {
+                animation: none !important;
+            }
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -1741,7 +1876,7 @@
     <!-- Hero Section (Section 1: Image BG) -->
     <section class="hero" id="home" style="padding: 160px 0 100px; background: linear-gradient(to right, rgba(12, 6, 22, 0.8) 0%, rgba(12, 6, 22, 0.45) 45%, rgba(12, 6, 22, 0) 80%), url('assets/review-hero.jpg') center/cover no-repeat; color: #ffffff; position: relative; overflow: hidden; min-height: 85vh; display: flex; align-items: center;">
         <div class="container" style="width: 100%;">
-            <div style="max-width: 580px; text-align: left;">
+            <div class="reveal-on-scroll" style="max-width: 580px; text-align: left;">
                 <h1 style="margin-bottom: 18px; font-size: clamp(2.4rem, 4.5vw, 3.8rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; color: #ffffff;">
                     Get more 5-star reviews.
                 </h1>
@@ -1762,7 +1897,7 @@
     </section>
 
     <!-- Starlink-Inspired Telemetry Spec Bar (Section 2: Purple BG Start) -->
-    <section class="telemetry-bar" style="background: #150824; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 36px 0;">
+    <section class="telemetry-bar section-ambient-divider reveal-on-scroll" style="background: #150824; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 36px 0;">
         <div class="container">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; text-align: center;">
                 <div class="telemetry-col" style="border-right: 1px solid rgba(255,255,255,0.08); padding: 0 15px;">
@@ -1788,9 +1923,9 @@
     <!-- Main Content -->
     <main id="main-content">
         <!-- Insight Engine Section (Section 2: Purple BG Continued) -->
-        <section class="insight-engine" id="insight-engine" style="background-color: #1C0C2E; color: #ffffff; padding: 90px 0;">
+        <section class="insight-engine section-ambient-divider" id="insight-engine" style="background-color: #1C0C2E; color: #ffffff; padding: 90px 0;">
             <div class="container">
-                <div class="section-title" style="text-align: center; max-width: 760px; margin: 0 auto 50px;">
+                <div class="section-title reveal-on-scroll" style="text-align: center; max-width: 760px; margin: 0 auto 50px;">
                     <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #b39253; margin-bottom: 16px;">
                         HIGH-CONVERTING CUSTOMER PROOF
                     </div>
@@ -1798,25 +1933,25 @@
                     <p style="color: #e9d5ff; font-size: 1.05rem;">Route positive ratings to Google, export social graphics, and intercept complaints privately.</p>
                 </div>
                 
-                <div class="grid-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 45px;">
-                    <div style="background: rgba(255, 255, 255, 0.04); padding: 32px 24px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <div class="grid-3 stagger-children reveal-on-scroll" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 45px;">
+                    <div class="hover-elevate" style="background: rgba(255, 255, 255, 0.04); padding: 32px 24px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08);">
                         <div style="font-size: 1.5rem; color: #b39253; margin-bottom: 14px;"><i class="fab fa-google"></i></div>
                         <h3 style="font-size: 1.2rem; font-weight: 700; color: #ffffff; margin-bottom: 10px;">Google 5-Star Booster</h3>
                         <p style="color: #e9d5ff; font-size: 0.92rem; line-height: 1.6; margin: 0;">1-click review routing with auto-copy. Private alert routing for 1–3 stars.</p>
                     </div>
-                    <div style="background: rgba(255, 255, 255, 0.04); padding: 32px 24px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div class="hover-elevate" style="background: rgba(255, 255, 255, 0.04); padding: 32px 24px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08);">
                         <div style="font-size: 1.5rem; color: #b39253; margin-bottom: 14px;"><i class="fas fa-layer-group"></i></div>
                         <h3 style="font-size: 1.2rem; font-weight: 700; color: #ffffff; margin-bottom: 10px;">Social Review Cards</h3>
                         <p style="color: #e9d5ff; font-size: 0.92rem; line-height: 1.6; margin: 0;">Export 5-star reviews to social media cards and embed live website widgets.</p>
                     </div>
-                    <div style="background: rgba(255, 255, 255, 0.04); padding: 32px 24px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div class="hover-elevate" style="background: rgba(255, 255, 255, 0.04); padding: 32px 24px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08);">
                         <div style="font-size: 1.5rem; color: #b39253; margin-bottom: 14px;"><i class="fab fa-whatsapp"></i></div>
                         <h3 style="font-size: 1.2rem; font-weight: 700; color: #ffffff; margin-bottom: 10px;">Audio & WhatsApp Alerts</h3>
                         <p style="color: #e9d5ff; font-size: 0.92rem; line-height: 1.6; margin: 0;">15s voice notes and instant WhatsApp alerts for urgent customer feedback.</p>
                     </div>
                 </div>
 
-                <div style="text-align: center;">
+                <div class="reveal-on-scroll" style="text-align: center;">
                     <a href="https://engine.lyenk.com/#/auth" class="btn" style="background-color: #ffffff; color: #1C0C2E; font-weight: 800; border-radius: 6px; padding: 16px 36px; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; text-decoration: none;">
                         Start Free Trial (25 Responses)
                     </a>
@@ -1825,9 +1960,9 @@
         </section>
 
         <!-- How It Works / Experience (Section 3: Image BG) -->
-        <section class="insight-steps" style="background: linear-gradient(to right, rgba(12, 6, 22, 0.82) 0%, rgba(12, 6, 22, 0.45) 45%, rgba(12, 6, 22, 0) 80%), url('assets/scan-experience.jpg') center/cover no-repeat; color: #ffffff; padding: 120px 0; min-height: 85vh; display: flex; align-items: center;">
+        <section class="insight-steps section-ambient-divider" style="background: linear-gradient(to right, rgba(12, 6, 22, 0.82) 0%, rgba(12, 6, 22, 0.45) 45%, rgba(12, 6, 22, 0) 80%), url('assets/scan-experience.jpg') center/cover no-repeat; color: #ffffff; padding: 120px 0; min-height: 85vh; display: flex; align-items: center;">
             <div class="container" style="width: 100%;">
-                <div style="max-width: 560px; text-align: left;">
+                <div class="reveal-on-scroll" style="max-width: 560px; text-align: left;">
                     <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #b39253; margin-bottom: 14px;">
                         CUSTOMER EXPERIENCE
                     </div>
@@ -1845,9 +1980,9 @@
         </section>
 
         <!-- Pricing Section (Section 4: Purple BG) -->
-        <section class="pricing" id="pricing" style="background-color: #150824; color: #ffffff; padding: 100px 0;">
+        <section class="pricing section-ambient-divider" id="pricing" style="background-color: #150824; color: #ffffff; padding: 100px 0;">
             <div class="container">
-                <div class="section-title" style="text-align: center; max-width: 760px; margin: 0 auto 50px;">
+                <div class="section-title reveal-on-scroll" style="text-align: center; max-width: 760px; margin: 0 auto 50px;">
                     <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #b39253; margin-bottom: 16px;">
                         SUBSCRIPTION PLANS
                     </div>
@@ -1855,9 +1990,9 @@
                     <p style="color: #d8b4fe; font-size: 1.1rem;">All plans include unlimited feedback links. Start with 25 free responses.</p>
                 </div>
                 
-                <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; align-items: stretch;">
+                <div class="pricing-grid stagger-children reveal-on-scroll" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; align-items: stretch;">
                     <!-- Starter Plan ($15) -->
-                    <div class="pricing-card" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 40px 30px; text-align: left; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div class="pricing-card hover-elevate" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 40px 30px; text-align: left; display: flex; flex-direction: column; justify-content: space-between;">
                         <div>
                             <div style="font-size: 0.8rem; font-weight: 700; color: #d8b4fe; text-transform: uppercase; margin-bottom: 8px;">Starter</div>
                             <div style="display: flex; align-items: baseline; margin-bottom: 10px;">
@@ -1876,7 +2011,7 @@
                     </div>
                     
                     <!-- Pro Plan ($30) -->
-                    <div class="pricing-card" style="background: rgba(255, 255, 255, 0.07); color: #fff; border: 2px solid #b39253; border-radius: 20px; padding: 40px 30px; text-align: left; position: relative; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div class="pricing-card hover-elevate" style="background: rgba(255, 255, 255, 0.07); color: #fff; border: 2px solid #b39253; border-radius: 20px; padding: 40px 30px; text-align: left; position: relative; display: flex; flex-direction: column; justify-content: space-between;">
                         <div style="position: absolute; top: -14px; right: 25px; background: #b39253; color: #000; padding: 4px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase;">Most Popular</div>
                         <div>
                             <div style="font-size: 0.8rem; font-weight: 700; color: #e9d5ff; text-transform: uppercase; margin-bottom: 8px;">Pro Plan</div>
@@ -1896,7 +2031,7 @@
                     </div>
                     
                     <!-- Scale Plan ($49) -->
-                    <div class="pricing-card" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 40px 30px; text-align: left; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div class="pricing-card hover-elevate" style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 40px 30px; text-align: left; display: flex; flex-direction: column; justify-content: space-between;">
                         <div>
                             <div style="font-size: 0.8rem; font-weight: 700; color: #d8b4fe; text-transform: uppercase; margin-bottom: 8px;">Scale</div>
                             <div style="display: flex; align-items: baseline; margin-bottom: 10px;">
@@ -1918,9 +2053,9 @@
         </section>
 
         <!-- Knowledge Hub & Definition Blocks (AEO / GEO Engine Optimized) -->
-        <section class="knowledge-hub" id="knowledge-hub" style="background-color: #120720; color: #ffffff; padding: 90px 0; border-top: 1px solid rgba(255, 255, 255, 0.08); border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+        <section class="knowledge-hub section-ambient-divider" id="knowledge-hub" style="background-color: #120720; color: #ffffff; padding: 90px 0; border-top: 1px solid rgba(255, 255, 255, 0.08); border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
             <div class="container">
-                <div class="section-title" style="text-align: center; max-width: 780px; margin: 0 auto 50px;">
+                <div class="section-title reveal-on-scroll" style="text-align: center; max-width: 780px; margin: 0 auto 50px;">
                     <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #b39253; margin-bottom: 16px;">
                         KNOWLEDGE HUB &amp; DIRECT ANSWERS
                     </div>
@@ -1928,9 +2063,9 @@
                     <p style="color: #e9d5ff; font-size: 1.05rem; line-height: 1.6;">Lyenk Insight Engine is an automated customer feedback and reputation management software designed for hospitality, healthcare, retail, and service enterprises across East Africa and worldwide. It channels positive reviews to public channels while privately routing customer concerns to operators.</p>
                 </div>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; margin-bottom: 45px;">
+                <div class="stagger-children reveal-on-scroll" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; margin-bottom: 45px;">
                     <!-- Definition Block 1 -->
-                    <div style="background: rgba(255, 255, 255, 0.04); padding: 34px 28px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div class="hover-elevate" style="background: rgba(255, 255, 255, 0.04); padding: 34px 28px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08);">
                         <h3 style="font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-bottom: 12px;">What is Private Review Interception?</h3>
                         <p style="color: #e9d5ff; font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">
                             Private review interception is a proactive reputation protection mechanism where dissatisfied customers submitting 1, 2, or 3-star ratings are routed to a confidential internal feedback channel instead of third-party public platforms. The feedback triggers instant alerts via WhatsApp or email directly to managers, enabling rapid service recovery before grievances turn into public negative reviews.
@@ -1938,7 +2073,7 @@
                     </div>
 
                     <!-- Definition Block 2 -->
-                    <div style="background: rgba(255, 255, 255, 0.04); padding: 34px 28px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div class="hover-elevate" style="background: rgba(255, 255, 255, 0.04); padding: 34px 28px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08);">
                         <h3 style="font-size: 1.25rem; font-weight: 700; color: #ffffff; margin-bottom: 12px;">Why Intercept Negative Reviews Privately?</h3>
                         <p style="color: #e9d5ff; font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">
                             Unaddressed public complaints damage search visibility and decrease consumer trust, with over 70% of potential buyers avoiding businesses with sub-4.5 star ratings. Privately intercepting negative feedback protects your public Google Maps rating, preserves search ranking equity, and gives business owners actionable insight to fix operational bottlenecks.
@@ -1947,7 +2082,7 @@
                 </div>
 
                 <!-- How To Ordered Step List -->
-                <div style="background: rgba(255, 255, 255, 0.03); padding: 40px 32px; border-radius: 18px; border: 1px solid rgba(179, 146, 83, 0.25); margin-bottom: 45px;">
+                <div class="hover-elevate reveal-on-scroll" style="background: rgba(255, 255, 255, 0.03); padding: 40px 32px; border-radius: 18px; border: 1px solid rgba(179, 146, 83, 0.25); margin-bottom: 45px;">
                     <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #b39253; margin-bottom: 12px;">
                         REPUTATION WORKFLOW
                     </div>
@@ -1966,7 +2101,7 @@
                 </div>
 
                 <!-- Definition List (<dl>) -->
-                <div style="background: rgba(255, 255, 255, 0.04); padding: 36px 30px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08);">
+                <div class="hover-elevate reveal-on-scroll" style="background: rgba(255, 255, 255, 0.04); padding: 36px 30px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.08);">
                     <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #b39253; margin-bottom: 14px;">
                         TERMINOLOGY &amp; GLOSSARY
                     </div>
@@ -1990,9 +2125,9 @@
         </section>
 
         <!-- CTA Section (Section 5: Image BG) -->
-        <section class="cta" style="background: linear-gradient(to right, rgba(12, 6, 22, 0.82) 0%, rgba(12, 6, 22, 0.4) 50%, rgba(12, 6, 22, 0) 85%), url('assets/cta-growth.jpg') center/cover no-repeat; color: #ffffff; padding: 120px 0; min-height: 70vh; display: flex; align-items: center;">
+        <section class="cta section-ambient-divider" style="background: linear-gradient(to right, rgba(12, 6, 22, 0.82) 0%, rgba(12, 6, 22, 0.4) 50%, rgba(12, 6, 22, 0) 85%), url('assets/cta-growth.jpg') center/cover no-repeat; color: #ffffff; padding: 120px 0; min-height: 70vh; display: flex; align-items: center;">
             <div class="container" style="width: 100%;">
-                <div style="max-width: 580px; text-align: left;">
+                <div class="reveal-on-scroll" style="max-width: 580px; text-align: left;">
                     <div style="font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #b39253; margin-bottom: 14px;">
                         DEPLOY TODAY
                     </div>
@@ -2590,6 +2725,30 @@
         document.addEventListener('mousedown', function() {
             document.body.classList.remove('keyboard-navigation');
         });
+
+        // Lightweight Native Scroll Reveal Observer (Zero Dependencies)
+        if ('IntersectionObserver' in window) {
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.08,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+                revealObserver.observe(el);
+            });
+        } else {
+            // Fallback for older browsers
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+                el.classList.add('is-revealed');
+            });
+        }
     </script>
 </body>
 </html>
